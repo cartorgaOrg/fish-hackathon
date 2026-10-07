@@ -1,0 +1,6084 @@
+[
+ {
+  "id": "kaykit-adventurers",
+  "name": "KayKit Character Pack: Adventurers",
+  "license": "CC0 1.0 — Kay Lousberg (www.kaylousberg.com)",
+  "notes": "Knight, Barbarian, Mage, Rogue, Rogue_Hooded — fully animated (~75 clips each). Weapons/shields/props as separate models.",
+  "models": [
+   {
+    "name": "Barbarian",
+    "url": "/assets/kaykit-adventurers/Barbarian.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcasting",
+     "T-Pose",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C"
+    ]
+   },
+   {
+    "name": "Knight",
+    "url": "/assets/kaykit-adventurers/Knight.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcasting",
+     "T-Pose",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C"
+    ]
+   },
+   {
+    "name": "Mage",
+    "url": "/assets/kaykit-adventurers/Mage.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcasting",
+     "T-Pose",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C"
+    ]
+   },
+   {
+    "name": "Rogue",
+    "url": "/assets/kaykit-adventurers/Rogue.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcasting",
+     "T-Pose",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C"
+    ]
+   },
+   {
+    "name": "Rogue_Hooded",
+    "url": "/assets/kaykit-adventurers/Rogue_Hooded.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcasting",
+     "T-Pose",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C"
+    ]
+   },
+   {
+    "name": "arrow",
+    "url": "/assets/kaykit-adventurers/arrow.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "arrow_bundle",
+    "url": "/assets/kaykit-adventurers/arrow_bundle.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "axe_1handed",
+    "url": "/assets/kaykit-adventurers/axe_1handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "axe_2handed",
+    "url": "/assets/kaykit-adventurers/axe_2handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crossbow_1handed",
+    "url": "/assets/kaykit-adventurers/crossbow_1handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crossbow_2handed",
+    "url": "/assets/kaykit-adventurers/crossbow_2handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "dagger",
+    "url": "/assets/kaykit-adventurers/dagger.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mug_empty",
+    "url": "/assets/kaykit-adventurers/mug_empty.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mug_full",
+    "url": "/assets/kaykit-adventurers/mug_full.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "quiver",
+    "url": "/assets/kaykit-adventurers/quiver.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_badge",
+    "url": "/assets/kaykit-adventurers/shield_badge.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_badge_color",
+    "url": "/assets/kaykit-adventurers/shield_badge_color.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_round",
+    "url": "/assets/kaykit-adventurers/shield_round.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_round_barbarian",
+    "url": "/assets/kaykit-adventurers/shield_round_barbarian.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_round_color",
+    "url": "/assets/kaykit-adventurers/shield_round_color.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_spikes",
+    "url": "/assets/kaykit-adventurers/shield_spikes.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_spikes_color",
+    "url": "/assets/kaykit-adventurers/shield_spikes_color.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_square",
+    "url": "/assets/kaykit-adventurers/shield_square.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shield_square_color",
+    "url": "/assets/kaykit-adventurers/shield_square_color.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "smokebomb",
+    "url": "/assets/kaykit-adventurers/smokebomb.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "spellbook_closed",
+    "url": "/assets/kaykit-adventurers/spellbook_closed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "spellbook_open",
+    "url": "/assets/kaykit-adventurers/spellbook_open.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "staff",
+    "url": "/assets/kaykit-adventurers/staff.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_1handed",
+    "url": "/assets/kaykit-adventurers/sword_1handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_2handed",
+    "url": "/assets/kaykit-adventurers/sword_2handed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_2handed_color",
+    "url": "/assets/kaykit-adventurers/sword_2handed_color.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wand",
+    "url": "/assets/kaykit-adventurers/wand.gltf",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "kaykit-skeletons",
+  "name": "KayKit Character Pack: Skeletons",
+  "license": "CC0 1.0 — Kay Lousberg (www.kaylousberg.com)",
+  "notes": "Skeleton Warrior/Mage/Rogue/Minion — animated enemies, plus their weapons.",
+  "models": [
+   {
+    "name": "Skeleton_Arrow",
+    "url": "/assets/kaykit-skeletons/Skeleton_Arrow.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Arrow_Broken",
+    "url": "/assets/kaykit-skeletons/Skeleton_Arrow_Broken.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Arrow_Broken_Half",
+    "url": "/assets/kaykit-skeletons/Skeleton_Arrow_Broken_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Arrow_Half",
+    "url": "/assets/kaykit-skeletons/Skeleton_Arrow_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Axe",
+    "url": "/assets/kaykit-skeletons/Skeleton_Axe.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Blade",
+    "url": "/assets/kaykit-skeletons/Skeleton_Blade.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Crossbow",
+    "url": "/assets/kaykit-skeletons/Skeleton_Crossbow.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Mage",
+    "url": "/assets/kaykit-skeletons/Skeleton_Mage.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Jump_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Death_C_Pose",
+     "Death_C_Skeletons",
+     "Death_C_Skeletons_Resurrect",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Idle_B",
+     "Idle_Combat",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_C",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Skeleton_Inactive_Standing_Pose",
+     "Skeletons_Awaken_Floor",
+     "Skeletons_Awaken_Floor_Long",
+     "Skeletons_Awaken_Standing",
+     "Skeletons_Inactive_Floor_Pose",
+     "Spawn_Air",
+     "Spawn_Ground",
+     "Spawn_Ground_Skeletons",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcast_Summon",
+     "Spellcasting",
+     "T-Pose",
+     "Taunt",
+     "Taunt_Longer",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C",
+     "Walking_D_Skeletons"
+    ]
+   },
+   {
+    "name": "Skeleton_Minion",
+    "url": "/assets/kaykit-skeletons/Skeleton_Minion.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Jump_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Death_C_Pose",
+     "Death_C_Skeletons",
+     "Death_C_Skeletons_Resurrect",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Idle_B",
+     "Idle_Combat",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_C",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Skeleton_Inactive_Standing_Pose",
+     "Skeletons_Awaken_Floor",
+     "Skeletons_Awaken_Floor_Long",
+     "Skeletons_Awaken_Standing",
+     "Skeletons_Inactive_Floor_Pose",
+     "Spawn_Air",
+     "Spawn_Ground",
+     "Spawn_Ground_Skeletons",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcast_Summon",
+     "Spellcasting",
+     "T-Pose",
+     "Taunt",
+     "Taunt_Longer",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C",
+     "Walking_D_Skeletons"
+    ]
+   },
+   {
+    "name": "Skeleton_Quiver",
+    "url": "/assets/kaykit-skeletons/Skeleton_Quiver.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Rogue",
+    "url": "/assets/kaykit-skeletons/Skeleton_Rogue.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Jump_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Death_C_Pose",
+     "Death_C_Skeletons",
+     "Death_C_Skeletons_Resurrect",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Idle_B",
+     "Idle_Combat",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_C",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Skeleton_Inactive_Standing_Pose",
+     "Skeletons_Awaken_Floor",
+     "Skeletons_Awaken_Floor_Long",
+     "Skeletons_Awaken_Standing",
+     "Skeletons_Inactive_Floor_Pose",
+     "Spawn_Air",
+     "Spawn_Ground",
+     "Spawn_Ground_Skeletons",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcast_Summon",
+     "Spellcasting",
+     "T-Pose",
+     "Taunt",
+     "Taunt_Longer",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C",
+     "Walking_D_Skeletons"
+    ]
+   },
+   {
+    "name": "Skeleton_Shield_Large_A",
+    "url": "/assets/kaykit-skeletons/Skeleton_Shield_Large_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Shield_Large_B",
+    "url": "/assets/kaykit-skeletons/Skeleton_Shield_Large_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Shield_Small_A",
+    "url": "/assets/kaykit-skeletons/Skeleton_Shield_Small_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Shield_Small_B",
+    "url": "/assets/kaykit-skeletons/Skeleton_Shield_Small_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Staff",
+    "url": "/assets/kaykit-skeletons/Skeleton_Staff.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skeleton_Warrior",
+    "url": "/assets/kaykit-skeletons/Skeleton_Warrior.glb",
+    "animated": true,
+    "animations": [
+     "1H_Melee_Attack_Chop",
+     "1H_Melee_Attack_Jump_Chop",
+     "1H_Melee_Attack_Slice_Diagonal",
+     "1H_Melee_Attack_Slice_Horizontal",
+     "1H_Melee_Attack_Stab",
+     "1H_Ranged_Aiming",
+     "1H_Ranged_Reload",
+     "1H_Ranged_Shoot",
+     "1H_Ranged_Shooting",
+     "2H_Melee_Attack_Chop",
+     "2H_Melee_Attack_Slice",
+     "2H_Melee_Attack_Spin",
+     "2H_Melee_Attack_Spinning",
+     "2H_Melee_Attack_Stab",
+     "2H_Melee_Idle",
+     "2H_Ranged_Aiming",
+     "2H_Ranged_Reload",
+     "2H_Ranged_Shoot",
+     "2H_Ranged_Shooting",
+     "Block",
+     "Block_Attack",
+     "Block_Hit",
+     "Blocking",
+     "Cheer",
+     "Death_A",
+     "Death_A_Pose",
+     "Death_B",
+     "Death_B_Pose",
+     "Death_C_Pose",
+     "Death_C_Skeletons",
+     "Death_C_Skeletons_Resurrect",
+     "Dodge_Backward",
+     "Dodge_Forward",
+     "Dodge_Left",
+     "Dodge_Right",
+     "Dualwield_Melee_Attack_Chop",
+     "Dualwield_Melee_Attack_Slice",
+     "Dualwield_Melee_Attack_Stab",
+     "Hit_A",
+     "Hit_B",
+     "Idle",
+     "Idle_B",
+     "Idle_Combat",
+     "Interact",
+     "Jump_Full_Long",
+     "Jump_Full_Short",
+     "Jump_Idle",
+     "Jump_Land",
+     "Jump_Start",
+     "Lie_Down",
+     "Lie_Idle",
+     "Lie_Pose",
+     "Lie_StandUp",
+     "PickUp",
+     "Running_A",
+     "Running_B",
+     "Running_C",
+     "Running_Strafe_Left",
+     "Running_Strafe_Right",
+     "Sit_Chair_Down",
+     "Sit_Chair_Idle",
+     "Sit_Chair_Pose",
+     "Sit_Chair_StandUp",
+     "Sit_Floor_Down",
+     "Sit_Floor_Idle",
+     "Sit_Floor_Pose",
+     "Sit_Floor_StandUp",
+     "Skeleton_Inactive_Standing_Pose",
+     "Skeletons_Awaken_Floor",
+     "Skeletons_Awaken_Floor_Long",
+     "Skeletons_Awaken_Standing",
+     "Skeletons_Inactive_Floor_Pose",
+     "Spawn_Air",
+     "Spawn_Ground",
+     "Spawn_Ground_Skeletons",
+     "Spellcast_Long",
+     "Spellcast_Raise",
+     "Spellcast_Shoot",
+     "Spellcast_Summon",
+     "Spellcasting",
+     "T-Pose",
+     "Taunt",
+     "Taunt_Longer",
+     "Throw",
+     "Unarmed_Idle",
+     "Unarmed_Melee_Attack_Kick",
+     "Unarmed_Melee_Attack_Punch_A",
+     "Unarmed_Melee_Attack_Punch_B",
+     "Unarmed_Pose",
+     "Use_Item",
+     "Walking_A",
+     "Walking_B",
+     "Walking_Backwards",
+     "Walking_C",
+     "Walking_D_Skeletons"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kaykit-prototype",
+  "name": "KayKit Prototype Bits",
+  "license": "CC0 1.0 — Kay Lousberg (www.kaylousberg.com)",
+  "notes": "Grey-box level pieces: cubes, slopes, stairs, walls, targets, crates. Great for shooters & platformers.",
+  "models": [
+   {
+    "name": "Barrel_A",
+    "url": "/assets/kaykit-prototype/Barrel_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barrel_B",
+    "url": "/assets/kaykit-prototype/Barrel_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barrel_C",
+    "url": "/assets/kaykit-prototype/Barrel_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Box_A",
+    "url": "/assets/kaykit-prototype/Box_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Box_B",
+    "url": "/assets/kaykit-prototype/Box_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Box_C",
+    "url": "/assets/kaykit-prototype/Box_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Can_A",
+    "url": "/assets/kaykit-prototype/Can_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Can_B",
+    "url": "/assets/kaykit-prototype/Can_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Coin_A",
+    "url": "/assets/kaykit-prototype/Coin_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Coin_B",
+    "url": "/assets/kaykit-prototype/Coin_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Coin_C",
+    "url": "/assets/kaykit-prototype/Coin_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Prototype_Large_A",
+    "url": "/assets/kaykit-prototype/Cube_Prototype_Large_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Prototype_Large_B",
+    "url": "/assets/kaykit-prototype/Cube_Prototype_Large_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Prototype_Small",
+    "url": "/assets/kaykit-prototype/Cube_Prototype_Small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Door_A",
+    "url": "/assets/kaykit-prototype/Door_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Door_A_Decorated",
+    "url": "/assets/kaykit-prototype/Door_A_Decorated.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Door_B",
+    "url": "/assets/kaykit-prototype/Door_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dummy_Base",
+    "url": "/assets/kaykit-prototype/Dummy_Base.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Floor",
+    "url": "/assets/kaykit-prototype/Floor.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Floor_Dirt",
+    "url": "/assets/kaykit-prototype/Floor_Dirt.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Floor_Prototype",
+    "url": "/assets/kaykit-prototype/Floor_Prototype.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pallet_Large",
+    "url": "/assets/kaykit-prototype/Pallet_Large.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pallet_Small",
+    "url": "/assets/kaykit-prototype/Pallet_Small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pallet_Small_Decorated_A",
+    "url": "/assets/kaykit-prototype/Pallet_Small_Decorated_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pallet_Small_Decorated_B",
+    "url": "/assets/kaykit-prototype/Pallet_Small_Decorated_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pillar_A",
+    "url": "/assets/kaykit-prototype/Pillar_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pillar_B",
+    "url": "/assets/kaykit-prototype/Pillar_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Beam",
+    "url": "/assets/kaykit-prototype/Primitive_Beam.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Cube",
+    "url": "/assets/kaykit-prototype/Primitive_Cube.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Cube_Small",
+    "url": "/assets/kaykit-prototype/Primitive_Cube_Small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Doorway",
+    "url": "/assets/kaykit-prototype/Primitive_Doorway.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Floor",
+    "url": "/assets/kaykit-prototype/Primitive_Floor.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Floor_Hole",
+    "url": "/assets/kaykit-prototype/Primitive_Floor_Hole.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Pillar",
+    "url": "/assets/kaykit-prototype/Primitive_Pillar.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope",
+    "url": "/assets/kaykit-prototype/Primitive_Slope.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope_Half",
+    "url": "/assets/kaykit-prototype/Primitive_Slope_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope_Half_InnerCorner",
+    "url": "/assets/kaykit-prototype/Primitive_Slope_Half_InnerCorner.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope_Half_OuterCorner",
+    "url": "/assets/kaykit-prototype/Primitive_Slope_Half_OuterCorner.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope_InnerCorner",
+    "url": "/assets/kaykit-prototype/Primitive_Slope_InnerCorner.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Slope_OuterCorner",
+    "url": "/assets/kaykit-prototype/Primitive_Slope_OuterCorner.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Stairs",
+    "url": "/assets/kaykit-prototype/Primitive_Stairs.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Stairs_Half",
+    "url": "/assets/kaykit-prototype/Primitive_Stairs_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Wall",
+    "url": "/assets/kaykit-prototype/Primitive_Wall.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Wall_Half",
+    "url": "/assets/kaykit-prototype/Primitive_Wall_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Wall_OpenCorner",
+    "url": "/assets/kaykit-prototype/Primitive_Wall_OpenCorner.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Wall_Short",
+    "url": "/assets/kaykit-prototype/Primitive_Wall_Short.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Wall_Slope",
+    "url": "/assets/kaykit-prototype/Primitive_Wall_Slope.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Primitive_Window",
+    "url": "/assets/kaykit-prototype/Primitive_Window.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall",
+    "url": "/assets/kaykit-prototype/Wall.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Decorated",
+    "url": "/assets/kaykit-prototype/Wall_Decorated.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Doorway",
+    "url": "/assets/kaykit-prototype/Wall_Doorway.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Half",
+    "url": "/assets/kaykit-prototype/Wall_Half.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Target",
+    "url": "/assets/kaykit-prototype/Wall_Target.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Window_Closed",
+    "url": "/assets/kaykit-prototype/Wall_Window_Closed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_Window_Open",
+    "url": "/assets/kaykit-prototype/Wall_Window_Open.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium",
+    "url": "/assets/kaykit-prototype/table_medium.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_Decorated",
+    "url": "/assets/kaykit-prototype/table_medium_Decorated.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_long",
+    "url": "/assets/kaykit-prototype/table_medium_long.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target",
+    "url": "/assets/kaykit-prototype/target.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_A",
+    "url": "/assets/kaykit-prototype/target_pieces_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_B",
+    "url": "/assets/kaykit-prototype/target_pieces_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_C",
+    "url": "/assets/kaykit-prototype/target_pieces_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_D",
+    "url": "/assets/kaykit-prototype/target_pieces_D.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_E",
+    "url": "/assets/kaykit-prototype/target_pieces_E.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_pieces_F",
+    "url": "/assets/kaykit-prototype/target_pieces_F.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_small",
+    "url": "/assets/kaykit-prototype/target_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_stand_A",
+    "url": "/assets/kaykit-prototype/target_stand_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_stand_A_Decorated",
+    "url": "/assets/kaykit-prototype/target_stand_A_Decorated.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_stand_B",
+    "url": "/assets/kaykit-prototype/target_stand_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_wall_large_A",
+    "url": "/assets/kaykit-prototype/target_wall_large_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_wall_large_B",
+    "url": "/assets/kaykit-prototype/target_wall_large_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target_wall_small",
+    "url": "/assets/kaykit-prototype/target_wall_small.gltf",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "kaykit-dungeon",
+  "name": "KayKit Dungeon Remastered",
+  "license": "CC0 1.0 — Kay Lousberg (www.kaylousberg.com)",
+  "notes": "Modular dungeon: floors, walls, doors, chests, torches, barrels, banners…",
+  "models": [
+   {
+    "name": "banner_blue",
+    "url": "/assets/kaykit-dungeon/banner_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_brown",
+    "url": "/assets/kaykit-dungeon/banner_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_green",
+    "url": "/assets/kaykit-dungeon/banner_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_blue",
+    "url": "/assets/kaykit-dungeon/banner_patternA_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_brown",
+    "url": "/assets/kaykit-dungeon/banner_patternA_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_green",
+    "url": "/assets/kaykit-dungeon/banner_patternA_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_red",
+    "url": "/assets/kaykit-dungeon/banner_patternA_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_white",
+    "url": "/assets/kaykit-dungeon/banner_patternA_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternA_yellow",
+    "url": "/assets/kaykit-dungeon/banner_patternA_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_blue",
+    "url": "/assets/kaykit-dungeon/banner_patternB_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_brown",
+    "url": "/assets/kaykit-dungeon/banner_patternB_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_green",
+    "url": "/assets/kaykit-dungeon/banner_patternB_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_red",
+    "url": "/assets/kaykit-dungeon/banner_patternB_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_white",
+    "url": "/assets/kaykit-dungeon/banner_patternB_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternB_yellow",
+    "url": "/assets/kaykit-dungeon/banner_patternB_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_blue",
+    "url": "/assets/kaykit-dungeon/banner_patternC_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_brown",
+    "url": "/assets/kaykit-dungeon/banner_patternC_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_green",
+    "url": "/assets/kaykit-dungeon/banner_patternC_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_red",
+    "url": "/assets/kaykit-dungeon/banner_patternC_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_white",
+    "url": "/assets/kaykit-dungeon/banner_patternC_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_patternC_yellow",
+    "url": "/assets/kaykit-dungeon/banner_patternC_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_red",
+    "url": "/assets/kaykit-dungeon/banner_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_blue",
+    "url": "/assets/kaykit-dungeon/banner_shield_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_brown",
+    "url": "/assets/kaykit-dungeon/banner_shield_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_green",
+    "url": "/assets/kaykit-dungeon/banner_shield_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_red",
+    "url": "/assets/kaykit-dungeon/banner_shield_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_white",
+    "url": "/assets/kaykit-dungeon/banner_shield_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_shield_yellow",
+    "url": "/assets/kaykit-dungeon/banner_shield_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_blue",
+    "url": "/assets/kaykit-dungeon/banner_thin_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_brown",
+    "url": "/assets/kaykit-dungeon/banner_thin_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_green",
+    "url": "/assets/kaykit-dungeon/banner_thin_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_red",
+    "url": "/assets/kaykit-dungeon/banner_thin_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_white",
+    "url": "/assets/kaykit-dungeon/banner_thin_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_thin_yellow",
+    "url": "/assets/kaykit-dungeon/banner_thin_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_blue",
+    "url": "/assets/kaykit-dungeon/banner_triple_blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_brown",
+    "url": "/assets/kaykit-dungeon/banner_triple_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_green",
+    "url": "/assets/kaykit-dungeon/banner_triple_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_red",
+    "url": "/assets/kaykit-dungeon/banner_triple_red.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_white",
+    "url": "/assets/kaykit-dungeon/banner_triple_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_triple_yellow",
+    "url": "/assets/kaykit-dungeon/banner_triple_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_white",
+    "url": "/assets/kaykit-dungeon/banner_white.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "banner_yellow",
+    "url": "/assets/kaykit-dungeon/banner_yellow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrel_large",
+    "url": "/assets/kaykit-dungeon/barrel_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrel_large_decorated",
+    "url": "/assets/kaykit-dungeon/barrel_large_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrel_small",
+    "url": "/assets/kaykit-dungeon/barrel_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrel_small_stack",
+    "url": "/assets/kaykit-dungeon/barrel_small_stack.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrier",
+    "url": "/assets/kaykit-dungeon/barrier.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrier_colum_half",
+    "url": "/assets/kaykit-dungeon/barrier_colum_half.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrier_column",
+    "url": "/assets/kaykit-dungeon/barrier_column.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrier_corner",
+    "url": "/assets/kaykit-dungeon/barrier_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrier_half",
+    "url": "/assets/kaykit-dungeon/barrier_half.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bed_decorated",
+    "url": "/assets/kaykit-dungeon/bed_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bed_floor",
+    "url": "/assets/kaykit-dungeon/bed_floor.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bed_frame",
+    "url": "/assets/kaykit-dungeon/bed_frame.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_A_brown",
+    "url": "/assets/kaykit-dungeon/bottle_A_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_A_green",
+    "url": "/assets/kaykit-dungeon/bottle_A_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_A_labeled_brown",
+    "url": "/assets/kaykit-dungeon/bottle_A_labeled_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_A_labeled_green",
+    "url": "/assets/kaykit-dungeon/bottle_A_labeled_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_B_brown",
+    "url": "/assets/kaykit-dungeon/bottle_B_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_B_green",
+    "url": "/assets/kaykit-dungeon/bottle_B_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_C_brown",
+    "url": "/assets/kaykit-dungeon/bottle_C_brown.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bottle_C_green",
+    "url": "/assets/kaykit-dungeon/bottle_C_green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "box_large",
+    "url": "/assets/kaykit-dungeon/box_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "box_small",
+    "url": "/assets/kaykit-dungeon/box_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "box_small_decorated",
+    "url": "/assets/kaykit-dungeon/box_small_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "box_stacked",
+    "url": "/assets/kaykit-dungeon/box_stacked.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle",
+    "url": "/assets/kaykit-dungeon/candle.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle_lit",
+    "url": "/assets/kaykit-dungeon/candle_lit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle_melted",
+    "url": "/assets/kaykit-dungeon/candle_melted.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle_thin",
+    "url": "/assets/kaykit-dungeon/candle_thin.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle_thin_lit",
+    "url": "/assets/kaykit-dungeon/candle_thin_lit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "candle_triple",
+    "url": "/assets/kaykit-dungeon/candle_triple.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "chair",
+    "url": "/assets/kaykit-dungeon/chair.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "chest",
+    "url": "/assets/kaykit-dungeon/chest.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "chest_gold",
+    "url": "/assets/kaykit-dungeon/chest_gold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "coin",
+    "url": "/assets/kaykit-dungeon/coin.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "coin_stack_large",
+    "url": "/assets/kaykit-dungeon/coin_stack_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "coin_stack_medium",
+    "url": "/assets/kaykit-dungeon/coin_stack_medium.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "coin_stack_small",
+    "url": "/assets/kaykit-dungeon/coin_stack_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "column",
+    "url": "/assets/kaykit-dungeon/column.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crates_stacked",
+    "url": "/assets/kaykit-dungeon/crates_stacked.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_large",
+    "url": "/assets/kaykit-dungeon/floor_dirt_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_large_rocky",
+    "url": "/assets/kaykit-dungeon/floor_dirt_large_rocky.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_A",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_B",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_C",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_C.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_D",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_D.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_corner",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_dirt_small_weeds",
+    "url": "/assets/kaykit-dungeon/floor_dirt_small_weeds.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_allsides",
+    "url": "/assets/kaykit-dungeon/floor_foundation_allsides.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_corner",
+    "url": "/assets/kaykit-dungeon/floor_foundation_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_diagonal_corner",
+    "url": "/assets/kaykit-dungeon/floor_foundation_diagonal_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_front",
+    "url": "/assets/kaykit-dungeon/floor_foundation_front.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_front_and_back",
+    "url": "/assets/kaykit-dungeon/floor_foundation_front_and_back.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_foundation_front_and_sides",
+    "url": "/assets/kaykit-dungeon/floor_foundation_front_and_sides.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_big_grate",
+    "url": "/assets/kaykit-dungeon/floor_tile_big_grate.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_big_grate_open",
+    "url": "/assets/kaykit-dungeon/floor_tile_big_grate_open.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_big_spikes",
+    "url": "/assets/kaykit-dungeon/floor_tile_big_spikes.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_extralarge_grates",
+    "url": "/assets/kaykit-dungeon/floor_tile_extralarge_grates.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_extralarge_grates_open",
+    "url": "/assets/kaykit-dungeon/floor_tile_extralarge_grates_open.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_grate",
+    "url": "/assets/kaykit-dungeon/floor_tile_grate.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_grate_open",
+    "url": "/assets/kaykit-dungeon/floor_tile_grate_open.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_large",
+    "url": "/assets/kaykit-dungeon/floor_tile_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_large_rocks",
+    "url": "/assets/kaykit-dungeon/floor_tile_large_rocks.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small",
+    "url": "/assets/kaykit-dungeon/floor_tile_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_broken_A",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_broken_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_broken_B",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_broken_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_corner",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_decorated",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_weeds_A",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_weeds_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_tile_small_weeds_B",
+    "url": "/assets/kaykit-dungeon/floor_tile_small_weeds_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_wood_large",
+    "url": "/assets/kaykit-dungeon/floor_wood_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_wood_large_dark",
+    "url": "/assets/kaykit-dungeon/floor_wood_large_dark.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_wood_small",
+    "url": "/assets/kaykit-dungeon/floor_wood_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "floor_wood_small_dark",
+    "url": "/assets/kaykit-dungeon/floor_wood_small_dark.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "keg",
+    "url": "/assets/kaykit-dungeon/keg.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "keg_decorated",
+    "url": "/assets/kaykit-dungeon/keg_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "key",
+    "url": "/assets/kaykit-dungeon/key.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "keyring",
+    "url": "/assets/kaykit-dungeon/keyring.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "keyring_hanging",
+    "url": "/assets/kaykit-dungeon/keyring_hanging.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "pillar",
+    "url": "/assets/kaykit-dungeon/pillar.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "pillar_decorated",
+    "url": "/assets/kaykit-dungeon/pillar_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "plate",
+    "url": "/assets/kaykit-dungeon/plate.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "plate_food_A",
+    "url": "/assets/kaykit-dungeon/plate_food_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "plate_food_B",
+    "url": "/assets/kaykit-dungeon/plate_food_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "plate_small",
+    "url": "/assets/kaykit-dungeon/plate_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "plate_stack",
+    "url": "/assets/kaykit-dungeon/plate_stack.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rubble_half",
+    "url": "/assets/kaykit-dungeon/rubble_half.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rubble_large",
+    "url": "/assets/kaykit-dungeon/rubble_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shelf_large",
+    "url": "/assets/kaykit-dungeon/shelf_large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shelf_small",
+    "url": "/assets/kaykit-dungeon/shelf_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shelf_small_candles",
+    "url": "/assets/kaykit-dungeon/shelf_small_candles.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "shelves",
+    "url": "/assets/kaykit-dungeon/shelves.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs",
+    "url": "/assets/kaykit-dungeon/stairs.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_narrow",
+    "url": "/assets/kaykit-dungeon/stairs_narrow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_wall_left",
+    "url": "/assets/kaykit-dungeon/stairs_wall_left.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_wall_right",
+    "url": "/assets/kaykit-dungeon/stairs_wall_right.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_walled",
+    "url": "/assets/kaykit-dungeon/stairs_walled.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_wide",
+    "url": "/assets/kaykit-dungeon/stairs_wide.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_wood",
+    "url": "/assets/kaykit-dungeon/stairs_wood.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stairs_wood_decorated",
+    "url": "/assets/kaykit-dungeon/stairs_wood_decorated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "stool",
+    "url": "/assets/kaykit-dungeon/stool.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_shield",
+    "url": "/assets/kaykit-dungeon/sword_shield.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_shield_broken",
+    "url": "/assets/kaykit-dungeon/sword_shield_broken.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sword_shield_gold",
+    "url": "/assets/kaykit-dungeon/sword_shield_gold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long",
+    "url": "/assets/kaykit-dungeon/table_long.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long_broken",
+    "url": "/assets/kaykit-dungeon/table_long_broken.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long_decorated_A",
+    "url": "/assets/kaykit-dungeon/table_long_decorated_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long_decorated_C",
+    "url": "/assets/kaykit-dungeon/table_long_decorated_C.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long_tablecloth",
+    "url": "/assets/kaykit-dungeon/table_long_tablecloth.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_long_tablecloth_decorated_A",
+    "url": "/assets/kaykit-dungeon/table_long_tablecloth_decorated_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium",
+    "url": "/assets/kaykit-dungeon/table_medium.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_broken",
+    "url": "/assets/kaykit-dungeon/table_medium_broken.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_decorated_A",
+    "url": "/assets/kaykit-dungeon/table_medium_decorated_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_tablecloth",
+    "url": "/assets/kaykit-dungeon/table_medium_tablecloth.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_medium_tablecloth_decorated_B",
+    "url": "/assets/kaykit-dungeon/table_medium_tablecloth_decorated_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_small",
+    "url": "/assets/kaykit-dungeon/table_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_small_decorated_A",
+    "url": "/assets/kaykit-dungeon/table_small_decorated_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "table_small_decorated_B",
+    "url": "/assets/kaykit-dungeon/table_small_decorated_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "torch",
+    "url": "/assets/kaykit-dungeon/torch.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "torch_lit",
+    "url": "/assets/kaykit-dungeon/torch_lit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "torch_mounted",
+    "url": "/assets/kaykit-dungeon/torch_mounted.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_large_A",
+    "url": "/assets/kaykit-dungeon/trunk_large_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_large_B",
+    "url": "/assets/kaykit-dungeon/trunk_large_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_large_C",
+    "url": "/assets/kaykit-dungeon/trunk_large_C.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_medium_A",
+    "url": "/assets/kaykit-dungeon/trunk_medium_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_medium_B",
+    "url": "/assets/kaykit-dungeon/trunk_medium_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_medium_C",
+    "url": "/assets/kaykit-dungeon/trunk_medium_C.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_small_A",
+    "url": "/assets/kaykit-dungeon/trunk_small_A.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_small_B",
+    "url": "/assets/kaykit-dungeon/trunk_small_B.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trunk_small_C",
+    "url": "/assets/kaykit-dungeon/trunk_small_C.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall",
+    "url": "/assets/kaykit-dungeon/wall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_Tsplit",
+    "url": "/assets/kaykit-dungeon/wall_Tsplit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_Tsplit_sloped",
+    "url": "/assets/kaykit-dungeon/wall_Tsplit_sloped.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_arched",
+    "url": "/assets/kaykit-dungeon/wall_arched.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_archedwindow_gated",
+    "url": "/assets/kaykit-dungeon/wall_archedwindow_gated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_archedwindow_gated_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_archedwindow_gated_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_archedwindow_open",
+    "url": "/assets/kaykit-dungeon/wall_archedwindow_open.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_broken",
+    "url": "/assets/kaykit-dungeon/wall_broken.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner",
+    "url": "/assets/kaykit-dungeon/wall_corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_gated",
+    "url": "/assets/kaykit-dungeon/wall_corner_gated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_corner_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_small",
+    "url": "/assets/kaykit-dungeon/wall_corner_small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_cracked",
+    "url": "/assets/kaykit-dungeon/wall_cracked.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_crossing",
+    "url": "/assets/kaykit-dungeon/wall_crossing.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_doorway",
+    "url": "/assets/kaykit-dungeon/wall_doorway.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_doorway_Tsplit",
+    "url": "/assets/kaykit-dungeon/wall_doorway_Tsplit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_doorway_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_doorway_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_doorway_sides",
+    "url": "/assets/kaykit-dungeon/wall_doorway_sides.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_endcap",
+    "url": "/assets/kaykit-dungeon/wall_endcap.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_gated",
+    "url": "/assets/kaykit-dungeon/wall_gated.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_half",
+    "url": "/assets/kaykit-dungeon/wall_half.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_half_endcap",
+    "url": "/assets/kaykit-dungeon/wall_half_endcap.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_half_endcap_sloped",
+    "url": "/assets/kaykit-dungeon/wall_half_endcap_sloped.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_open_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_open_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_pillar",
+    "url": "/assets/kaykit-dungeon/wall_pillar.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_shelves",
+    "url": "/assets/kaykit-dungeon/wall_shelves.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_sloped",
+    "url": "/assets/kaykit-dungeon/wall_sloped.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_window_closed",
+    "url": "/assets/kaykit-dungeon/wall_window_closed.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_window_closed_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_window_closed_scaffold.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_window_open",
+    "url": "/assets/kaykit-dungeon/wall_window_open.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_window_open_scaffold",
+    "url": "/assets/kaykit-dungeon/wall_window_open_scaffold.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "kaykit-hexagon",
+  "name": "KayKit Medieval Hexagon Pack",
+  "license": "CC0 1.0 — Kay Lousberg (www.kaylousberg.com)",
+  "notes": "Hex tiles (grass, water, coast, rivers, roads), buildings in blue/red/neutral, mountains, trees.",
+  "models": [
+   {
+    "name": "building_archeryrange_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_archeryrange_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_barracks_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_barracks_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_blacksmith_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_blacksmith_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_castle_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_castle_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_church_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_church_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_home_A_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_home_A_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_home_B_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_home_B_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_lumbermill_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_lumbermill_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_market_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_market_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_mine_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_mine_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tavern_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_tavern_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_A_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_tower_A_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_B_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_tower_B_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_base_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_tower_base_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_catapult_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_tower_catapult_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_watermill_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_watermill_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_well_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_well_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_windmill_blue",
+    "url": "/assets/kaykit-hexagon/buildings/blue/building_windmill_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_bridge_A",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_bridge_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_bridge_B",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_bridge_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_destroyed",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_destroyed.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_dirt",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_dirt.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_grain",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_grain.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_scaffolding",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_scaffolding.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_stage_A",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_stage_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_stage_B",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_stage_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_stage_C",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/building_stage_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "fence_stone_straight",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/fence_stone_straight.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "fence_stone_straight_gate",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/fence_stone_straight_gate.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "fence_wood_straight",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/fence_wood_straight.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "fence_wood_straight_gate",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/fence_wood_straight_gate.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "projectile_catapult",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/projectile_catapult.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_A_gate",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_corner_A_gate.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_A_inside",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_corner_A_inside.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_A_outside",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_corner_A_outside.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_B_inside",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_corner_B_inside.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_corner_B_outside",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_corner_B_outside.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_straight",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_straight.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wall_straight_gate",
+    "url": "/assets/kaykit-hexagon/buildings/neutral/wall_straight_gate.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_archeryrange_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_archeryrange_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_barracks_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_barracks_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_blacksmith_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_blacksmith_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_castle_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_castle_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_church_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_church_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_home_A_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_home_A_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_home_B_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_home_B_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_lumbermill_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_lumbermill_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_market_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_market_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_mine_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_mine_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tavern_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_tavern_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_A_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_tower_A_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_B_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_tower_B_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_base_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_tower_base_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_tower_catapult_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_tower_catapult_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_watermill_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_watermill_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_well_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_well_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "building_windmill_red",
+    "url": "/assets/kaykit-hexagon/buildings/red/building_windmill_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "cloud_big",
+    "url": "/assets/kaykit-hexagon/decoration/nature/cloud_big.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "cloud_small",
+    "url": "/assets/kaykit-hexagon/decoration/nature/cloud_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hill_single_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hill_single_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hill_single_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hill_single_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hill_single_C",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hill_single_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_A_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_A_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_B_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_B_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_C",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hills_C_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/hills_C_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_A_grass",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_A_grass.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_A_grass_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_A_grass_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_B_grass",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_B_grass.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_B_grass_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_B_grass_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_C",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_C_grass",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_C_grass.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "mountain_C_grass_trees",
+    "url": "/assets/kaykit-hexagon/decoration/nature/mountain_C_grass_trees.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rock_single_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/rock_single_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rock_single_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/rock_single_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rock_single_C",
+    "url": "/assets/kaykit-hexagon/decoration/nature/rock_single_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rock_single_D",
+    "url": "/assets/kaykit-hexagon/decoration/nature/rock_single_D.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "rock_single_E",
+    "url": "/assets/kaykit-hexagon/decoration/nature/rock_single_E.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "tree_single_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/tree_single_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "tree_single_A_cut",
+    "url": "/assets/kaykit-hexagon/decoration/nature/tree_single_A_cut.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "tree_single_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/tree_single_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "tree_single_B_cut",
+    "url": "/assets/kaykit-hexagon/decoration/nature/tree_single_B_cut.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_A_cut",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_A_cut.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_A_large",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_A_large.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_A_medium",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_A_medium.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_A_small",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_A_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_B_cut",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_B_cut.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_B_large",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_B_large.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_B_medium",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_B_medium.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "trees_B_small",
+    "url": "/assets/kaykit-hexagon/decoration/nature/trees_B_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "waterlily_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/waterlily_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "waterlily_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/waterlily_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "waterplant_A",
+    "url": "/assets/kaykit-hexagon/decoration/nature/waterplant_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "waterplant_B",
+    "url": "/assets/kaykit-hexagon/decoration/nature/waterplant_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "waterplant_C",
+    "url": "/assets/kaykit-hexagon/decoration/nature/waterplant_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "barrel",
+    "url": "/assets/kaykit-hexagon/decoration/props/barrel.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bucket_arrows",
+    "url": "/assets/kaykit-hexagon/decoration/props/bucket_arrows.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bucket_empty",
+    "url": "/assets/kaykit-hexagon/decoration/props/bucket_empty.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "bucket_water",
+    "url": "/assets/kaykit-hexagon/decoration/props/bucket_water.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_A_big",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_A_big.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_A_small",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_A_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_B_big",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_B_big.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_B_small",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_B_small.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_long_A",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_long_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_long_B",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_long_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_long_C",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_long_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_long_empty",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_long_empty.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "crate_open",
+    "url": "/assets/kaykit-hexagon/decoration/props/crate_open.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "flag_blue",
+    "url": "/assets/kaykit-hexagon/decoration/props/flag_blue.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "flag_green",
+    "url": "/assets/kaykit-hexagon/decoration/props/flag_green.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "flag_red",
+    "url": "/assets/kaykit-hexagon/decoration/props/flag_red.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "flag_yellow",
+    "url": "/assets/kaykit-hexagon/decoration/props/flag_yellow.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "ladder",
+    "url": "/assets/kaykit-hexagon/decoration/props/ladder.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "pallet",
+    "url": "/assets/kaykit-hexagon/decoration/props/pallet.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "resource_lumber",
+    "url": "/assets/kaykit-hexagon/decoration/props/resource_lumber.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "resource_stone",
+    "url": "/assets/kaykit-hexagon/decoration/props/resource_stone.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "sack",
+    "url": "/assets/kaykit-hexagon/decoration/props/sack.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "target",
+    "url": "/assets/kaykit-hexagon/decoration/props/target.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "tent",
+    "url": "/assets/kaykit-hexagon/decoration/props/tent.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "weaponrack",
+    "url": "/assets/kaykit-hexagon/decoration/props/weaponrack.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "wheelbarrow",
+    "url": "/assets/kaykit-hexagon/decoration/props/wheelbarrow.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_grass",
+    "url": "/assets/kaykit-hexagon/tiles/base/hex_grass.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_grass_bottom",
+    "url": "/assets/kaykit-hexagon/tiles/base/hex_grass_bottom.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_grass_sloped_high",
+    "url": "/assets/kaykit-hexagon/tiles/base/hex_grass_sloped_high.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_grass_sloped_low",
+    "url": "/assets/kaykit-hexagon/tiles/base/hex_grass_sloped_low.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_water",
+    "url": "/assets/kaykit-hexagon/tiles/base/hex_water.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_coast_A",
+    "url": "/assets/kaykit-hexagon/tiles/coast/hex_coast_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_coast_B",
+    "url": "/assets/kaykit-hexagon/tiles/coast/hex_coast_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_coast_C",
+    "url": "/assets/kaykit-hexagon/tiles/coast/hex_coast_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_coast_D",
+    "url": "/assets/kaykit-hexagon/tiles/coast/hex_coast_D.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_coast_E",
+    "url": "/assets/kaykit-hexagon/tiles/coast/hex_coast_E.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_A",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_A_curvy",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_A_curvy.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_B",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_C",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_D",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_D.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_E",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_E.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_F",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_F.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_G",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_G.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_H",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_H.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_I",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_I.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_J",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_J.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_K",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_K.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_L",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_L.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_crossing_A",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_crossing_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_river_crossing_B",
+    "url": "/assets/kaykit-hexagon/tiles/rivers/hex_river_crossing_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_A",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_A.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_A_sloped_high",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_A_sloped_high.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_A_sloped_low",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_A_sloped_low.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_B",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_B.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_C",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_C.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_D",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_D.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_E",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_E.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_F",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_F.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_G",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_G.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_H",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_H.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_I",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_I.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_J",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_J.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_K",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_K.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_L",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_L.gltf",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "hex_road_M",
+    "url": "/assets/kaykit-hexagon/tiles/roads/hex_road_M.gltf",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-platformer",
+  "name": "Quaternius Ultimate Platformer Pack",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Animated Character (+Gun variant), enemies, coins, gems, hazards, grass cubes, flags, cannons.",
+  "models": [
+   {
+    "name": "Arrow",
+    "url": "/assets/quaternius-platformer/Arrow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Arrow_Side",
+    "url": "/assets/quaternius-platformer/Arrow_Side.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Arrow_Up",
+    "url": "/assets/quaternius-platformer/Arrow_Up.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bee",
+    "url": "/assets/quaternius-platformer/Bee.glb",
+    "animated": true,
+    "animations": [
+     "MonsterArmature|Bite_Front",
+     "MonsterArmature|Death",
+     "MonsterArmature|Flying",
+     "MonsterArmature|HitRecieve"
+    ]
+   },
+   {
+    "name": "Bomb",
+    "url": "/assets/quaternius-platformer/Bomb.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bouncer",
+    "url": "/assets/quaternius-platformer/Bouncer.glb",
+    "animated": true,
+    "animations": [
+     "Bouncer_Bounce",
+     "Bouncer_Idle",
+     "BouncerArmature|Bouncer_Bounce",
+     "BouncerArmature|Bouncer_Idle"
+    ]
+   },
+   {
+    "name": "Bridge_Modular",
+    "url": "/assets/quaternius-platformer/Bridge_Modular.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bridge_Modular_Center",
+    "url": "/assets/quaternius-platformer/Bridge_Modular_Center.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bridge_Small",
+    "url": "/assets/quaternius-platformer/Bridge_Small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bush",
+    "url": "/assets/quaternius-platformer/Bush.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bush_Fruit",
+    "url": "/assets/quaternius-platformer/Bush_Fruit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cannon",
+    "url": "/assets/quaternius-platformer/Cannon.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cannonball",
+    "url": "/assets/quaternius-platformer/Cannonball.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Character",
+    "url": "/assets/quaternius-platformer/Character.glb",
+    "animated": true,
+    "animations": [
+     "CharacterArmature|Death",
+     "CharacterArmature|Duck",
+     "CharacterArmature|HitReact",
+     "CharacterArmature|Idle",
+     "CharacterArmature|Idle_Gun",
+     "CharacterArmature|Idle_Shoot",
+     "CharacterArmature|Jump",
+     "CharacterArmature|Jump_Idle",
+     "CharacterArmature|Jump_Land",
+     "CharacterArmature|No",
+     "CharacterArmature|Punch",
+     "CharacterArmature|Run",
+     "CharacterArmature|Run_Gun",
+     "CharacterArmature|Run_Shoot",
+     "CharacterArmature|Walk",
+     "CharacterArmature|Walk_Gun",
+     "CharacterArmature|Wave",
+     "CharacterArmature|Yes"
+    ]
+   },
+   {
+    "name": "Character_Gun",
+    "url": "/assets/quaternius-platformer/Character_Gun.glb",
+    "animated": true,
+    "animations": [
+     "CharacterArmature|Death",
+     "CharacterArmature|Duck",
+     "CharacterArmature|HitReact",
+     "CharacterArmature|Idle",
+     "CharacterArmature|Idle_Gun",
+     "CharacterArmature|Idle_Shoot",
+     "CharacterArmature|Jump",
+     "CharacterArmature|Jump_Idle",
+     "CharacterArmature|Jump_Land",
+     "CharacterArmature|No",
+     "CharacterArmature|Punch",
+     "CharacterArmature|Run",
+     "CharacterArmature|Run_Gun",
+     "CharacterArmature|Run_Shoot",
+     "CharacterArmature|Walk",
+     "CharacterArmature|Walk_Gun",
+     "CharacterArmature|Wave",
+     "CharacterArmature|Yes"
+    ]
+   },
+   {
+    "name": "Character_HumanoidRig",
+    "url": "/assets/quaternius-platformer/Character_HumanoidRig.glb",
+    "animated": true,
+    "animations": []
+   },
+   {
+    "name": "Chest",
+    "url": "/assets/quaternius-platformer/Chest.glb",
+    "animated": true,
+    "animations": [
+     "Chest_Close",
+     "Chest_Open",
+     "Chest_Armature|Chest_Close",
+     "Chest_Armature|Chest_Open"
+    ]
+   },
+   {
+    "name": "Cloud_1",
+    "url": "/assets/quaternius-platformer/Cloud_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cloud_2",
+    "url": "/assets/quaternius-platformer/Cloud_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cloud_3",
+    "url": "/assets/quaternius-platformer/Cloud_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Coin",
+    "url": "/assets/quaternius-platformer/Coin.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crab",
+    "url": "/assets/quaternius-platformer/Crab.glb",
+    "animated": true,
+    "animations": [
+     "MonsterArmature|Bite_Front",
+     "MonsterArmature|Bite_InPlace",
+     "MonsterArmature|Dance",
+     "MonsterArmature|Death",
+     "MonsterArmature|HitRecieve",
+     "MonsterArmature|Idle",
+     "MonsterArmature|Jump",
+     "MonsterArmature|No",
+     "MonsterArmature|Walk",
+     "MonsterArmature|Yes"
+    ]
+   },
+   {
+    "name": "Cube_Bricks",
+    "url": "/assets/quaternius-platformer/Cube_Bricks.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Crate",
+    "url": "/assets/quaternius-platformer/Cube_Crate.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Default",
+    "url": "/assets/quaternius-platformer/Cube_Default.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Dirt_Center_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Dirt_Center_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Dirt_Corner_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Dirt_Corner_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Dirt_Side_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Dirt_Side_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Dirt_Single",
+    "url": "/assets/quaternius-platformer/Cube_Dirt_Single.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Exclamation",
+    "url": "/assets/quaternius-platformer/Cube_Exclamation.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_Bottom_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_Bottom_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_Center_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_Center_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_CornerBottom_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_CornerBottom_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_CornerCenter_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_CornerCenter_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_Corner_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_Corner_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_SideBottom_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_SideBottom_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_SideCenter_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_SideCenter_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_Side_Tall",
+    "url": "/assets/quaternius-platformer/Cube_Grass_Side_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Grass_Single",
+    "url": "/assets/quaternius-platformer/Cube_Grass_Single.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Question",
+    "url": "/assets/quaternius-platformer/Cube_Question.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Cube_Spikes",
+    "url": "/assets/quaternius-platformer/Cube_Spikes.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Door",
+    "url": "/assets/quaternius-platformer/Door.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Enemy",
+    "url": "/assets/quaternius-platformer/Enemy.glb",
+    "animated": true,
+    "animations": [
+     "MonsterArmature|Bite_Front",
+     "MonsterArmature|Bite_InPlace",
+     "MonsterArmature|Dance",
+     "MonsterArmature|Death",
+     "MonsterArmature|HitRecieve",
+     "MonsterArmature|Idle",
+     "MonsterArmature|Jump",
+     "MonsterArmature|No",
+     "MonsterArmature|Walk",
+     "MonsterArmature|Yes"
+    ]
+   },
+   {
+    "name": "Fence_1",
+    "url": "/assets/quaternius-platformer/Fence_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Fence_Corner",
+    "url": "/assets/quaternius-platformer/Fence_Corner.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Fence_Middle",
+    "url": "/assets/quaternius-platformer/Fence_Middle.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Fruit",
+    "url": "/assets/quaternius-platformer/Fruit.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Gem_Blue",
+    "url": "/assets/quaternius-platformer/Gem_Blue.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Gem_Green",
+    "url": "/assets/quaternius-platformer/Gem_Green.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Gem_Pink",
+    "url": "/assets/quaternius-platformer/Gem_Pink.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Goal_Flag",
+    "url": "/assets/quaternius-platformer/Goal_Flag.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass_1",
+    "url": "/assets/quaternius-platformer/Grass_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass_2",
+    "url": "/assets/quaternius-platformer/Grass_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass_3",
+    "url": "/assets/quaternius-platformer/Grass_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Hazard_Cylinder",
+    "url": "/assets/quaternius-platformer/Hazard_Cylinder.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Hazard_Saw",
+    "url": "/assets/quaternius-platformer/Hazard_Saw.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Hazard_SpikeTrap",
+    "url": "/assets/quaternius-platformer/Hazard_SpikeTrap.glb",
+    "animated": true,
+    "animations": [
+     "SpikeTrap_Activate",
+     "Hazard_SpikeTrap_Armature|SpikeTrap_Activate"
+    ]
+   },
+   {
+    "name": "Heart",
+    "url": "/assets/quaternius-platformer/Heart.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Heart_Half",
+    "url": "/assets/quaternius-platformer/Heart_Half.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Heart_Outline",
+    "url": "/assets/quaternius-platformer/Heart_Outline.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Key",
+    "url": "/assets/quaternius-platformer/Key.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lever",
+    "url": "/assets/quaternius-platformer/Lever.glb",
+    "animated": true,
+    "animations": [
+     "Lever_Off",
+     "Lever_On",
+     "LeverArmature|Lever_Off",
+     "LeverArmature|Lever_On"
+    ]
+   },
+   {
+    "name": "Numbers_0",
+    "url": "/assets/quaternius-platformer/Numbers_0.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_1",
+    "url": "/assets/quaternius-platformer/Numbers_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_2",
+    "url": "/assets/quaternius-platformer/Numbers_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_3",
+    "url": "/assets/quaternius-platformer/Numbers_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_4",
+    "url": "/assets/quaternius-platformer/Numbers_4.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_5",
+    "url": "/assets/quaternius-platformer/Numbers_5.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_6",
+    "url": "/assets/quaternius-platformer/Numbers_6.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_7",
+    "url": "/assets/quaternius-platformer/Numbers_7.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_8",
+    "url": "/assets/quaternius-platformer/Numbers_8.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Numbers_9",
+    "url": "/assets/quaternius-platformer/Numbers_9.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pipe_90",
+    "url": "/assets/quaternius-platformer/Pipe_90.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pipe_End",
+    "url": "/assets/quaternius-platformer/Pipe_End.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pipe_Straight",
+    "url": "/assets/quaternius-platformer/Pipe_Straight.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pipe_T",
+    "url": "/assets/quaternius-platformer/Pipe_T.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Plant_Large",
+    "url": "/assets/quaternius-platformer/Plant_Large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Plant_Small",
+    "url": "/assets/quaternius-platformer/Plant_Small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatform_Tall",
+    "url": "/assets/quaternius-platformer/RockPlatform_Tall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatforms_1",
+    "url": "/assets/quaternius-platformer/RockPlatforms_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatforms_2",
+    "url": "/assets/quaternius-platformer/RockPlatforms_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatforms_3",
+    "url": "/assets/quaternius-platformer/RockPlatforms_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatforms_Large",
+    "url": "/assets/quaternius-platformer/RockPlatforms_Large.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "RockPlatforms_Medium",
+    "url": "/assets/quaternius-platformer/RockPlatforms_Medium.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock_1",
+    "url": "/assets/quaternius-platformer/Rock_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock_2",
+    "url": "/assets/quaternius-platformer/Rock_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Skull",
+    "url": "/assets/quaternius-platformer/Skull.glb",
+    "animated": true,
+    "animations": [
+     "MonsterArmature|Bite_Front",
+     "MonsterArmature|Bite_InPlace",
+     "MonsterArmature|Dance",
+     "MonsterArmature|Death",
+     "MonsterArmature|HitRecieve",
+     "MonsterArmature|Idle",
+     "MonsterArmature|Jump",
+     "MonsterArmature|No",
+     "MonsterArmature|Walk",
+     "MonsterArmature|Yes"
+    ]
+   },
+   {
+    "name": "Spikes",
+    "url": "/assets/quaternius-platformer/Spikes.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "SpikyBall",
+    "url": "/assets/quaternius-platformer/SpikyBall.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Stairs",
+    "url": "/assets/quaternius-platformer/Stairs.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Stairs_Modular_End",
+    "url": "/assets/quaternius-platformer/Stairs_Modular_End.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Stairs_Modular_Middle",
+    "url": "/assets/quaternius-platformer/Stairs_Modular_Middle.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Stairs_Modular_Start",
+    "url": "/assets/quaternius-platformer/Stairs_Modular_Start.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Stairs_Small",
+    "url": "/assets/quaternius-platformer/Stairs_Small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Star",
+    "url": "/assets/quaternius-platformer/Star.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Star_Outline",
+    "url": "/assets/quaternius-platformer/Star_Outline.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Thunder",
+    "url": "/assets/quaternius-platformer/Thunder.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tower",
+    "url": "/assets/quaternius-platformer/Tower.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree",
+    "url": "/assets/quaternius-platformer/Tree.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree_Fruit",
+    "url": "/assets/quaternius-platformer/Tree_Fruit.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-rts",
+  "name": "Quaternius Medieval RTS Pack",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Age-of-Empires style buildings (TownCenter, Barracks, Houses, Farms…, 3 upgrade levels) and resources (trees, gold, rock).",
+  "models": [
+   {
+    "name": "Archery_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Archery_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Archery_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Archery_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Archery_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Archery_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barracks_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Barracks_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barracks_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Barracks_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barracks_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Barracks_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Barrel",
+    "url": "/assets/quaternius-rts/Barrel.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crate",
+    "url": "/assets/quaternius-rts/Crate.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crate_Big_Stack2",
+    "url": "/assets/quaternius-rts/Crate_Big_Stack2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crate_Stack1",
+    "url": "/assets/quaternius-rts/Crate_Stack1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crate_Stack2",
+    "url": "/assets/quaternius-rts/Crate_Stack2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dock_FirstAge",
+    "url": "/assets/quaternius-rts/Dock_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level1_Wheat",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level1_Wheat.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level2_Wheat",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level2_Wheat.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Farm_FirstAge_Level3_Wheat",
+    "url": "/assets/quaternius-rts/Farm_FirstAge_Level3_Wheat.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_1_Level1",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_1_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_1_Level2",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_1_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_1_Level3",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_1_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_2_Level1",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_2_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_2_Level2",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_2_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_2_Level3",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_2_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_3_Level1",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_3_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_3_Level2",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_3_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Houses_FirstAge_3_Level3",
+    "url": "/assets/quaternius-rts/Houses_FirstAge_3_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Logs",
+    "url": "/assets/quaternius-rts/Logs.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Market_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Market_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Market_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Market_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Market_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Market_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Mine",
+    "url": "/assets/quaternius-rts/Mine.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "MountainLarge_Single",
+    "url": "/assets/quaternius-rts/MountainLarge_Single.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Mountain_Group_1",
+    "url": "/assets/quaternius-rts/Mountain_Group_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Mountain_Group_2",
+    "url": "/assets/quaternius-rts/Mountain_Group_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Mountain_Single",
+    "url": "/assets/quaternius-rts/Mountain_Single.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Port_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Port_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Port_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Port_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Port_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Port_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Gold_1",
+    "url": "/assets/quaternius-rts/Resource_Gold_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Gold_2",
+    "url": "/assets/quaternius-rts/Resource_Gold_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Gold_3",
+    "url": "/assets/quaternius-rts/Resource_Gold_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_PineTree",
+    "url": "/assets/quaternius-rts/Resource_PineTree.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_PineTree_Group",
+    "url": "/assets/quaternius-rts/Resource_PineTree_Group.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_PineTree_Group_Cut",
+    "url": "/assets/quaternius-rts/Resource_PineTree_Group_Cut.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Rock_1",
+    "url": "/assets/quaternius-rts/Resource_Rock_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Rock_2",
+    "url": "/assets/quaternius-rts/Resource_Rock_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Rock_3",
+    "url": "/assets/quaternius-rts/Resource_Rock_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Tree1",
+    "url": "/assets/quaternius-rts/Resource_Tree1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Tree2",
+    "url": "/assets/quaternius-rts/Resource_Tree2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Tree_Group",
+    "url": "/assets/quaternius-rts/Resource_Tree_Group.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Resource_Tree_Group_Cut",
+    "url": "/assets/quaternius-rts/Resource_Tree_Group_Cut.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock",
+    "url": "/assets/quaternius-rts/Rock.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock_Group",
+    "url": "/assets/quaternius-rts/Rock_Group.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Storage_FirstAge_Leve3",
+    "url": "/assets/quaternius-rts/Storage_FirstAge_Leve3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Storage_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Storage_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Storage_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Storage_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Temple_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Temple_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Temple_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Temple_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Temple_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Temple_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "TowerHouse_FirstAge",
+    "url": "/assets/quaternius-rts/TowerHouse_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "TownCenter_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/TownCenter_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "TownCenter_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/TownCenter_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "TownCenter_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/TownCenter_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WallTowers_DoorClosed_FirstAge",
+    "url": "/assets/quaternius-rts/WallTowers_DoorClosed_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WallTowers_Door_FirstAge",
+    "url": "/assets/quaternius-rts/WallTowers_Door_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WallTowers_FirstAge",
+    "url": "/assets/quaternius-rts/WallTowers_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wall_FirstAge",
+    "url": "/assets/quaternius-rts/Wall_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WatchTower_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/WatchTower_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WatchTower_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/WatchTower_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WatchTower_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/WatchTower_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Windmill_FirstAge",
+    "url": "/assets/quaternius-rts/Windmill_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "WonderWalls_FirstAge",
+    "url": "/assets/quaternius-rts/WonderWalls_FirstAge.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wonder_FirstAge_Level1",
+    "url": "/assets/quaternius-rts/Wonder_FirstAge_Level1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wonder_FirstAge_Level2",
+    "url": "/assets/quaternius-rts/Wonder_FirstAge_Level2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Wonder_FirstAge_Level3",
+    "url": "/assets/quaternius-rts/Wonder_FirstAge_Level3.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-scifi-guns",
+  "name": "Quaternius Modular Sci-Fi Guns",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Complete guns: assault rifles, pistols, SMGs, snipers, crossbows, grenade launchers.",
+  "models": [
+   {
+    "name": "AR_1",
+    "url": "/assets/quaternius-scifi-guns/AR_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "AR_2",
+    "url": "/assets/quaternius-scifi-guns/AR_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "AR_3",
+    "url": "/assets/quaternius-scifi-guns/AR_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "AR_4",
+    "url": "/assets/quaternius-scifi-guns/AR_4.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "AR_5",
+    "url": "/assets/quaternius-scifi-guns/AR_5.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "AR_6",
+    "url": "/assets/quaternius-scifi-guns/AR_6.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crossbow_1",
+    "url": "/assets/quaternius-scifi-guns/Crossbow_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Crossbow_2",
+    "url": "/assets/quaternius-scifi-guns/Crossbow_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grenade",
+    "url": "/assets/quaternius-scifi-guns/Grenade.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grenade_1",
+    "url": "/assets/quaternius-scifi-guns/Grenade_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grenade_2",
+    "url": "/assets/quaternius-scifi-guns/Grenade_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grenade_3",
+    "url": "/assets/quaternius-scifi-guns/Grenade_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pistol_1",
+    "url": "/assets/quaternius-scifi-guns/Pistol_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pistol_2",
+    "url": "/assets/quaternius-scifi-guns/Pistol_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Pistol_3",
+    "url": "/assets/quaternius-scifi-guns/Pistol_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "SMG_1",
+    "url": "/assets/quaternius-scifi-guns/SMG_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "SMG_2",
+    "url": "/assets/quaternius-scifi-guns/SMG_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sniper_1",
+    "url": "/assets/quaternius-scifi-guns/Sniper_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sniper_2",
+    "url": "/assets/quaternius-scifi-guns/Sniper_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sniper_3",
+    "url": "/assets/quaternius-scifi-guns/Sniper_3.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-enemies",
+  "name": "Quaternius Easy Enemies",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Animated Frog, Rat, Snake, Spider, Wasp.",
+  "models": [
+   {
+    "name": "Frog",
+    "url": "/assets/quaternius-enemies/Frog.glb",
+    "animated": true,
+    "animations": [
+     "FrogArmature|Frog_Attack",
+     "FrogArmature|Frog_Death",
+     "FrogArmature|Frog_Idle",
+     "FrogArmature|Frog_Jump"
+    ]
+   },
+   {
+    "name": "Rat",
+    "url": "/assets/quaternius-enemies/Rat.glb",
+    "animated": true,
+    "animations": [
+     "RatArmature|Rat_Attack",
+     "RatArmature|Rat_Death",
+     "RatArmature|Rat_Idle",
+     "RatArmature|Rat_Jump",
+     "RatArmature|Rat_Run",
+     "RatArmature|Rat_Walk"
+    ]
+   },
+   {
+    "name": "Snake",
+    "url": "/assets/quaternius-enemies/Snake.glb",
+    "animated": true,
+    "animations": [
+     "SnakeArmature|Snake_Attack",
+     "SnakeArmature|Snake_Idle",
+     "SnakeArmature|Snake_Jump",
+     "SnakeArmature|Snake_Walk"
+    ]
+   },
+   {
+    "name": "Snake_angry",
+    "url": "/assets/quaternius-enemies/Snake_angry.glb",
+    "animated": true,
+    "animations": [
+     "SnakeArmature|Snake_Attack",
+     "SnakeArmature|Snake_Idle",
+     "SnakeArmature|Snake_Jump",
+     "SnakeArmature|Snake_Walk"
+    ]
+   },
+   {
+    "name": "Spider",
+    "url": "/assets/quaternius-enemies/Spider.glb",
+    "animated": true,
+    "animations": [
+     "SpiderArmature|Spider_Attack",
+     "SpiderArmature|Spider_Death",
+     "SpiderArmature|Spider_Idle",
+     "SpiderArmature|Spider_Jump",
+     "SpiderArmature|Spider_Walk"
+    ]
+   },
+   {
+    "name": "Wasp",
+    "url": "/assets/quaternius-enemies/Wasp.glb",
+    "animated": true,
+    "animations": [
+     "WaspArmature|Wasp_Attack",
+     "WaspArmature|Wasp_Death",
+     "WaspArmature|Wasp_Flying"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "quaternius-fish",
+  "name": "Quaternius Cute Fish Pack",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "40+ animated fish, fishing rods, lures, docks, boat. 🐟",
+  "models": [
+   {
+    "name": "Anglerfish",
+    "url": "/assets/quaternius-fish/Anglerfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "ArmoredCatfish",
+    "url": "/assets/quaternius-fish/ArmoredCatfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Betta",
+    "url": "/assets/quaternius-fish/Betta.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "BlackLionFish",
+    "url": "/assets/quaternius-fish/BlackLionFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Blobfish",
+    "url": "/assets/quaternius-fish/Blobfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "BlueGoldfish",
+    "url": "/assets/quaternius-fish/BlueGoldfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "BlueTang",
+    "url": "/assets/quaternius-fish/BlueTang.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Boat",
+    "url": "/assets/quaternius-fish/Boat.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "ButterflyFish",
+    "url": "/assets/quaternius-fish/ButterflyFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "CardinalFish",
+    "url": "/assets/quaternius-fish/CardinalFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Clownfish",
+    "url": "/assets/quaternius-fish/Clownfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "CoralGrouper",
+    "url": "/assets/quaternius-fish/CoralGrouper.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Cowfish",
+    "url": "/assets/quaternius-fish/Cowfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Dock_Long",
+    "url": "/assets/quaternius-fish/Dock_Long.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dock_Long_NoRope",
+    "url": "/assets/quaternius-fish/Dock_Long_NoRope.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dock_Stairs",
+    "url": "/assets/quaternius-fish/Dock_Stairs.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dock_Wide",
+    "url": "/assets/quaternius-fish/Dock_Wide.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "FishingRod_Lvl1",
+    "url": "/assets/quaternius-fish/FishingRod_Lvl1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "FishingRod_Lvl2",
+    "url": "/assets/quaternius-fish/FishingRod_Lvl2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "FishingRod_Lvl3",
+    "url": "/assets/quaternius-fish/FishingRod_Lvl3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "FishingRod_Lvl4",
+    "url": "/assets/quaternius-fish/FishingRod_Lvl4.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "FishingRod_Lvl5",
+    "url": "/assets/quaternius-fish/FishingRod_Lvl5.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Flatfish",
+    "url": "/assets/quaternius-fish/Flatfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "FlowerHorn",
+    "url": "/assets/quaternius-fish/FlowerHorn.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "GoblinShark",
+    "url": "/assets/quaternius-fish/GoblinShark.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Goldfish",
+    "url": "/assets/quaternius-fish/Goldfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Humphead",
+    "url": "/assets/quaternius-fish/Humphead.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Koi",
+    "url": "/assets/quaternius-fish/Koi.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Lionfish",
+    "url": "/assets/quaternius-fish/Lionfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Lure_1",
+    "url": "/assets/quaternius-fish/Lure_1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lure_2",
+    "url": "/assets/quaternius-fish/Lure_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lure_3",
+    "url": "/assets/quaternius-fish/Lure_3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lure_4",
+    "url": "/assets/quaternius-fish/Lure_4.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lure_5",
+    "url": "/assets/quaternius-fish/Lure_5.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Lure_6",
+    "url": "/assets/quaternius-fish/Lure_6.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "MandarinFish",
+    "url": "/assets/quaternius-fish/MandarinFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "MoorishIdol",
+    "url": "/assets/quaternius-fish/MoorishIdol.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "ParrotFish",
+    "url": "/assets/quaternius-fish/ParrotFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Piranha",
+    "url": "/assets/quaternius-fish/Piranha.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Puffer",
+    "url": "/assets/quaternius-fish/Puffer.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "RedSnapper",
+    "url": "/assets/quaternius-fish/RedSnapper.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "RoyalGramma",
+    "url": "/assets/quaternius-fish/RoyalGramma.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Shark",
+    "url": "/assets/quaternius-fish/Shark.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Sunfish",
+    "url": "/assets/quaternius-fish/Sunfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Swordfish",
+    "url": "/assets/quaternius-fish/Swordfish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Tang",
+    "url": "/assets/quaternius-fish/Tang.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Tetra",
+    "url": "/assets/quaternius-fish/Tetra.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Tuna",
+    "url": "/assets/quaternius-fish/Tuna.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Turbot",
+    "url": "/assets/quaternius-fish/Turbot.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "Worm",
+    "url": "/assets/quaternius-fish/Worm.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "YellowTang",
+    "url": "/assets/quaternius-fish/YellowTang.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   },
+   {
+    "name": "ZebraClownFish",
+    "url": "/assets/quaternius-fish/ZebraClownFish.glb",
+    "animated": true,
+    "animations": [
+     "Fish_Armature|Attack",
+     "Fish_Armature|Death",
+     "Fish_Armature|Out_Of_Water",
+     "Fish_Armature|Swimming_Fast",
+     "Fish_Armature|Swimming_Impulse",
+     "Fish_Armature|Swimming_Normal"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "quaternius-nature",
+  "name": "Quaternius Simple Nature",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Low-poly trees, bushes, rocks, grass.",
+  "models": [
+   {
+    "name": "Bush1",
+    "url": "/assets/quaternius-nature/Bush1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bush2",
+    "url": "/assets/quaternius-nature/Bush2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bush3",
+    "url": "/assets/quaternius-nature/Bush3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass1",
+    "url": "/assets/quaternius-nature/Grass1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass2",
+    "url": "/assets/quaternius-nature/Grass2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Grass3",
+    "url": "/assets/quaternius-nature/Grass3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock1",
+    "url": "/assets/quaternius-nature/Rock1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock2",
+    "url": "/assets/quaternius-nature/Rock2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Rock3",
+    "url": "/assets/quaternius-nature/Rock3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree1",
+    "url": "/assets/quaternius-nature/Tree1.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree2",
+    "url": "/assets/quaternius-nature/Tree2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree3",
+    "url": "/assets/quaternius-nature/Tree3.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Tree4",
+    "url": "/assets/quaternius-nature/Tree4.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-weapons",
+  "name": "Quaternius Medieval Weapons",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Swords, axes, bows, shields, spears.",
+  "models": [
+   {
+    "name": "Arrow",
+    "url": "/assets/quaternius-weapons/Arrow.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Axe",
+    "url": "/assets/quaternius-weapons/Axe.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Axe_Double",
+    "url": "/assets/quaternius-weapons/Axe_Double.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Axe_Small",
+    "url": "/assets/quaternius-weapons/Axe_Small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bow_Evil",
+    "url": "/assets/quaternius-weapons/Bow_Evil.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bow_Golden",
+    "url": "/assets/quaternius-weapons/Bow_Golden.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bow_Wooden",
+    "url": "/assets/quaternius-weapons/Bow_Wooden.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Bow_Wooden2",
+    "url": "/assets/quaternius-weapons/Bow_Wooden2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Claymore",
+    "url": "/assets/quaternius-weapons/Claymore.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dagger",
+    "url": "/assets/quaternius-weapons/Dagger.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Dagger_2",
+    "url": "/assets/quaternius-weapons/Dagger_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Hammer_Double",
+    "url": "/assets/quaternius-weapons/Hammer_Double.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Hammer_Small",
+    "url": "/assets/quaternius-weapons/Hammer_Small.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Scythe",
+    "url": "/assets/quaternius-weapons/Scythe.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Shield_Celtic_Golden",
+    "url": "/assets/quaternius-weapons/Shield_Celtic_Golden.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Shield_Heater",
+    "url": "/assets/quaternius-weapons/Shield_Heater.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Shield_Heater_2",
+    "url": "/assets/quaternius-weapons/Shield_Heater_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Shield_Round",
+    "url": "/assets/quaternius-weapons/Shield_Round.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Shield_Round_2",
+    "url": "/assets/quaternius-weapons/Shield_Round_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Spear",
+    "url": "/assets/quaternius-weapons/Spear.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sword",
+    "url": "/assets/quaternius-weapons/Sword.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sword_2",
+    "url": "/assets/quaternius-weapons/Sword_2.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sword_Big",
+    "url": "/assets/quaternius-weapons/Sword_Big.glb",
+    "animated": false,
+    "animations": []
+   },
+   {
+    "name": "Sword_Golden",
+    "url": "/assets/quaternius-weapons/Sword_Golden.glb",
+    "animated": false,
+    "animations": []
+   }
+  ]
+ },
+ {
+  "id": "quaternius-animals",
+  "name": "Quaternius Animals (subset)",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Animated wolf, deer, fox, horse, cow.",
+  "models": [
+   {
+    "name": "Cow",
+    "url": "/assets/quaternius-animals/Cow.glb",
+    "animated": true,
+    "animations": [
+     "AnimalArmature|Attack_Headbutt",
+     "AnimalArmature|Attack_Kick",
+     "AnimalArmature|Death",
+     "AnimalArmature|Eating",
+     "AnimalArmature|Gallop",
+     "AnimalArmature|Gallop_Jump",
+     "AnimalArmature|Idle",
+     "AnimalArmature|Idle_2",
+     "AnimalArmature|Idle_Headlow",
+     "AnimalArmature|Idle_HitReact_Left",
+     "AnimalArmature|Jump_toIdle",
+     "AnimalArmature|Walk"
+    ]
+   },
+   {
+    "name": "Deer",
+    "url": "/assets/quaternius-animals/Deer.glb",
+    "animated": true,
+    "animations": [
+     "AnimalArmature|Attack_Headbutt",
+     "AnimalArmature|Attack_Kick",
+     "AnimalArmature|Death",
+     "AnimalArmature|Eating",
+     "AnimalArmature|Gallop",
+     "AnimalArmature|Gallop_Jump",
+     "AnimalArmature|Idle",
+     "AnimalArmature|Idle_2",
+     "AnimalArmature|Idle_Headlow",
+     "AnimalArmature|Idle_HitReact_Left",
+     "AnimalArmature|Idle_HitReact_Right",
+     "AnimalArmature|Jump_toIdle",
+     "AnimalArmature|Walk"
+    ]
+   },
+   {
+    "name": "Fox",
+    "url": "/assets/quaternius-animals/Fox.glb",
+    "animated": true,
+    "animations": [
+     "AnimalArmature|Attack",
+     "AnimalArmature|Death",
+     "AnimalArmature|Eating",
+     "AnimalArmature|Gallop",
+     "AnimalArmature|Gallop_Jump",
+     "AnimalArmature|Idle",
+     "AnimalArmature|Idle_2",
+     "AnimalArmature|Idle_2_HeadLow",
+     "AnimalArmature|Idle_HitReact_Left",
+     "AnimalArmature|Idle_HitReact_Right",
+     "AnimalArmature|Jump_ToIdle",
+     "AnimalArmature|Walk"
+    ]
+   },
+   {
+    "name": "Horse",
+    "url": "/assets/quaternius-animals/Horse.glb",
+    "animated": true,
+    "animations": [
+     "AnimalArmature|Attack_Headbutt",
+     "AnimalArmature|Attack_Kick",
+     "AnimalArmature|Death",
+     "AnimalArmature|Eating",
+     "AnimalArmature|Gallop",
+     "AnimalArmature|Gallop_Jump",
+     "AnimalArmature|Idle",
+     "AnimalArmature|Idle_2",
+     "AnimalArmature|Idle_Headlow",
+     "AnimalArmature|Idle_HitReact_Left",
+     "AnimalArmature|Idle_HitReact_Right",
+     "AnimalArmature|Jump_toIdle",
+     "AnimalArmature|Walk"
+    ]
+   },
+   {
+    "name": "Wolf",
+    "url": "/assets/quaternius-animals/Wolf.glb",
+    "animated": true,
+    "animations": [
+     "AnimalArmature|Attack",
+     "AnimalArmature|Death",
+     "AnimalArmature|Eating",
+     "AnimalArmature|Gallop",
+     "AnimalArmature|Gallop_Jump",
+     "AnimalArmature|Idle",
+     "AnimalArmature|Idle_2",
+     "AnimalArmature|Idle_2_HeadLow",
+     "AnimalArmature|Idle_HitReact_Left",
+     "AnimalArmature|Idle_HitReact_Right",
+     "AnimalArmature|Jump_ToIdle",
+     "AnimalArmature|Walk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "quaternius-animation-library",
+  "name": "Quaternius Universal Animation Library",
+  "license": "CC0 1.0 — Quaternius (quaternius.com)",
+  "notes": "Mannequin with a big library of humanoid animations.",
+  "models": [
+   {
+    "name": "AnimationLibrary_Godot_Standard",
+    "url": "/assets/quaternius-animation-library/AnimationLibrary_Godot_Standard.gltf",
+    "animated": true,
+    "animations": [
+     "A_TPose",
+     "Crouch_Fwd_Loop",
+     "Crouch_Idle_Loop",
+     "Dance_Loop",
+     "Death01",
+     "Driving_Loop",
+     "Fixing_Kneeling",
+     "Hit_Chest",
+     "Hit_Head",
+     "Idle_Loop",
+     "Idle_Talking_Loop",
+     "Idle_Torch_Loop",
+     "Interact",
+     "Jog_Fwd_Loop",
+     "Jump_Land",
+     "Jump_Loop",
+     "Jump_Start",
+     "PickUp_Table",
+     "Pistol_Aim_Down",
+     "Pistol_Aim_Neutral",
+     "Pistol_Aim_Up",
+     "Pistol_Idle_Loop",
+     "Pistol_Reload",
+     "Pistol_Shoot",
+     "Punch_Cross",
+     "Punch_Enter",
+     "Punch_Jab",
+     "Push_Loop",
+     "Roll",
+     "Roll_RM",
+     "Sitting_Enter",
+     "Sitting_Exit",
+     "Sitting_Idle_Loop",
+     "Sitting_Talking_Loop",
+     "Spell_Simple_Enter",
+     "Spell_Simple_Exit",
+     "Spell_Simple_Idle_Loop",
+     "Spell_Simple_Shoot",
+     "Sprint_Loop",
+     "Swim_Fwd_Loop",
+     "Swim_Idle_Loop",
+     "Sword_Attack",
+     "Sword_Attack_RM",
+     "Sword_Idle",
+     "Walk_Formal_Loop",
+     "Walk_Loop"
+    ]
+   }
+  ]
+ }
+]
