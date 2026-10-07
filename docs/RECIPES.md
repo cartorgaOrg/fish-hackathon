@@ -184,6 +184,8 @@ game.onUpdate((dt) => {
 
 ## Build levels from a text map
 
+`games/sidescroller` is a complete example: the whole level is one ASCII string.
+
 Text maps are easy to edit, easy to diff, and anyone on the team can make levels:
 
 ```js

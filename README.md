@@ -2,7 +2,7 @@
 
 A batteries-included starting point for hackathon games in the browser:
 
-- **4 playable sample games** (Action RPG, Jump & Run, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea.
+- **5 playable sample games** (Action RPG, 3D Jump & Run, Mario-style Side-Scroller, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea.
 - **Reusable primitives** in `engine/` (~2,400 lines of commented JavaScript on top of [three.js](https://threejs.org)): game loop, entities, model loading, animation, input, AABB physics, character controller, 3 camera rigs, health, state machines, A* pathfinding, RTS selection, HUD/dialogs, synthesized sound effects and particles.
 - **780+ CC0 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, skeletons, dungeons, platformer kits, RTS buildings, guns, animals and 40+ animated fish. They're already downloaded and include a visual **asset browser**.
 
@@ -26,7 +26,8 @@ Open **http://localhost:5173** (Vite picks the next free port if 5173 is taken; 
 | `/` | Launcher with every game |
 | `/games/starter/` | Smallest complete game (~80 lines) |
 | `/games/rpg/` | Action RPG |
-| `/games/platformer/` | Jump & Run |
+| `/games/platformer/` | 3D Jump & Run |
+| `/games/sidescroller/` | Side-Scroller (Mario-style) |
 | `/games/shooter/` | Arena Shooter |
 | `/games/strategy/` | Strategy (AoE-like) |
 | `/assets.html` | **Asset browser**: search models, preview animations, copy code |
@@ -61,7 +62,8 @@ game.start();
 |---|---|---|
 | Anything / not sure yet | `starter` | `Game`, `Entity`, `CharacterController`, `FollowCamera`, UI |
 | Action RPG, adventure, hack & slash, survival | `rpg` | Melee combat, `StateMachine` enemy AI, `Health`, dialog, quests, XP, loot, interactables |
-| Platformer, collect-a-thon, obby | `platformer` | Double jump, moving platforms, hazards, stomping, checkpoints, data-driven level |
+| 3D platformer, collect-a-thon, obby | `platformer` | Double jump, moving platforms, hazards, stomping, checkpoints, data-driven level |
+| Side-scroller, Mario-like, metroidvania, endless runner | `sidescroller` | ASCII-map levels, 2.5D camera, `body.ceiling` block bumps, power-up states, stomping, timer |
 | FPS, arena or wave shooter | `shooter` | `FirstPersonCamera`, hitscan raycasts, weapons table, waves, pickups, screen shake |
 | RTS, city builder, tower defense, tactics | `strategy` | `RTSCamera`, `Selection`, `NavGrid` pathfinding, gathering economy, building placement, unit training |
 | Fishing / underwater game 🐟 | `starter` + the fish recipe | See *An underwater / fish scene* in [docs/RECIPES.md](docs/RECIPES.md) |

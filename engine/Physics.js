@@ -172,6 +172,8 @@ export class Body {
     this.ground = null;
     /** set true for one frame when we bump our head */
     this.hitCeiling = false;
+    /** @type {Collider | null} what we bumped our head on this frame (e.g. a "?" block) */
+    this.ceiling = null;
     /** set true for one frame when blocked horizontally */
     this.hitWall = false;
     this._box = new THREE.Box3();
@@ -189,6 +191,7 @@ export class Body {
     if (this.ground?.dynamic) this.position.add(this.ground.delta); // ride moving platforms
     this.velocity.y += ph.gravity * this.gravityScale * dt;
     this.hitCeiling = this.hitWall = false;
+    this.ceiling = null;
 
     // sub-step so fast movers don't tunnel through thin walls
     const d = this.velocity.clone().multiplyScalar(dt);
@@ -246,6 +249,7 @@ export class Body {
         } else {
           this.position.y = c.box.min.y - this.height - 0.001;
           this.hitCeiling = true;
+          this.ceiling = c;
         }
         this.velocity.y = 0;
       } else {

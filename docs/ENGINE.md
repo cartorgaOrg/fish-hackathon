@@ -171,7 +171,7 @@ physics.showDebug(game.scene);                          // draw every collider
 const body = new Body(physics, { radius: 0.4, height: 1.8, position: v3(0, 0, 0), stepHeight: 0.35 });
 body.velocity.set(x, body.velocity.y, z);
 body.move(dt);                     // gravity + collisions
-body.onGround; body.hitWall; body.hitCeiling; body.ground /* the collider under you */
+body.onGround; body.hitWall; body.hitCeiling; body.ground /* collider under you */; body.ceiling /* collider you bumped (? blocks!) */
 model.position.copy(body.position);  // body.position = feet
 
 physics.raycast(origin, dir, { maxDist: 100, entities: game.findAll('enemy') });
