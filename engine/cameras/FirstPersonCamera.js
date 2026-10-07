@@ -41,7 +41,7 @@ export class FirstPersonCamera {
 
   update(dt) {
     const input = this.game.input;
-    if (input.pointerLocked) {
+    if (input.pointerLocked || input.touch.look) {
       this.yaw -= input.mouse.dx * this.sensitivity;
       this.pitch = clamp(this.pitch - input.mouse.dy * this.sensitivity, -1.5, 1.5);
     }

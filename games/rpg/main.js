@@ -12,7 +12,7 @@
 //    QUEST           — talk to the wizard → kill skeletons → beat the Skeleton King
 // =============================================================================
 import {
-  THREE, Game, Entity, Animator, CharacterController, FollowCamera, Health, setupEnvironment, setVisible,
+  THREE, Game, Entity, Animator, CharacterController, FollowCamera, Health, GameMenu, TouchControls, setupEnvironment, setVisible,
   distXZ, rand, randInt, pick, v3, cooldown,
 } from '@engine';
 import { Skeleton, ENEMY_TYPES } from './enemy.js';
@@ -67,7 +67,8 @@ const WORLD = [
 // -----------------------------------------------------------------------------
 const game = new Game();
 setupEnvironment(game, { sky: 'day', ground: { color: '#6a9a4a' } });
-game.ui.controls(['WASD — move · Space — jump · Shift — sprint', 'Left click / F — attack', 'E — talk / open · 1 — potion', 'Right-drag — orbit · Wheel — zoom']);
+const CONTROLS = ['WASD — move · Space — jump · Shift — sprint', 'Left click / F — attack', 'E — talk / open · 1 — potion', 'Right-drag — orbit · Wheel — zoom', 'Esc — pause'];
+game.ui.controls(CONTROLS);
 await game.load([...Object.values(M), ...new Set(Object.values(ENEMY_TYPES).map((t) => t.model))], 'Entering the realm…');
 
 // ---- world props
@@ -327,7 +328,11 @@ function onEnemyKilled(enemy) {
   if (enemy.def.boss) {
     quest.stage = 'done';
     game.audio.play('win');
-    game.ui.message('Victory! 👑', 5, { sub: 'The Skeleton King is defeated.' });
+    game.after(2.5, () => menu.win({
+      title: 'Victory! 👑',
+      text: `The Skeleton King is defeated. You reached level ${hero.level} with ${hero.gold} gold.`,
+      score: hero.level * 100 + hero.gold,
+    }));
   }
   hud();
 }
@@ -371,6 +376,20 @@ function hud() {
   }[quest.stage]);
 }
 hud();
-game.ui.message('The Restless Dead', 2.5, { sub: 'Talk to the wizard (E)' });
+
+// =============================================================================
+//  MENUS & TOUCH — title screen, pause (Esc), victory screen, phone controls
+// =============================================================================
+const menu = new GameMenu(game, {
+  title: 'The Restless Dead',
+  subtitle: 'Skeletons have risen in the ruins. The wizard needs a hero.',
+  controls: CONTROLS,
+  touchControls: ['Left stick — move · drag — look', '⚔️ attack · 💬 talk/open · 🧪 potion'],
+  onStart: () => game.ui.message('The Restless Dead', 2.5, { sub: 'Talk to the wizard (E)' }),
+});
+new TouchControls(game, {
+  joystick: true, look: true,
+  buttons: [{ label: '⚔️', key: 'KeyF' }, { label: 'Jump', key: 'Space' }, { label: '💬', key: 'KeyE' }, { label: '🧪', key: 'Digit1' }],
+});
 
 game.start();

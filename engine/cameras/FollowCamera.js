@@ -55,7 +55,7 @@ export class FollowCamera {
 
   update(dt) {
     const input = this.game.input;
-    if (this.orbit && (this.pointerLock ? input.pointerLocked : input.mouseDown(this.dragButton))) {
+    if (this.orbit && (input.touch.look || (this.pointerLock ? input.pointerLocked : input.mouseDown(this.dragButton)))) {
       this.yaw -= input.mouse.dx * this.sensitivity;
       this.pitch = clamp(this.pitch + input.mouse.dy * this.sensitivity, this.minPitch, this.maxPitch);
     }

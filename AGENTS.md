@@ -6,7 +6,8 @@ This repo is a browser game starter kit: three.js + a small engine of primitives
 
 - Plain JavaScript ES modules, no TypeScript, no framework. Import engine features from `'@engine'` (an alias for `engine/index.js`, which also re-exports `THREE`).
 - Each game lives in `games/<name>/` with `index.html` + `main.js`. New games: `npm run new <name> [-- --from <sample>]`. Vite picks up new folders automatically, and the launcher lists them.
-- **Read `docs/ENGINE.md` before writing code.** Prefer engine primitives over hand-rolled code: `Entity`, `CharacterController`, `FollowCamera` / `FirstPersonCamera` / `RTSCamera`, `Body` + `physics.addCollider`, `Animator`, `Health`, `StateMachine`, `NavGrid` + `PathFollower`, `Selection`, `game.ui.*`, `game.audio.play`, `game.effects.*`.
+- **Read `docs/ENGINE.md` before writing code.** Prefer engine primitives over hand-rolled code: `Entity`, `CharacterController`, `FollowCamera` / `FirstPersonCamera` / `RTSCamera`, `Body` + `physics.addCollider`, `Animator`, `Health`, `StateMachine`, `NavGrid` + `PathFollower`, `Selection`, `GameMenu` (title/pause/game over), `TouchControls` (phones), `game.ui.*`, `game.audio.play`, `game.effects.*`.
+- Every sample has a `GameMenu` and `TouchControls`. Keep that when you build new games: use `menu.gameOver()`/`menu.win()`/`menu.restart()` instead of `location.reload()`, and make every keyboard action reachable by a touch button.
 - The samples in `games/` are the best reference for idiomatic usage. Copy patterns from them.
 - Prefer not to change `engine/` for one game's needs. Subclass or compose in the game folder instead. If you fix an engine bug, keep the API backwards compatible, because every sample depends on it.
 

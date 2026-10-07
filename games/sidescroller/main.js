@@ -15,7 +15,7 @@
 //  camera looks at it from the side.
 // =============================================================================
 import {
-  Game, Entity, Body, Animator, CharacterController, setupEnvironment, tint, sphere,
+  Game, Entity, Body, Animator, CharacterController, GameMenu, TouchControls, setupEnvironment, tint, sphere,
   rand, pick, damp, v3, storage,
 } from '@engine';
 
@@ -197,13 +197,13 @@ class Player extends CharacterController {
     this.dead = true;
     this.locked = true;
     this.animator.once('Death');
-    game.audio.play('lose');
+    game.audio.play('hurt');
     this.body.velocity.set(0, 20, 0);            // the classic death hop, then fall through everything
     const lives = state.lives - 1;
     storage.save('ss-lives', lives > 0 ? lives : CONFIG.lives);
     game.after(2.5, () => {
-      if (lives > 0) location.reload();          // simplest possible restart; lives are kept in storage
-      else { game.ui.message('GAME OVER', 0, { sub: 'Press Enter to try again' }); state.over = true; }
+      if (lives > 0) menu.restart();             // simplest possible restart (skips the title); lives are kept in storage
+      else { state.over = true; menu.gameOver({ text: 'Out of lives!', score: state.score }); }
     });
   }
 
@@ -386,15 +386,13 @@ function winLevel() {
   won = true;
   player.locked = true;
   player.body.velocity.x = 0;
-  game.audio.play('win');
   const bonus = Math.ceil(state.time) * CONFIG.score.timeBonus;
   addScore(bonus);
   flag.position.y = groundTop;
   game.effects.burst(flag.position.clone().setY(groundTop + 6), { color: '#ff5555', count: 40, up: 8 });
-  storage.save('ss-best', Math.max(storage.load('ss-best', 0), state.score));
-  game.ui.message('COURSE CLEAR!', 0, { sub: `Time bonus +${bonus} · Score ${state.score} · Best ${storage.load('ss-best', 0)}<br>Press Enter to play again` });
   state.over = true;
   hud();
+  game.after(1.5, () => menu.win({ title: 'COURSE CLEAR!', text: `Time bonus +${bonus}`, score: state.score }));
 }
 
 function addScore(n, pos) {
@@ -409,7 +407,17 @@ function hud() {
   hudText.set(`SCORE ${String(state.score).padStart(6, '0')}    🪙×${String(state.coins).padStart(2, '0')}    WORLD 1-1    TIME ${Math.max(0, Math.ceil(state.time))}    ♥×${state.lives}`);
 }
 hud();
-game.ui.controls(['A/D or ←/→ — run', 'Space — jump (hold = higher)', 'Shift — run faster', 'Stomp enemies · bump ? blocks']);
-addEventListener('keydown', (e) => { if (e.code === 'Enter' && state.over) location.reload(); });
+const CONTROLS = ['A/D or ←/→ — run', 'Space — jump (hold = higher)', 'Shift — run faster', 'Stomp enemies · bump ? blocks', 'Esc — pause'];
+game.ui.controls(CONTROLS);
+
+// title screen / pause / game over + phone controls
+const menu = new GameMenu(game, {
+  title: 'WORLD 1-1',
+  subtitle: 'Reach the flag before the clock runs out!',
+  controls: CONTROLS,
+  touchControls: ['Stick — run left / right', 'Jump (hold = higher) · Run = faster'],
+  accent: '#ff6b5a',
+});
+new TouchControls(game, { joystick: true, buttons: [{ label: 'Jump', key: 'Space' }, { label: 'Run', key: 'ShiftLeft' }] });
 
 game.start();

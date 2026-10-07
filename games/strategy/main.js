@@ -16,7 +16,7 @@
 //    • Buildings, training queues and resource nodes live in buildings.js
 //    • Map layout (forests, gold, start position) is in buildMap() below
 // =============================================================================
-import { Game, RTSCamera, Selection, NavGrid, setupEnvironment, THREE, rand, v3 } from '@engine';
+import { Game, RTSCamera, Selection, NavGrid, GameMenu, TouchControls, setupEnvironment, THREE, rand, v3 } from '@engine';
 import { CONFIG, RESOURCES, UNITS, BUILDINGS, ALL_MODELS } from './data.js';
 import { world, canAfford, pay, costText, teamOf, population } from './world.js';
 import { spawnUnit } from './units.js';
@@ -196,7 +196,9 @@ function refreshButtons() {
   if (sig === lastSignature) return; // only rebuild the DOM when something changed (keeps clicks reliable)
   lastSignature = sig;
   buttons?.remove();
-  buttons = actions.length ? game.ui.buttons(actions, { bottom: 16, right: 16 }) : null;
+  // on phones the bottom-right corner belongs to the touch buttons, so stack these top-right instead
+  const touch = TouchControls.enabled;
+  buttons = actions.length ? game.ui.buttons(actions, touch ? { top: 64, right: 12 } : { bottom: 16, right: 16 }, { vertical: touch }) : null;
 }
 
 function updateHud() {
@@ -227,10 +229,11 @@ function updateHud() {
   info.innerHTML = html;
 }
 
-game.ui.controls([
+const CONTROLS = [
   'Left click / drag — select', 'Right click — move · gather · build · attack',
-  '1 2 3 — build (villager selected) · V / K — train', 'WASD / edges — pan · wheel — zoom · Q/E — rotate',
-]);
+  '1 2 3 — build (villager selected) · V / K — train', 'WASD / edges — pan · wheel — zoom · Q/E — rotate', 'Esc — pause',
+];
+game.ui.controls(CONTROLS);
 
 // ----------------------------------------------------------------------------- raids
 async function raid() {
@@ -257,12 +260,12 @@ function checkEnd() {
   if (world.over) return;
   if (!game.find('townCenter')) {
     world.over = true;
-    game.audio.play('lose');
-    game.ui.message('Your Town Center has fallen 💀', 0, { sub: 'Press Enter to try again' });
+    menu.gameOver({ title: 'Defeat 💀', text: `Your Town Center has fallen during raid ${world.wave}.` });
   } else if (world.wave >= CONFIG.wavesToWin && !teamOf('enemy').length) {
     world.over = true;
-    game.audio.play('win');
-    game.ui.message('Victory! 🏰', 0, { sub: `You survived ${CONFIG.wavesToWin} raids — press Enter to play again` });
+    // score: everything you still own (resources + 50 per unit)
+    const score = Math.floor(Object.values(world.stock).reduce((a, b) => a + b, 0)) + population().used * 50;
+    menu.win({ title: 'Victory! 🏰', text: `You survived ${CONFIG.wavesToWin} raids.`, score });
   }
 }
 
@@ -273,9 +276,29 @@ game.onUpdate(() => {
   if (placing) updatePlacing();
   else if (input.mousePressed(2)) issueOrders();
   for (const a of actions) if (input.pressed(a.code) && !a.disabled) a.onClick();
-  if (world.over && input.pressed('Enter')) location.reload();
   selection.enabled = !placing; // left clicks place buildings instead of selecting
   updateHud();
+});
+
+// ----------------------------------------------------------------------------- menus + touch
+// The game is paused until Play, so the raid timers (game.time based) only start counting then.
+const menu = new GameMenu(game, {
+  title: 'Tiny Empires',
+  subtitle: `Gather, build, train — and survive ${CONFIG.wavesToWin} skeleton raids.`,
+  controls: CONTROLS,
+  touchControls: [
+    'Tap / drag — select units', 'Order, then tap — move · gather · build · attack',
+    'Stick — pan camera · + / − — zoom', 'Build & train with the buttons at the bottom right',
+  ],
+});
+new TouchControls(game, {
+  joystick: true,          // pans the RTS camera (it reads input.move())
+  look: false,             // taps must select units, not rotate the camera
+  buttons: [
+    { label: 'Order', tapAs: 2 },   // next tap on the map = right-click command
+    { label: '+', wheel: -1 },
+    { label: '−', wheel: 1 },
+  ],
 });
 
 game.start();

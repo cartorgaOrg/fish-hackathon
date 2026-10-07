@@ -201,7 +201,7 @@ function injectCss() {
   .fx-message { top: 40%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-weight: 900; text-shadow: 0 4px 12px #000c; animation: fx-pop .3s ease-out; }
   .fx-sub { font-size: 20px; font-weight: 600; margin-top: 8px; opacity: .9 }
   @keyframes fx-pop { from { transform: translate(-50%, -50%) scale(.6); opacity: 0 } }
-  .fx-toasts { top: 16px; right: 16px; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+  .fx-toasts { top: 56px; right: 16px; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
   .fx-toast { position: static; background: #000a; padding: 8px 14px; border-radius: 8px; font-weight: 600; animation: fx-fade 2.5s forwards; }
   @keyframes fx-fade { 0% { opacity: 0; transform: translateX(20px) } 10%, 80% { opacity: 1; transform: none } 100% { opacity: 0 } }
   .fx-float { top: 0; left: 0; font-weight: 900; text-shadow: 0 2px 3px #000; white-space: nowrap; }

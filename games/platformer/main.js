@@ -14,7 +14,7 @@
 //      to invent a new object, then add a `case` for it in buildLevel().
 // =============================================================================
 import {
-  Game, Entity, CharacterController, FollowCamera, Animator, Health, setupEnvironment, tint,
+  Game, Entity, CharacterController, FollowCamera, Animator, Health, GameMenu, TouchControls, setupEnvironment, tint,
   THREE, rand, pick,
 } from '@engine';
 import { LEVEL } from './level.js';
@@ -86,7 +86,8 @@ function updateHud() {
   hud.coins.set(`🪙 ${coins} / ${totalCoins}`);
 }
 game.onUpdate(() => { if (!finished) hud.time.set(`⏱ ${game.time.toFixed(1)}s`); });
-game.ui.controls(['WASD — move', 'Space — jump / double jump', 'Shift — sprint', 'Land on enemies to stomp them', 'Right-drag — orbit camera']);
+const CONTROLS = ['WASD — move', 'Space — jump / double jump', 'Shift — sprint', 'Land on enemies to stomp them', 'Right-drag — orbit camera'];
+game.ui.controls(CONTROLS);
 
 /** Take a hit, knocked away from `from`. */
 function hurt(from) {
@@ -106,9 +107,7 @@ function loseLife() {
   game.audio.play('death');
   updateHud();
   if (lives <= 0) {
-    game.audio.play('lose');
-    game.ui.message('Game Over', 0, { sub: 'Press Enter to try again' });
-    addEventListener('keydown', (e) => { if (e.code === 'Enter') location.reload(); });
+    game.after(1, () => menu.gameOver({ text: `Coins ${coins} / ${totalCoins}` }));
     return;
   }
   game.after(1.2, () => {
@@ -232,10 +231,10 @@ class Goal extends Entity {
     finished = true;
     player.locked = true;
     player.anims.idle = 'Wave'; // celebrate on the spot
-    game.audio.play('win');
     for (let i = 0; i < 5; i++) game.after(i * 0.25, () => game.effects.burst(this.position.clone().add(v([rand(-2, 2), 3, rand(-2, 2)])), { color: pick(['#ff5', '#5f8', '#f5a', '#5cf']), count: 30 }));
-    game.ui.message('🏁 Course complete!', 0, { sub: `Time ${game.time.toFixed(1)}s · Coins ${coins} / ${totalCoins} · Press Enter to play again` });
-    addEventListener('keydown', (e) => { if (e.code === 'Enter') location.reload(); });
+    // score: coins are worth 100, every second under 3 minutes is worth 10
+    const score = coins * 100 + Math.max(0, Math.round((180 - game.time) * 10));
+    game.after(1.5, () => menu.win({ title: '🏁 Course complete!', text: `Time ${game.time.toFixed(1)}s · Coins ${coins} / ${totalCoins}`, score }));
   }
 }
 
@@ -358,4 +357,14 @@ game.add(player); // added last so it moves after the platforms each frame
 game.onUpdate(() => { if (!dying && player.position.y < CONFIG.fallY) { health.hp = 0; loseLife(); } });
 
 updateHud();
+
+// title screen + pause (Esc) + win / game-over screens, and on-screen controls on phones
+const menu = new GameMenu(game, {
+  title: 'Jump & Run',
+  subtitle: 'Reach the flag. Collect coins, stomp enemies, don\'t fall!',
+  controls: CONTROLS,
+  touchControls: ['Left stick — move', 'Drag — look around', 'Jump — jump (tap again in the air to double jump)'],
+});
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: 'Jump', key: 'Space' }] });
+
 game.start();

@@ -5,7 +5,7 @@
 //  Everything you see is built from engine primitives — read docs/ENGINE.md.
 // =============================================================================
 import {
-  Game, Entity, CharacterController, FollowCamera, setupEnvironment, setVisible,
+  Game, Entity, CharacterController, FollowCamera, GameMenu, TouchControls, setupEnvironment, setVisible,
   rand, distXZ,
 } from '@engine';
 
@@ -56,7 +56,7 @@ class Coin extends Entity {
       game.ui.floatingText(this.position, '+1', '#ffd84a');
       this.destroy();
       score.set(`Coins: ${++collected} / ${TOTAL}`);
-      if (collected === TOTAL) { game.audio.play('win'); game.ui.message('You win! 🎉', 0, { sub: 'Now make it your own — edit games/starter/main.js' }); }
+      if (collected === TOTAL) menu.win({ text: 'Now make it your own — edit games/starter/main.js', score: Math.round(1000 - game.time * 5) });
     }
   }
 }
@@ -70,7 +70,17 @@ for (let i = 0; i < TOTAL; i++) {
 
 // 7. UI is plain HTML on top of the canvas.
 const score = game.ui.text(`Coins: 0 / ${TOTAL}`, { top: 16, left: 16 }, { size: 26 });
-game.ui.controls(['WASD — move', 'Space — jump', 'Shift — sprint', 'Right-drag — orbit camera', 'Wheel — zoom']);
+const CONTROLS = ['WASD — move', 'Space — jump', 'Shift — sprint', 'Right-drag — orbit camera', 'Wheel — zoom'];
+game.ui.controls(CONTROLS);
 
-// 8. Go!
+// 8. Title screen + pause menu (Esc) + win screen, and on-screen controls on phones.
+const menu = new GameMenu(game, {
+  title: 'Coin Collector',
+  subtitle: `Find all ${TOTAL} coins as fast as you can.`,
+  controls: CONTROLS,
+  touchControls: ['Left stick — move', 'Drag — look around', 'Jump button — jump'],
+});
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: 'Jump', key: 'Space' }] });
+
+// 9. Go!
 game.start();

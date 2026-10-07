@@ -25,6 +25,8 @@ import { Game, Entity, Animator, CharacterController, FollowCamera, /* … */ } 
 - [NavGrid & PathFollower](#navgrid--pathfollower): A* pathfinding
 - [Selection](#selection): RTS click and box select
 - [UI](#ui): HUD, bars, dialogs, damage numbers, world labels
+- [GameMenu](#gamemenu): title screen, pause, game over and win screens
+- [TouchControls](#touchcontrols): on-screen joystick and buttons for phones
 - [Audio](#audio): built-in synth sounds and your own files
 - [Effects](#effects): particles, flashes, tracers, screen shake
 - [setupEnvironment](#setupenvironment): sky, sun, shadows, ground
@@ -148,6 +150,10 @@ input.mouse.x / .y (px) / .ndc (-1..1) / .dx / .dy (movement this frame)
 input.wheel;               // scroll this frame (-1 / 0 / 1)
 input.padDown(0);  input.padPressed(0);       // gamepad buttons (0 = A)
 input.lockPointer();  input.pointerLocked;
+input.pressKey('Space'); input.releaseKey('Space');   // simulate input (touch buttons, bots, tests)
+input.pressMouse(0);     input.releaseMouse(0);
+input.virtual            // { x, y } from the on-screen joystick (already included in move())
+input.touch.look         // true while a finger drags the camera
 ```
 
 Right-click's context menu is disabled on the canvas so you can use it for gameplay.
@@ -289,6 +295,50 @@ game.ui.el('div', { className: 'fx-panel', html: '…', pos: { top: 10, right: 1
 ```
 
 Positions are CSS: numbers mean px, strings pass through (`'50%'`).
+
+## GameMenu
+
+`engine/Menu.js`. One object gives a game a title screen, a pause menu (Esc / P, or ⏸ on phones), game-over and win screens, and a saved best score.
+
+```js
+const menu = new GameMenu(game, {
+  title: 'Fish Frenzy', subtitle: 'Catch them all!',
+  controls: ['WASD — move', 'Space — jump'],           // shown on the title and pause screens
+  touchControls: ['Stick — move', 'Jump button — jump'], // shown instead on phones
+  onStart: () => startWaves(),                         // runs when Play is pressed
+  lockPointer: false,                                  // true for FPS games (Play/Resume capture the mouse)
+  accent: '#ffd166',
+});
+menu.gameOver({ text: 'Eaten by a shark', score: 1234 });   // pauses the game, shows Play again / Quit
+menu.win({ title: 'Course clear!', text: '…', score });
+menu.restart();     // reload straight into the game (skips the title)
+menu.pause(); menu.resume(); menu.playing; menu.state;   // 'title' | 'playing' | 'paused' | 'over'
+```
+
+The game is paused until Play is pressed, so `game.time` timers don't run behind the title screen.
+Enter starts or restarts. The best score is stored per game.
+
+## TouchControls
+
+`engine/Touch.js`. Adds on-screen controls that feed `game.input`, so your game code doesn't change:
+the joystick shows up in `input.move()` and buttons press real key codes.
+
+```js
+new TouchControls(game, {
+  joystick: true,                       // left thumb → input.move()
+  look: true,                           // drag on the 3D view → FollowCamera / FirstPersonCamera look
+  buttons: [
+    { label: 'Jump', key: 'Space' },    // presses Space while touched
+    { label: 'Fire', mouse: 0 },        // acts as the left mouse button
+    { label: 'Order', tapAs: 2 },       // the next tap on the 3D view counts as a right-click (RTS)
+    { label: '+', wheel: -1 },          // zoom
+  ],
+});
+TouchControls.enabled   // true on phones/tablets, or on desktop with ?touch in the URL
+```
+
+They only appear on touch devices. Add `?touch` to the URL (e.g. `/games/rpg/?touch`) to try them on desktop.
+With `look: true`, finger drags on the canvas turn the camera instead of clicking. Leave it off for games where tapping the world matters (RTS, click-to-move).
 
 ## Audio
 

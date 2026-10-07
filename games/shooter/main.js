@@ -2,8 +2,8 @@
 //  ARENA SHOOTER — first-person wave survival.
 //
 //  Controls: click to capture the mouse · mouse = look · WASD = move · Space = jump
-//            Shift = sprint · Left click = shoot · R = reload · 1 / 2 = switch weapon
-//            Enter = restart after game over · Esc = release the mouse (pauses)
+//            Shift = sprint · Left click = shoot · R = reload · 1 / 2 / Q = switch weapon
+//            Esc = release the mouse (pauses) · on phones: on-screen stick + buttons
 //
 //  How to change things:
 //    • Weapons (damage, fire rate, magazine…)  → CONFIG.weapons
@@ -13,7 +13,7 @@
 //    • Shooting                                → function fire()
 // =============================================================================
 import {
-  THREE, Game, Entity, Body, FirstPersonCamera, Health, StateMachine, Animator,
+  THREE, Game, Entity, Body, FirstPersonCamera, Health, StateMachine, Animator, GameMenu, TouchControls,
   setupEnvironment, attach, fitSize, getBounds, cooldown, rand, pick, damp, distXZ, yawTo, v3,
 } from '@engine';
 
@@ -101,23 +101,36 @@ showWeapon(0);
 game.ui.crosshair();
 const hpBar = game.ui.bar({ bottom: 28, left: '50%' }, { width: 260, height: 22, color: '#e5484d', label: '100' });
 hpBar.el.style.transform = 'translateX(-50%)';
-const ammoText = game.ui.text('', { bottom: 24, right: 32 }, { size: 40 });
-const weaponText = game.ui.text('', { bottom: 74, right: 32 }, { size: 18 });
+// on phones the bottom-right corner belongs to the touch buttons, so the ammo counter moves up
+const ammoText = game.ui.text('', TouchControls.enabled ? { top: 16, right: 24 } : { bottom: 24, right: 32 }, { size: 40 });
+const weaponText = game.ui.text('', TouchControls.enabled ? { top: 66, right: 24 } : { bottom: 74, right: 32 }, { size: 18 });
 const scoreText = game.ui.text('Score: 0', { top: 16, left: 16 }, { size: 24 });
 const waveText = game.ui.text('', { top: 40, left: '50%' }, { size: 22 });
 waveText.el.style.transform = 'translateX(-50%)';
 const vignette = game.ui.el('div', { pos: { top: 0, left: 0, right: 0, bottom: 0 } });
 Object.assign(vignette.style, { background: 'radial-gradient(ellipse at center, transparent 45%, #d00 120%)', opacity: 0 });
-game.ui.controls(['Click — capture mouse', 'WASD — move · Space — jump', 'Left click — shoot', 'R — reload · 1/2 — weapons']);
+const CONTROLS = ['Mouse — look', 'WASD — move · Space — jump · Shift — sprint', 'Left click — shoot', 'R — reload · 1/2 or Q — switch weapon', 'Esc — pause'];
+game.ui.controls(CONTROLS);
 
-// "Click to play" overlay (browsers only allow mouse capture after a click)
-const overlay = game.ui.el('div', { className: 'fx-dialog-wrap', html: '<div class="fx-dialog"><h3>Arena Shooter</h3><p>Survive the skeleton waves.<br>Click to play.</p></div>' });
-overlay.style.alignItems = 'center';
-game.paused = true; // frozen until the first click
-overlay.onclick = () => { overlay.style.display = 'none'; game.paused = false; game.input.lockPointer(); };
-document.addEventListener('pointerlockchange', () => {
-  // Esc releases the mouse → pause and show the overlay again
-  if (!game.input.pointerLocked && !state.over) { overlay.style.display = ''; game.paused = true; }
+// Title screen, pause menu and game-over screen. lockPointer: Play/Resume capture the mouse
+// (browsers only allow that after a click), and releasing it (Esc) pauses automatically.
+const menu = new GameMenu(game, {
+  title: 'Arena Shooter',
+  subtitle: 'Survive the skeleton waves.',
+  controls: CONTROLS,
+  touchControls: ['Left stick — move', 'Drag — aim', 'Fire / Reload / Swap / Jump buttons'],
+  lockPointer: true,
+  onStart: () => startWave(),
+});
+new TouchControls(game, {
+  joystick: true,
+  look: true,
+  buttons: [
+    { label: 'Fire', mouse: 0 },
+    { label: 'Jump', key: 'Space' },
+    { label: 'Reload', key: 'KeyR' },
+    { label: 'Swap', key: 'KeyQ' },
+  ],
 });
 
 // ----------------------------------------------------------------- GAME STATE
@@ -134,8 +147,6 @@ game.onUpdate((dt) => {
   updateWaves(dt);
 });
 
-addEventListener('keydown', (e) => { if (e.code === 'Enter' && state.over) restart(); });
-startWave();
 game.start();
 
 // ============================================================================ PLAYER
@@ -187,6 +198,7 @@ function handleWeapon(dt) {
   const slot = slots[current];
   if (input.pressed('Digit1')) showWeapon(0);
   if (input.pressed('Digit2') && slots[1]) showWeapon(1);
+  if (input.pressed('KeyQ')) showWeapon((current + 1) % slots.length);
 
   // reloading: count down, then move bullets from reserve into the magazine
   if (reloading > 0) {
@@ -203,7 +215,7 @@ function handleWeapon(dt) {
 
   // shooting works with or without pointer lock (aim = centre of the screen)
   const trigger = input.mousePressed(0) || (slot.w.auto && input.mouseDown(0)); // auto weapons keep firing while held
-  if (trigger && overlay.style.display === 'none' && reloading <= 0 && slot.ammo > 0 && slot.cd.ready()) fire(slot);
+  if (trigger && menu.playing && reloading <= 0 && slot.ammo > 0 && slot.cd.ready()) fire(slot);
   else if (input.mousePressed(0) && slot.ammo === 0 && reloading <= 0) game.audio.play('click', { pitch: 2 });
 
   // gun animation: bob while walking, kick back on recoil, dip while reloading
@@ -362,7 +374,6 @@ async function spawnEnemy(type) {
 
 // ============================================================================ WAVES
 
-let cancelNextWave = null;
 function startWave() {
   state.wave++;
   state.toSpawn = CONFIG.waves.first + (state.wave - 1) * CONFIG.waves.growth;
@@ -384,7 +395,7 @@ function updateWaves(dt) {
     state.between = true;
     game.audio.play('win');
     game.ui.message('Wave cleared!', 2);
-    cancelNextWave = game.after(3, () => { if (!state.over) startWave(); });
+    game.after(3, () => { if (!state.over) startWave(); });
   }
 }
 
@@ -421,27 +432,11 @@ function updateHud(dt) {
   vignette.style.opacity = String(Math.max(hurtFlash, player.health.fraction < 0.3 ? 0.35 : 0));
 }
 
-let overMsg = null;
 function gameOver() {
   state.over = true;
-  game.audio.play('lose');
-  if (document.pointerLockElement) document.exitPointerLock();
   for (const e of game.findAll('enemy')) e.ai.go('cheer');
-  overMsg = game.ui.message('Game Over', 0, { sub: `Wave ${state.wave} · Score ${state.score} — press Enter to restart` });
-}
-
-function restart() {
-  for (const tag of ['enemy', 'pickup']) game.findAll(tag).forEach((e) => e.destroy());
-  [...game.entities].filter((e) => e instanceof Skeleton).forEach((e) => e.destroy()); // corpses too
-  overMsg?.remove();
-  cancelNextWave?.();
-  player.health.reset();
-  body.position.set(0, 0, 4);
-  body.velocity.set(0, 0, 0);
-  fps.yaw = fps.pitch = 0;
-  for (const s of slots) { s.ammo = s.w.mag; s.reserve = s.w.reserve; }
-  Object.assign(state, { score: 0, wave: 0, over: false });
-  startWave();
+  // let the skeletons celebrate for a moment, then show the game-over menu ("Play again" restarts)
+  game.after(1.5, () => menu.gameOver({ text: `You survived until wave ${state.wave}.`, score: state.score }));
 }
 
 // ============================================================================ ARENA

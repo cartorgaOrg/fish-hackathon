@@ -21,6 +21,8 @@ export { StateMachine } from './StateMachine.js';
 export { NavGrid, PathFollower } from './NavGrid.js';
 export { Selection } from './Selection.js';
 export { UI } from './UI.js';
+export { GameMenu } from './Menu.js';
+export { TouchControls } from './Touch.js';
 export { Audio, BUILTIN_SOUNDS } from './Audio.js';
 export { Effects } from './Effects.js';
 export { setupEnvironment, gradientTexture, SKY_PRESETS } from './Environment.js';

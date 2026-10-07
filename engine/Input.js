@@ -29,6 +29,13 @@ export class Input {
     this.wheel = 0;
     this.gamepad = null;
     this._padPrev = [];
+    /** extra movement vector from an on-screen joystick (see engine/Touch.js) */
+    this.virtual = { x: 0, y: 0 };
+    /** touch state: `look` = a finger is dragging the camera; `lookMode` = canvas drags look instead of clicking */
+    this.touch = { look: false, lookMode: false };
+    /** if set, the next canvas tap is reported as this mouse button (e.g. 2 = "right-click" on phones) */
+    this.tapAs = null;
+    this._pointerButtons = new Map();
 
     addEventListener('keydown', (e) => {
       if (e.repeat) return;
@@ -41,8 +48,18 @@ export class Input {
     addEventListener('keyup', (e) => { this._down.delete(e.code); this._released.add(e.code); });
     addEventListener('blur', () => { this._down.clear(); this._mouseDown.clear(); });
 
-    element.addEventListener('pointerdown', (e) => { this._mouseDown.add(e.button); this._mousePressed.add(e.button); });
-    addEventListener('pointerup', (e) => { this._mouseDown.delete(e.button); this._mouseReleased.add(e.button); });
+    element.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch' && this.touch.lookMode && this.tapAs == null) return; // finger = camera look
+      const button = this.tapAs ?? e.button;
+      this.tapAs = null;
+      this._pointerButtons.set(e.pointerId, button);
+      this.pressMouse(button);
+    });
+    addEventListener('pointerup', (e) => {
+      const button = this._pointerButtons.get(e.pointerId) ?? e.button;
+      this._pointerButtons.delete(e.pointerId);
+      this.releaseMouse(button);
+    });
     addEventListener('pointermove', (e) => {
       const r = element.getBoundingClientRect();
       this.mouse.x = e.clientX - r.left;
@@ -67,11 +84,17 @@ export class Input {
   mousePressed(button = 0) { return this._mousePressed.has(button); }
   mouseReleased(button = 0) { return this._mouseReleased.has(button); }
 
+  /** Simulate keys / mouse buttons (used by on-screen touch buttons; handy for bots and tests too). */
+  pressKey(code) { this._down.add(code); this._pressed.add(code); }
+  releaseKey(code) { if (this._down.delete(code)) this._released.add(code); }
+  pressMouse(button = 0) { this._mouseDown.add(button); this._mousePressed.add(button); }
+  releaseMouse(button = 0) { if (this._mouseDown.delete(button)) this._mouseReleased.add(button); }
+
   /** -1, 0 or 1 from two keys. */
   axis(negative, positive) { return (this.down(positive) ? 1 : 0) - (this.down(negative) ? 1 : 0); }
 
   /**
-   * Movement vector from WASD + arrow keys + gamepad left stick.
+   * Movement vector from WASD + arrow keys + gamepad left stick + on-screen joystick.
    * x: right is +1, y: forward (W / up) is +1. Length is at most 1.
    */
   move() {
@@ -81,6 +104,8 @@ export class Input {
       const [gx, gy] = this.gamepad.axes;
       if (Math.hypot(gx, gy) > 0.2) { x += gx; y -= gy; }
     }
+    x += this.virtual.x;
+    y += this.virtual.y;
     const len = Math.hypot(x, y);
     return len > 1 ? { x: x / len, y: y / len } : { x, y };
   }

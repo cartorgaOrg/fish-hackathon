@@ -19,6 +19,7 @@ const game = new Game();
 - [Build levels from a text map](#build-levels-from-a-text-map)
 - [Moving platforms and doors](#moving-platforms-and-doors)
 - [Game states: title screen, game over, restart](#game-states-title-screen-game-over-restart)
+- [Phones & touch](#phones--touch)
 - [Save a high score](#save-a-high-score)
 - [An underwater / fish scene 🐟](#an-underwater--fish-scene)
 - [Team colours](#team-colours)
@@ -219,20 +220,27 @@ A door works the same way: animate `door.position.y` upwards when the player has
 
 ## Game states: title screen, game over, restart
 
+Use `GameMenu` (see `docs/ENGINE.md`). It handles the title screen, pause, game over, win, restart and the best score:
+
 ```js
-const flow = new StateMachine({
-  title:    { enter: () => (game.paused = true, msg = game.ui.message('My Game', 0, { sub: 'Press Enter' })) },
-  playing:  { enter: () => (msg.remove(), game.paused = false) },
-  gameover: { enter: () => (game.paused = true, game.ui.message('Game Over', 0, { sub: 'Press Enter to retry' })) },
-}, 'title');
-addEventListener('keydown', (e) => {
-  if (e.code !== 'Enter') return;
-  if (flow.is('title')) flow.go('playing');
-  else if (flow.is('gameover')) location.reload();   // the simplest possible restart
-});
+const menu = new GameMenu(game, { title: 'My Game', controls: ['WASD — move'], onStart: () => spawnEnemies() });
+// when the player dies:
+menu.gameOver({ text: 'You fell in the lava', score });
+// when they win:
+menu.win({ text: 'All coins collected!', score });
 ```
 
-`location.reload()` is a perfectly good restart in a hackathon.
+For custom phases inside a run (build phase → wave phase → shop), use a `StateMachine`.
+
+## Phones & touch
+
+```js
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: 'Jump', key: 'Space' }, { label: '⚔️', key: 'KeyF' }] });
+```
+
+Test on your laptop with `?touch` in the URL. To play on a real phone on the same Wi-Fi, `npm run dev` prints a *Network* URL; open that on the phone.
+Keep buttons to 4 or fewer, and make anything the keyboard can do reachable from a button or an on-screen `ui.buttons()` panel.
+`GameMenu` adds a ⏸ button automatically on touch devices.
 
 ## Save a high score
 
