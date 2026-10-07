@@ -35,11 +35,17 @@ cd my-team
 ```bash
 cd game-kit
 npm install
-npm run dev                  # open http://localhost:5173 and play the samples
-npm run new my-game          # make your own game, then edit game-kit/games/my-game/main.js
+npm run dev                  # keeps running; open the URL it prints (usually http://localhost:5173)
 ```
 
-**2. Try the voice examples** (needs a Fish Audio key from https://fish.audio/app/api-keys):
+Leave that running. In a **second terminal**, inside `my-team/game-kit`, make your own game:
+
+```bash
+npm run new my-game          # then open /games/my-game/ and edit game-kit/games/my-game/main.js
+```
+
+**2. Try the voice examples** (needs a Fish Audio key from https://fish.audio/app/api-keys).
+Open a new terminal in the `my-team` folder:
 
 ```bash
 cd fish-audio

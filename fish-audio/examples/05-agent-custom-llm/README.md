@@ -62,8 +62,8 @@ LLM when configured. It should not need game-specific edits.
 ## Run it
 
 ```bash
-cp ../../.env.example .env   # if you haven't already (or use fish-audio/.env)
-# fill in FISH_API_KEY, and in this folder's .env also set:
+cp -n ../../.env.example ../../.env   # creates fish-audio/.env if missing
+# in fish-audio/.env fill in FISH_API_KEY and set:
 #   CUSTOM_LLM_API_KEY=<any long random string>
 uv run uvicorn server:app --port 8000
 ```
@@ -113,6 +113,7 @@ Or run it and curl it directly, shaped like Fish's real request:
 
 ```bash
 uv run uvicorn server:app --port 8000 &
+export CUSTOM_LLM_API_KEY=<the same value as in fish-audio/.env>
 
 curl -N -X POST http://localhost:8000/v1/chat/completions \
   -H "Authorization: Bearer $CUSTOM_LLM_API_KEY" \

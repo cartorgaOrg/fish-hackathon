@@ -31,7 +31,7 @@ act. There is no custom LLM here — see [05-agent-custom-llm](../05-agent-custo
 ## Run it
 
 ```bash
-cp ../../.env.example ../../.env   # if you haven't already; fill in FISH_API_KEY
+cp -n ../../.env.example ../../.env   # creates fish-audio/.env if missing; fill in FISH_API_KEY
 npm install
 npm run create-agent               # creates a demo NPC agent, prints an agent id
 # paste the printed id into FISH_AGENT_ID in your .env

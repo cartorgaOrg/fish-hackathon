@@ -15,7 +15,7 @@ Create custom NPC voices from character descriptions. Build a library of unique,
 ## Run
 
 ```bash
-cp ../../.env .
+# needs fish-audio/.env with your FISH_API_KEY (see the fish-audio README quick start)
 
 # Step 1: Generate candidates
 uv run design_voices.py "Brom the Guard"

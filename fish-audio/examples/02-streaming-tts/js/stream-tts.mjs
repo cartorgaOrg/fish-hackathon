@@ -16,7 +16,7 @@ for (let dir = process.cwd(); ; dir = dirname(dir)) {
 }
 
 if (!process.env.FISH_API_KEY) {
-  console.error("Missing FISH_API_KEY. Copy .env.example to .env and add your key.");
+  console.error("Missing FISH_API_KEY. Copy fish-audio/.env.example to fish-audio/.env and add your key.");
   process.exit(1);
 }
 

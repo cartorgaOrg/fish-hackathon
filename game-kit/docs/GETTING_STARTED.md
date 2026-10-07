@@ -59,6 +59,8 @@ Each one is explained in detail in [GAMES.md](GAMES.md).
 
 ## 3. Make your game (5 min)
 
+Keep `npm run dev` running. Open a **second terminal**, go to the same `game-kit` folder, and run:
+
 ```bash
 npm run new my-game                    # copy of the starter
 npm run new my-game -- --from rpg      # …or copy the sample closest to your idea

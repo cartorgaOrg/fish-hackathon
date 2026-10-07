@@ -22,6 +22,7 @@ Requires [Node.js](https://nodejs.org) 20+.
 cd game-kit                      # every command below runs from this folder
 npm install
 npm run dev                      # → open http://localhost:5173 (check the terminal for the URL)
+# keeps running: use a second terminal (also in game-kit/) for the commands below
 npm run new my-game              # make your own game (copy of the starter)…
 npm run new my-game -- --from rpg   # …or of the sample closest to your idea
 ```

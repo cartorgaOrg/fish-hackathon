@@ -38,7 +38,7 @@ async def dry_run(player_text: str) -> None:
 async def speak(player_text: str, do_play: bool) -> None:
     if not os.environ.get("FISH_API_KEY"):
         raise SystemExit(
-            "Missing FISH_API_KEY. Copy .env.example to .env and add your key "
+            "Missing FISH_API_KEY. Copy fish-audio/.env.example to fish-audio/.env and add your key "
             "(https://fish.audio/app/api-keys)."
         )
 

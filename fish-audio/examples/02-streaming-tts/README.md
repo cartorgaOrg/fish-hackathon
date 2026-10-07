@@ -19,7 +19,7 @@ rest.
 ## Run it
 
 ```bash
-cp ../../.env.example ../../.env   # creates fish-audio/.env; then add FISH_API_KEY
+cp -n ../../.env.example ../../.env   # creates fish-audio/.env if missing; then add FISH_API_KEY
 uv run stream_tts.py "Let me cross the bridge"       # saves out/stream.mp3
 uv run stream_tts.py "Let me cross the bridge" --play # also plays it (needs ffmpeg/ffplay)
 uv run stream_tts.py --dry-run                        # prints mock NPC tokens, no Fish call
@@ -59,7 +59,8 @@ Console output logs latency so you can tune it:
   dependency -- useful if your game engine (Unity, Godot, ...) can't pull in the Python SDK
   but can speak WebSocket + MessagePack directly.
 - `js/`: a tiny Node.js port of `stream_tts.py` using the `fish-audio` npm package's
-  `convertRealtime`. Node-only (the realtime JS client uses Node's `ws`).
+  `convertRealtime`. Node-only (the realtime JS client uses Node's `ws`). Run it with
+  `cd js && npm install && npm start`.
 
 ## Fish docs
 

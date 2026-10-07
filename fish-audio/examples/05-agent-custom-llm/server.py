@@ -43,7 +43,8 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger("game-master")
 
 DEV_DEFAULT_KEY = "dev-only-change-me"
-CUSTOM_LLM_API_KEY = os.environ.get("CUSTOM_LLM_API_KEY", DEV_DEFAULT_KEY)
+# `or`, not a get() default: .env.example ships `CUSTOM_LLM_API_KEY=` empty, and an empty key would accept an empty token.
+CUSTOM_LLM_API_KEY = os.environ.get("CUSTOM_LLM_API_KEY") or DEV_DEFAULT_KEY
 if CUSTOM_LLM_API_KEY == DEV_DEFAULT_KEY:
     log.warning(
         "[auth] CUSTOM_LLM_API_KEY not set - using an insecure dev default (%s). "
@@ -67,7 +68,7 @@ def _check_auth(authorization: str | None = Header(default=None)) -> None:
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="missing bearer token")
     token = authorization.removeprefix("Bearer ").strip()
-    if not secrets.compare_digest(token, CUSTOM_LLM_API_KEY):
+    if not token or not secrets.compare_digest(token, CUSTOM_LLM_API_KEY):
         raise HTTPException(status_code=401, detail="invalid bearer token")
 
 

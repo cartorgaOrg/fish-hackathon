@@ -55,8 +55,7 @@ the browser's "Timing" panel.
 ## Run it
 
 ```bash
-cp ../../.env.example .env   # or let it fall back to fish-audio/.env
-cd examples/06-own-pipeline
+cp -n ../../.env.example ../../.env   # creates fish-audio/.env if missing; fill in FISH_API_KEY
 uv run uvicorn server:app --port 8001
 # open http://localhost:8001
 ```

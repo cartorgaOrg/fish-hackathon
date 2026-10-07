@@ -9,7 +9,7 @@ Good for static, scripted dialogue you control fully before runtime.
 ## Run
 
 ```bash
-cp ../../.env .
+# needs fish-audio/.env with your FISH_API_KEY (see the fish-audio README quick start)
 uv run tts.py
 ```
 

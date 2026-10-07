@@ -27,7 +27,7 @@ app.use(express.json());
 // https://docs.fish.audio/agents/deploy/authentication.md
 app.post("/api/session", async (req, res) => {
   if (!FISH_API_KEY) {
-    return res.status(500).json({ error: "FISH_API_KEY is not set. Copy .env.example to .env and fill it in." });
+    return res.status(500).json({ error: "FISH_API_KEY is not set. Copy fish-audio/.env.example to fish-audio/.env and fill it in." });
   }
   if (!FISH_AGENT_ID) {
     return res.status(500).json({ error: "FISH_AGENT_ID is not set. Run `npm run create-agent` first, or paste an id from the console." });
