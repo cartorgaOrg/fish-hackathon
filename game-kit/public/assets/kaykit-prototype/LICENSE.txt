@@ -1,0 +1,3 @@
+KayKit Prototype Bits
+License: CC0 1.0 — Kay Lousberg (www.kaylousberg.com)
+Source: https://github.com/KayKit-Game-Assets/KayKit-Prototype-Bits-1.0/tree/bb159596f4f5106b663741d002c8eb45c80c0f41/addons/kaykit_prototype_bits/Assets/gltf

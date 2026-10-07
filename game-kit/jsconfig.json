@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2022",
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": { "@engine": ["engine/index.js"] }
+  },
+  "include": ["engine", "games", "tools"]
+}

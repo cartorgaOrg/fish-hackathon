@@ -1,0 +1,31 @@
+{
+  "name": "fishathon-starter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hackathon starter kit: Three.js + reusable game primitives + CC0 asset packs (KayKit, Quaternius).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:cdn": "vite build --mode cdn",
+    "preview": "vite preview",
+    "assets": "node scripts/fetch-assets.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "assets:upload": "node scripts/upload-assets.mjs",
+    "new": "node scripts/new-game.mjs",
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "package": "node scripts/package.mjs",
+    "offline-kit": "node scripts/offline-kit.mjs"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

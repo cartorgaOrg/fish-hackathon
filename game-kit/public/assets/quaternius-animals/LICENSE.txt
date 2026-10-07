@@ -1,0 +1,3 @@
+Quaternius Animals (subset)
+License: CC0 1.0 — Quaternius (quaternius.com)
+Source: https://github.com/trebeljahr/quaternius-showcase/tree/e90ffea347393537703ae6f9d73e36492820f5a9/public/glb/animals_pack

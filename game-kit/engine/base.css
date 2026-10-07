@@ -1,0 +1,5 @@
+/* Shared page styles for every game. */
+html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; }
+.fx-back { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); z-index: 20; color: #fff8; font-size: 12px; text-decoration: none; background: #0006; padding: 3px 10px; border-radius: 10px; }
+.fx-back:hover { color: #fff; }

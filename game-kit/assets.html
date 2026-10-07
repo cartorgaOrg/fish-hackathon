@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asset Browser</title>
+  <style>
+    :root { --bg: #14161f; --panel: #1d2030; --line: #ffffff1a; --text: #e8e8f0; --dim: #9aa0b8; --accent: #6cf; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 14px system-ui, -apple-system, Segoe UI, sans-serif; display: grid; grid-template-columns: 320px 1fr; height: 100vh; overflow: hidden; }
+    aside { background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
+    header { padding: 12px; border-bottom: 1px solid var(--line); }
+    header a { color: var(--dim); text-decoration: none; font-size: 12px; }
+    h1 { font-size: 16px; margin: 4px 0 10px; }
+    input { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: inherit; }
+    label.chk { display: flex; gap: 6px; align-items: center; color: var(--dim); font-size: 12px; margin-top: 8px; }
+    #list { overflow: auto; flex: 1; padding: 6px 0; }
+    .pack { padding: 10px 12px 4px; color: var(--accent); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    .pack small { color: var(--dim); font-weight: 400; text-transform: none; }
+    .item { padding: 4px 12px 4px 20px; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+    .item:hover { background: #ffffff0d; } .item.on { background: #6cf3; }
+    .item span { color: var(--dim); font-size: 11px; }
+    main { position: relative; min-width: 0; }
+    canvas { display: block; }
+    #info { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+    #info > * { pointer-events: auto; }
+    #title { font-size: 18px; font-weight: 700; }
+    #meta { color: var(--dim); }
+    pre { margin: 0; background: #000a; padding: 8px 10px; border-radius: 6px; font-size: 12px; white-space: pre-wrap; cursor: copy; max-width: 760px; }
+    #bottom { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 6px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 4px; max-height: 22vh; overflow: auto; }
+    .chips:empty { display: none; }
+    .chips b { font-size: 11px; color: var(--dim); align-self: center; margin-right: 4px; text-transform: uppercase; }
+    .chips button { font: inherit; font-size: 12px; background: #2c3e66cc; color: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 3px 7px; cursor: pointer; }
+    .chips button.on { background: #e07b39; }
+    #parts button.off { background: #000a; color: var(--dim); text-decoration: line-through; }
+    #hint { color: var(--dim); font-size: 12px; }
+    #copied { position: fixed; bottom: 16px; right: 16px; background: #2a5; padding: 6px 12px; border-radius: 6px; opacity: 0; transition: opacity .2s; }
+  </style>
+</head>
+<body>
+  <aside>
+    <header>
+      <a href="./">← back to games</a>
+      <h1>🐟 Asset Browser</h1>
+      <input id="search" placeholder="Search models or animations… (e.g. knight, run, tree)" autofocus />
+      <label class="chk"><input type="checkbox" id="animOnly" style="width:auto" /> animated only</label>
+    </header>
+    <div id="list"></div>
+  </aside>
+  <main>
+    <div id="info">
+      <div id="title">Pick a model on the left</div>
+      <div id="meta">All models are CC0 — free for any use. Click the code below to copy it.</div>
+      <pre id="code" title="click to copy"></pre>
+    </div>
+    <div id="bottom">
+      <div id="parts" class="chips"></div>
+      <div id="anims" class="chips"></div>
+      <div id="hint">drag = orbit · wheel = zoom · grid squares = 1 unit · click a part to hide it (the code updates)</div>
+    </div>
+  </main>
+  <div id="copied">copied!</div>
+  <script type="module" src="./tools/asset-browser.js"></script>
+</body>
+</html>

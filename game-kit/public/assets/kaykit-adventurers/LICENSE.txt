@@ -1,0 +1,3 @@
+KayKit Character Pack: Adventurers
+License: CC0 1.0 — Kay Lousberg (www.kaylousberg.com)
+Source: https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/tree/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures
