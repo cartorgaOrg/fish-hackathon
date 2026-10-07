@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Hackathon - Fish Audio Voice Playground</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fishathon Voice Playground</title>
 <style>
   html { background: #f6f6f4; }
   body { font-family: system-ui, sans-serif; color: #111; max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
@@ -18,12 +19,21 @@
   .card p, .card ul { margin: 0.5rem 0; }
   .card li { margin: 0.2rem 0; }
   code { background: #f0f0ee; padding: 0 0.25rem; border-radius: 3px; }
+  .next { margin-top: 1.5rem; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 1rem 1.25rem; }
+  .next h2 { margin: 0 0 0.25rem; font-size: 1.2rem; }
+  .next table { border-collapse: collapse; width: 100%; margin: 0.5rem 0; font-size: 0.95rem; }
+  .next th, .next td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem; border-top: 1px solid #e4e4e0; }
+  .next th { border-top: none; color: #555; font-weight: 600; }
+  .next td code { overflow-wrap: anywhere; }
+  .tabs { flex-wrap: wrap; }
   iframe { width: 100%; height: 760px; border: 1px solid #ddd; border-radius: 8px; margin-top: 0.75rem; background: #fff; }
 </style>
 </head>
 <body>
-<h1>Hackathon - Fish Audio Voice Playground</h1>
-<p class="sub">Two ways to give your game a voice. Pick one, press start, and talk to the NPC. Use headphones.</p>
+<h1>🐟 Fishathon Voice Playground</h1>
+<p class="sub"><strong>Step 1: hear it.</strong> Two ways to make an NPC that listens and talks back, powered by Fish Audio.
+  Pick one, press start, and talk to the NPC. Use Chrome and headphones.
+  <strong>Step 2:</strong> <a href="#next">put it in your game</a>.</p>
 
 <div class="tabs" role="tablist">
   <button role="tab" data-tab="agent" aria-selected="true">Fish hosted agent</button>
@@ -62,6 +72,26 @@ Local token server: creates the session, so your API key never reaches the brows
 
   <iframe id="app" allow="microphone; autoplay"></iframe>
 </div>
+
+<section class="next" id="next">
+  <h2>🎮 Step 2: put the voice in your game</h2>
+  <p>The NPC above lives in a mock game. Your real game can be anything. The starter kit includes one ready to use:
+    <code>game-kit/</code> has eight sample 3D browser games and 780+ free models.
+    Run <code>npm install</code> and then <code>npm run dev</code> in <code>game-kit/</code>, and open
+    <a href="http://localhost:5173" target="_blank" rel="noopener">localhost:5173</a>.</p>
+  <table>
+    <tr><th>You liked…</th><th>Copy from</th><th>Hook it into the game kit</th></tr>
+    <tr><td>Fish hosted agent</td><td><code>examples/04-agent-web</code></td>
+      <td>Keep its token server running, add <code>server: { proxy: { '/api': 'http://localhost:8787' } }</code> to
+        <code>game-kit/vite.config.js</code>, and port the browser code from <code>src/main.ts</code> into your game.</td></tr>
+    <tr><td>Own pipeline</td><td><code>examples/06-own-pipeline</code></td>
+      <td>Keep its server running; your game opens the same WebSocket the demo page uses.</td></tr>
+    <tr><td>Neither, just spoken lines</td><td><code>examples/01-tts-basics</code></td>
+      <td>Generate MP3s, put them in <code>game-kit/public/sounds/</code>, play them with <code>game.audio</code>.</td></tr>
+  </table>
+  <p>Never put <code>FISH_API_KEY</code> in game code: the browser talks to your small server, and the server talks to Fish Audio.
+    The full guide is in the root <code>README.md</code>, under "Putting the voice in your game".</p>
+</section>
 
 <script>
   // Only one option runs at a time: switching tabs reloads the iframe, which ends the other call.
