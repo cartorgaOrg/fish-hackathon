@@ -2,8 +2,8 @@
 
 A batteries-included starting point for hackathon games in the browser:
 
-- **5 playable sample games** (Action RPG, 3D Jump & Run, Mario-style Side-Scroller, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea.
-- **Reusable primitives** in `engine/` (~2,400 lines of commented JavaScript on top of [three.js](https://threejs.org)): game loop, entities, model loading, animation, input, AABB physics, character controller, 3 camera rigs, health, state machines, A* pathfinding, RTS selection, HUD/dialogs, synthesized sound effects and particles.
+- **6 playable sample games** (🎣 Fishing, Action RPG, 3D Jump & Run, Mario-style Side-Scroller, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea. Every sample has a title screen, a pause menu, game-over and win screens, and on-screen touch controls for phones.
+- **Reusable primitives** in `engine/` (~2,400 lines of commented JavaScript on top of [three.js](https://threejs.org)): game loop, entities, model loading, animation, input, AABB physics, character controller, 3 camera rigs, health, state machines, A* pathfinding, RTS selection, HUD/dialogs, menus (title/pause/game over), touch controls, synthesized sound effects and particles.
 - **780+ CC0 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, skeletons, dungeons, platformer kits, RTS buildings, guns, animals and 40+ animated fish. They're already downloaded and include a visual **asset browser**.
 
 No game engine to install, no build step to learn: edit a `.js` file, save, and the browser reloads.
@@ -25,6 +25,7 @@ Open **http://localhost:5173** (Vite picks the next free port if 5173 is taken; 
 |---|---|
 | `/` | Launcher with every game |
 | `/games/starter/` | Smallest complete game (~80 lines) |
+| `/games/fishing/` | Fish Frenzy (fishing) |
 | `/games/rpg/` | Action RPG |
 | `/games/platformer/` | 3D Jump & Run |
 | `/games/sidescroller/` | Side-Scroller (Mario-style) |
@@ -66,7 +67,8 @@ game.start();
 | Side-scroller, Mario-like, metroidvania, endless runner | `sidescroller` | ASCII-map levels, 2.5D camera, `body.ceiling` block bumps, power-up states, stomping, timer |
 | FPS, arena or wave shooter | `shooter` | `FirstPersonCamera`, hitscan raycasts, weapons table, waves, pickups, screen shake |
 | RTS, city builder, tower defense, tactics | `strategy` | `RTSCamera`, `Selection`, `NavGrid` pathfinding, gathering economy, building placement, unit training |
-| Fishing / underwater game 🐟 | `starter` + the fish recipe | See *An underwater / fish scene* in [docs/RECIPES.md](docs/RECIPES.md) |
+| Fishing, cozy or collection game 🎣 | `fishing` | Cast/bite/reel `StateMachine`, tension minigame, rarity tables, shop, journal, save data |
+| Underwater game 🐟 | `starter` + the fish recipe | See *An underwater / fish scene* in [docs/RECIPES.md](docs/RECIPES.md) |
 
 Mixing genres is easy: every primitive is independent. A tower defense is the strategy sample's `NavGrid` plus the shooter's waves. A top-down shooter is `RTSCamera` plus the shooter's weapons.
 
@@ -82,6 +84,8 @@ engine/            reusable primitives (import from '@engine'); every file start
   Physics.js         AABB colliders, kinematic Body, raycasts
   CharacterController.js   ready-made 3rd-person hero
   cameras/           FollowCamera, FirstPersonCamera, RTSCamera
+  Menu.js            title / pause / game-over screens
+  Touch.js           on-screen joystick + buttons for phones
   Health.js  StateMachine.js  NavGrid.js  Selection.js
   UI.js  Audio.js  Effects.js  Environment.js  shapes.js  utils.js
 games/<name>/      one folder per game: index.html + main.js (+ more modules)
@@ -115,6 +119,7 @@ docs/              ENGINE.md, RECIPES.md, ASSETS.md, ASSET_LIST.md
 - Keep tuning numbers in a `CONFIG` object at the top of the file, like the samples do.
 - `game` is on `window`. Use the browser console to inspect things (`game.findAll('enemy')`) or try slow motion (`game.timeScale = 0.3`).
 - `game.physics.showDebug(game.scene)` shows colliders when something feels off.
+- Test on your phone: `npm run dev` prints a Network URL. Add `?touch` on desktop to see the touch controls.
 - Sound matters more than you think: `game.audio.play('coin')` works without any audio files.
 - Juice: `game.effects.shake()`, `burst()`, `flash()` and `ui.floatingText()` make hits feel good.
 
