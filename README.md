@@ -70,7 +70,7 @@ game.start();
 | `npm run dev` | Dev server with hot reload (also prints a Network URL for testing on your phone) |
 | `npm run new <name> [-- --from <game>]` | Create `games/<name>/` from the starter or any sample |
 | `npm run check` | Fast checks: asset paths, game folders, production build |
-| `npm run smoke [-- <game>…]` | Open games in headless Chrome, press Play, report errors, save screenshots to `.smoke/` (first time: `npx playwright install chromium`) |
+| `npm run smoke [-- <game>…]` | Open games in headless Chrome, press Play, report errors, save screenshots to `.smoke/`. Options: `--keys`, `--eval`, `--wait`, `--touch` (first time: `npx playwright install chromium`) |
 | `npm run package -- <game> [--full]` | Build one game into `dist/` + `dist.zip`, ready for itch.io and friends |
 | `npm run build` / `npm run build:cdn` / `npm run preview` | Build every game (with models / models from CDN) and preview the build |
 | `npm run catalog` | Rebuild the asset catalog after adding models |

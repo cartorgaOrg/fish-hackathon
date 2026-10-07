@@ -9,6 +9,9 @@
  *   npm run smoke -- my-game --touch    # with on-screen touch controls (?touch)
  *   npm run smoke -- my-game --wait 8   # let it run 8 s before the screenshot (default 3)
  *   npm run smoke -- my-game --keys KeyW:1500,Space   # hold W for 1.5 s, then tap Space
+ *   npm run smoke -- my-game --eval "game.find('player').position.set(0,0,20)"   # run JS in the page
+ *        (--eval can be repeated; runs after --keys, result is printed. Use it to stage win/lose
+ *         situations, e.g. call a debug hook your game exposes on window.)
  *
  * First time only:  npx playwright install chromium
  * Rendering is software-only (no GPU), so frame rates are low and game time runs slower than
@@ -24,7 +27,8 @@ const OUT = path.join(ROOT, '.smoke');
 
 const args = process.argv.slice(2);
 const opt = (name, fallback) => { const i = args.indexOf(`--${name}`); return i >= 0 ? args[i + 1] : fallback; };
-const optNames = new Set(['--wait', '--keys']);
+const optNames = new Set(['--wait', '--keys', '--eval']);
+const evals = args.flatMap((a, i) => (a === '--eval' ? [args[i + 1]] : []));
 const names = args.filter((a, i) => !a.startsWith('--') && !optNames.has(args[i - 1]));
 const touch = args.includes('--touch');
 const waitSec = Number(opt('wait', 3));
@@ -73,6 +77,11 @@ for (const g of games) {
   for (const k of keys) {
     if (k.ms) { await page.keyboard.down(k.code); await page.waitForTimeout(k.ms); await page.keyboard.up(k.code); }
     else await page.keyboard.press(k.code);
+  }
+  for (const js of evals) {
+    const result = await page.evaluate(js).then((r) => JSON.stringify(r) ?? 'undefined', (e) => `ERROR ${e.message.split('\n')[0].replace('page.evaluate: ', '')}`);
+    console.log(`    eval ${js.length > 60 ? js.slice(0, 57) + '…' : js}  →  ${String(result).slice(0, 300)}`);
+    if (result.startsWith('ERROR')) issues.push(`eval failed: ${result}`);
   }
   await page.waitForTimeout(waitSec * 1000);
   const info = await page.evaluate(() => ({

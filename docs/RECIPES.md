@@ -22,6 +22,7 @@ const game = new Game();
 - [Phones & touch](#phones--touch)
 - [Save a high score](#save-a-high-score)
 - [An underwater / fish scene 🐟](#an-underwater--fish-scene-)
+- [A swimming or flying player (free 3D movement)](#a-swimming-or-flying-player-free-3d-movement)
 - [Team colours](#team-colours)
 - [Use your own models or sounds](#use-your-own-models-or-sounds)
 - [Add real physics (Rapier)](#add-real-physics-rapier)
@@ -272,6 +273,39 @@ for (let i = 0; i < 30; i++) {
 The fish pack also has fishing rods (`FishingRod_Lvl1..5`), lures, docks and a boat.
 Fish clips: `Swimming_Normal`, `Swimming_Fast`, `Swimming_Impulse`, `Attack`, `Death`, `Out_Of_Water`.
 Physics has no water, so swimming is just a `Body` with `gravityScale: 0` (or 0.1 for slow sinking).
+
+## A swimming or flying player (free 3D movement)
+
+`CharacterController` walks on the ground. To swim, fly or float, drive a `Body` with no gravity yourself, steering on the XZ plane with the camera and moving up and down with extra keys:
+
+```js
+const fish = await game.assets.model('/assets/quaternius-fish/Goldfish.glb', { scale: 0.25 });
+const anim = new Animator(fish);  anim.play('Swimming_Normal');
+const player = game.add(new Entity(fish, { tags: ['player'] }));
+const body = new Body(game.physics, { radius: 0.4, height: 0.8, gravityScale: 0, position: v3(0, 4, 0) });
+const cam = game.add(new FollowCamera(game, player.object, { distance: 7, height: 0.5 }));
+fish.rotation.order = 'YXZ';                        // yaw first, then pitch: needed to tilt nose up/down
+
+player.onUpdate((dt) => {
+  const dir = cam.toWorld(game.input.move());       // XZ only
+  dir.y = game.input.axis('ShiftLeft', 'Space');    // Space = up, Shift = down (add touch buttons for these!)
+  const speed = 6;
+  body.velocity.x = damp(body.velocity.x, dir.x * speed, 6, dt);
+  body.velocity.y = damp(body.velocity.y, dir.y * speed * 0.7, 6, dt);
+  body.velocity.z = damp(body.velocity.z, dir.z * speed, 6, dt);
+  body.move(dt);
+  body.position.y = clamp(body.position.y, 0.5, 15); // stay between the sea floor and the surface
+  player.position.copy(body.position);
+  const flat = Math.hypot(body.velocity.x, body.velocity.z);
+  if (flat > 0.3) fish.rotation.y = dampAngle(fish.rotation.y, Math.atan2(body.velocity.x, body.velocity.z), 8, dt);
+  fish.rotation.x = -Math.atan2(body.velocity.y, Math.max(flat, 0.1)) * 0.6;   // nose follows climb/dive
+  anim.play(flat > 4 ? 'Swimming_Fast' : 'Swimming_Normal');
+  anim.update(dt);
+});
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: '⬆', key: 'Space' }, { label: '⬇', key: 'ShiftLeft' }] });
+```
+
+Combine it with `setupEnvironment(game, { sky: 'underwater', … })` from the recipe above. For enemies that chase in 3D, steer their own `Body` toward `player.position` the same way.
 
 ## Team colours
 

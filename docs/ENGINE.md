@@ -118,7 +118,7 @@ game.start();
 | `game.findNear(pos, radius, tag)` | Entities within a radius, nearest first |
 | `game.onUpdate(fn)` | Per-frame callback without writing a class. Returns an unsubscribe function. |
 | `game.after(sec, fn)` / `game.every(sec, fn)` | Timers that pause with the game. Both return a cancel function. |
-| `game.time` | Game seconds since start |
+| `game.time` | Game seconds since `game.start()`. It doesn't advance while paused, so with a `GameMenu` it is ≈ 0 when Play is pressed |
 | `game.paused`, `game.timeScale` | Freeze the game, or run it in slow motion |
 | `game.mouseGround(y=0)` | Point on a horizontal plane under the mouse (click-to-move, placing buildings) |
 | `game.mousePick(objects?)` | three.js raycast hit under the mouse, with `.entity` filled in |
@@ -140,6 +140,7 @@ class Coin extends Entity {
 }
 const coin = game.add(new Coin(model, { tags: ['coin', 'pickup'] }));
 coin.position.set(3, 1, 0);   // shortcut for coin.object.position
+coin.rotation.y = Math.PI;    // shortcut for coin.object.rotation
 coin.is('coin');              // true
 coin.destroy();               // removes it from the game and the scene
 
@@ -237,7 +238,8 @@ physics.addBox([0, 2, -20], [40, 4, 1]);                // invisible wall: cente
 physics.remove(colliderOrObject);
 physics.showDebug(game.scene);                          // draw every collider
 
-const body = new Body(physics, { radius: 0.4, height: 1.8, position: v3(0, 0, 0), stepHeight: 0.35 });
+const body = new Body(physics, { radius: 0.4, height: 1.8, position: v3(0, 0, 0), stepHeight: 0.35, gravityScale: 1 });
+// gravityScale: 0 = no gravity (swimming, flying, space); 0.2 = floaty
 body.velocity.set(x, body.velocity.y, z);
 body.move(dt);                     // gravity + collisions
 body.onGround; body.hitWall; body.hitCeiling; body.ground /* collider under you */; body.ceiling /* collider you bumped (? blocks!) */
@@ -278,7 +280,8 @@ All cameras drive `game.camera`. Add them with `game.add(...)` so they update af
 **FollowCamera** is third-person orbit: right-drag to orbit, wheel to zoom. It pulls in when a wall is in the way.
 ```js
 const cam = game.add(new FollowCamera(game, player.object, { distance: 8, pitch: 0.45, yaw: 0, height: 1.5, pointerLock: false }));
-cam.toWorld(input.move());   // camera-relative direction on the ground
+cam.toWorld(input.move());   // camera-relative direction on the ground (XZ only; y is always 0, so add vertical movement yourself)
+cam.yaw;                     // 0 = camera on the +Z side looking toward -Z, so W initially moves the player toward -Z
 ```
 
 **FirstPersonCamera** is mouse look. Click the canvas to capture the mouse.
@@ -345,7 +348,8 @@ sel.selected;  sel.set([a, b]);  sel.clear();  sel.enabled = false;  // e.g. whi
 `engine/UI.js`. An HTML overlay. HTML and CSS are the quickest way to make game UI.
 
 ```js
-const score = game.ui.text('Score: 0', { top: 16, left: 16 }, { size: 24 });  score.set('Score: 5');
+const score = game.ui.text('Score: 0', { top: 16, left: 16 }, { size: 24, className: '' });  score.set('Score: 5');
+score.el.style.color = '#ffd84a';   // options are only size + className; style anything else via .el (it's a plain <div>)
 const hp = game.ui.bar({ bottom: 20, left: 20 }, { width: 200, color: '#e33', label: ' ' });  hp.set(0.5, '50 / 100');
 game.ui.message('Wave 3', 2, { sub: 'Here they come!' });   // big centred text (0 = until .remove())
 game.ui.toast('Quest updated');

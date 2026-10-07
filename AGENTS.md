@@ -102,6 +102,8 @@ game.start();
 **Add an enemy / NPC with AI**
 Copy `games/rpg/enemy.js`. It's `Entity` + `Body` + `Animator` + `Health` + `StateMachine` (idle → wander → chase → attack → hit → dead) plus `ui.worldBar`. Add a type to its `ENEMY_TYPES` table. For enemies that walk a fixed path use `PathFollower` (`games/towerdefense`); for pathfinding around obstacles use `NavGrid` (`games/strategy`).
 
+**Swimming / flying / free 3D movement**: `CharacterController` is for walking only. Use a `Body` with `gravityScale: 0` and your own vertical input; see RECIPES → *A swimming or flying player*.
+
 **Add a pickup / trigger**: an `Entity` subclass whose `update()` checks `distXZ(this.position, player.position) < r`, then `destroy()` (see `Coin` in `games/starter/main.js`).
 
 **Add a level**: data-driven levels are ASCII maps (`games/sidescroller` `LEVEL`, `games/towerdefense` `MAP`) or arrays of placements (`games/rpg` `WORLD`, `games/platformer/level.js`).
@@ -118,7 +120,10 @@ Copy `games/rpg/enemy.js`. It's `Entity` + `Body` + `Animator` + `Health` + `Sta
 npm run check                          # asset paths, game folder layout, production build (≈10 s)
 npm run smoke -- <game>                # headless Chrome: loads the game, presses Enter (Play), screenshots
 npm run smoke -- <game> --keys KeyW:1500,Space --wait 5   # drive it a little first
+npm run smoke -- <game> --eval "game.find('player').position.set(0, 0, 20)"   # stage a situation with JS
 ```
+
+To test win/lose paths, expose a small debug hook in your game (e.g. `window.dbg = { win: () => menu.win({ score }) }`, like `window.td` in towerdefense) and call it with `--eval "dbg.win()"`. Then check that the `menu=` field in the output shows the right screen. Remember the default camera looks toward **-Z**, so holding W moves the player toward -Z.
 
 - `smoke` prints every console error, uncaught exception and failed request, and exits non-zero if there are any.
 - Screenshots land in `.smoke/<game>-title.png` (title screen) and `.smoke/<game>.png` (after Play). **Open and look at them**: they're your only view of the game. Check that models are visible, scaled sensibly, not floating, and that the HUD is readable.
@@ -132,7 +137,7 @@ npm run smoke -- <game> --keys KeyW:1500,Space --wait 5   # drive it a little fi
 | `npm run dev` | Dev server with hot reload. Prints the URL (usually http://localhost:5173) |
 | `npm run new <name> [-- --from <game>]` | Scaffold a game |
 | `npm run check` | Static checks + build |
-| `npm run smoke [-- <games…>] [--touch] [--wait s] [--keys …]` | Headless browser test + screenshots |
+| `npm run smoke [-- <games…>] [--touch] [--wait s] [--keys …] [--eval js]` | Headless browser test + screenshots (`--eval` runs JS in the page, repeatable) |
 | `npm run package -- <game> [--full]` | Deployable `dist/` + `dist.zip` for one game |
 | `npm run build` / `build:cdn` / `preview` | Full builds of every game |
 | `npm run catalog` | Regenerate `docs/ASSET_LIST.md` + `public/assets/catalog.json` after adding models |
