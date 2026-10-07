@@ -94,6 +94,6 @@ source of truth; every page there also exists as `<page>.md`.
 
 ## Fish Audio docs
 
-(Meta-note: this whole file *is* the curated Fish Audio docs list for the repo. For the raw
+(Meta-note: this whole file *is* the curated Fish Audio docs list for this folder. For the raw
 machine-readable index, see https://docs.fish.audio/llms.txt — for everything in one fetch,
 https://docs.fish.audio/llms-full.txt.)

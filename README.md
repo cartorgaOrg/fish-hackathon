@@ -1,0 +1,111 @@
+# 🐟 Fishathon Starter Kit
+
+Everything you need to build a **voice-driven 3D browser game** in a weekend. The repo has two parts.
+You can use either one on its own, or both together.
+
+| | Folder | What it gives you | You need | Start here |
+|---|---|---|---|---|
+| 🎮 | [`game-kit/`](game-kit/) | **The game.** A small three.js engine, 8 playable sample games (RPG, platformer, fishing, shooter…) and 780+ free 3D models. Plain JavaScript, runs in the browser. | Node.js 20+ | [game-kit/README.md](game-kit/README.md) |
+| 🔊 | [`fish-audio/`](fish-audio/) | **The voice.** Working examples for making characters **speak** (text-to-speech), **listen** (speech-to-text) and **hold conversations** (voice agents) with [Fish Audio](https://fish.audio). | A Fish Audio API key, plus [uv](https://docs.astral.sh/uv/) (Python) and/or Node.js 20+ | [fish-audio/README.md](fish-audio/README.md) |
+
+Each part has its own README, docs and `AGENTS.md`, and works without the other.
+
+## 🤖 Building with an AI coding agent? Start here
+
+Point your agent at [AGENTS.md](AGENTS.md). It explains the two parts and sends the agent to the right
+`AGENTS.md` for whatever it's working on. Claude Code loads it automatically (via `CLAUDE.md`).
+
+For the voice part, also give your agent the official Fish Audio skills. Run this **from the repo root**:
+
+```bash
+npx skills add https://docs.fish.audio
+```
+
+Claude Code users already have them: they are committed in [`.claude/skills/`](.claude/skills/).
+
+## Quick start
+
+```bash
+git clone https://github.com/cartorgaOrg/fish-hackathon.git my-team
+cd my-team
+```
+
+**1. Run the game kit** (no keys needed, works offline):
+
+```bash
+cd game-kit
+npm install
+npm run dev                  # open http://localhost:5173 and play the samples
+npm run new my-game          # make your own game, then edit game-kit/games/my-game/main.js
+```
+
+**2. Try the voice examples** (needs a Fish Audio key from https://fish.audio/app/api-keys):
+
+```bash
+cd fish-audio
+cp .env.example .env         # paste your FISH_API_KEY into .env
+cd examples/01-tts-basics    # pick any example and follow its README
+```
+
+New to all of this? Do step 1 first, read [game-kit/docs/GETTING_STARTED.md](game-kit/docs/GETTING_STARTED.md)
+(15 minutes), then pick a voice path in [fish-audio/docs/00-choose-your-path.md](fish-audio/docs/00-choose-your-path.md).
+
+## Using both parts together
+
+The game runs **in the browser**. Fish Audio needs your **secret API key**. A key in browser code can be
+read by anyone who opens your game, so the browser never talks to Fish Audio with your key. Instead:
+
+```
+ game-kit (browser)                      small server (yours)                 Fish Audio
+ ──────────────────                      ────────────────────                 ──────────
+ games/my-game/main.js  ── /api/... ──▶  holds FISH_API_KEY      ── HTTPS ──▶  TTS / STT / agents
+                        ◀── audio  ───   (from fish-audio/)      ◀──────────
+```
+
+Pick the simplest option that fits your game idea:
+
+| | I want… | How | Copy from |
+|---|---|---|---|
+| 🔊 | **Pre-written lines** (narrator, NPC barks, cutscenes) | Generate MP3s once, put them in `game-kit/public/sounds/`, play them with `await game.audio.load('intro', '/sounds/intro.mp3')` then `game.audio.play('intro')`. No server at runtime. | [01-tts-basics](fish-audio/examples/01-tts-basics) · [03-npc-voice-factory](fish-audio/examples/03-npc-voice-factory) |
+| 🗣️ | **An NPC the player can talk to** | Run the example's token server, then add `server: { proxy: { '/api': 'http://localhost:8787' } }` to `game-kit/vite.config.js` so your game can call `/api/session`. Port the browser code from `src/main.ts` into your game as plain JS. | [04-agent-web](fish-audio/examples/04-agent-web) |
+| 🧠 | **NPC replies that depend on game state** | Same as above, plus your own "game master" server that decides what the NPC says. | [05-agent-custom-llm](fish-audio/examples/05-agent-custom-llm) |
+| 🔧 | **Full control** (voice commands, custom turn-taking) | Your own server runs mic → STT → LLM → TTS; the game talks to it over a WebSocket. | [06-own-pipeline](fish-audio/examples/06-own-pipeline) |
+
+Every Fish example marks its touch points with `GAME HOOK` (where a game plugs in) and `MOCKUP` (fake game
+logic to replace). Find them with `grep -rn "GAME HOOK" fish-audio/examples/`.
+
+### Ports when everything runs at once
+
+| Port | What | Started by |
+|---|---|---|
+| 5173 | Game kit dev server | `npm run dev` in `game-kit/` |
+| 3000 | Fish voice playground (both conversation options in one page) | `node playground/start.mjs` in `fish-audio/` |
+| 5174 | Hosted agent page (inside the playground) | the playground |
+| 8787 | Agent token server | the playground, or `npm run server` in `fish-audio/examples/04-agent-web/` |
+| 8001 | Own-pipeline server | the playground, or `fish-audio/examples/06-own-pipeline/` |
+
+## Repo layout
+
+```
+README.md            you are here
+AGENTS.md            map for AI coding agents (start here, then the part's own AGENTS.md)
+.claude/skills/      official Fish Audio skills for Claude Code (shared by the whole repo)
+
+game-kit/            🎮 the game part (Node + Vite + three.js)
+  engine/              reusable game primitives, imported as '@engine'
+  games/<name>/        one folder per game: the samples, and yours
+  public/assets/       780+ CC0 3D models
+  docs/                getting started, engine API, recipes, assets, deploy, troubleshooting
+  scripts/             new-game, check, smoke, package, asset tools
+
+fish-audio/          🔊 the voice part (Python with uv, and Node)
+  examples/NN-name/    self-contained examples, from simple TTS to a full voice pipeline
+  playground/          try both conversation options in one page
+  docs/                choose your path, concepts, gotchas, links to the official docs
+  .env.example         copy to fish-audio/.env and add your FISH_API_KEY
+```
+
+## Credits & license
+
+- Game kit code: MIT (see [game-kit/LICENSE](game-kit/LICENSE)). Models: CC0 by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**.
+- Voice: [Fish Audio](https://fish.audio). Docs: https://docs.fish.audio

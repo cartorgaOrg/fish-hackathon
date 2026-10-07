@@ -21,8 +21,8 @@ You need:
 - **git**, a code editor (VS Code works well), and Chrome, Edge or Firefox.
 
 ```bash
-git clone https://github.com/playmanogames/game-starter-kit.git my-team   # or your team's fork
-cd my-team
+git clone https://github.com/cartorgaOrg/fish-hackathon.git my-team   # or your team's fork
+cd my-team/game-kit              # the game half of the repo; run every npm command from here
 npm install
 npm run dev
 ```
@@ -117,7 +117,7 @@ Now read [ENGINE.md](ENGINE.md) once from top to bottom (15 minutes). It's the w
 
 The kit is written to be easy for AI coding assistants (Claude Code, Cursor, Copilot, …) to work with:
 
-- **[`AGENTS.md`](../AGENTS.md)** at the repo root is their manual. Claude Code reads it automatically via `CLAUDE.md`; other tools often do too. If yours doesn't, tell it: *"Read AGENTS.md first."*
+- **[`AGENTS.md`](../AGENTS.md)** in `game-kit/` is their manual (the [root AGENTS.md](../../AGENTS.md) points to it). Claude Code reads it automatically via `CLAUDE.md`; other tools often do too. If yours doesn't, tell it: *"Read AGENTS.md first."*
 - **`docs/ASSET_LIST.md`** lists every model path and animation name, so the assistant doesn't have to guess paths.
 - **`npm run check`** and **`npm run smoke`** let it test its own work. `smoke` opens your game in a hidden browser and saves screenshots to `.smoke/`. One-time setup: `npx playwright install chromium`.
 

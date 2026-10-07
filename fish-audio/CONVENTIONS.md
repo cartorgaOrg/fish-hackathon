@@ -4,7 +4,7 @@ These rules keep every example easy to copy into a game and easy for an LLM to e
 
 ## 1. Each example is self-contained
 
-Each `examples/NN-name/` folder can be copied out of the repo on its own. It has:
+Each `examples/NN-name/` folder can be copied out of `fish-audio/` on its own. It has:
 
 - `README.md`: starts with a one-line "Coding agent? Run `npx skills add https://docs.fish.audio` and read
   [AGENTS.md](../../AGENTS.md)" note, then what it shows, how to run it (one command), which Fish docs it relies on (links), and
@@ -49,7 +49,7 @@ runnable with only `FISH_API_KEY`.
 ## 4. Config and secrets
 
 - Read env vars, loading `.env` from the example folder or any parent (Python: `python-dotenv` `find_dotenv()`;
-  Node: `dotenv`). Variable names come from the root `.env.example`.
+  Node: `dotenv`). Variable names come from `fish-audio/.env.example`.
 - Never put `FISH_API_KEY` in browser code. Browsers talk to a small local server.
 - Write generated audio to `out/` inside the example (gitignored).
 
@@ -64,6 +64,6 @@ runnable with only `FISH_API_KEY`.
 ## 6. Git workflow
 
 - One branch and PR per example or doc area: `feat/<example-name>` or `docs/<topic>`.
-- Only touch your own folder. Root files (README, AGENTS.md, .env.example) are owned by `main`;
+- Only touch your own folder. Top-level files (the root README and AGENTS.md, `fish-audio/README.md`, `fish-audio/AGENTS.md`, `.env.example`) are owned by `main`;
   propose changes in the PR description instead.
 - In the PR description, say what you tested and how (real Fish key, mock only, or untested).

@@ -19,7 +19,7 @@ rest.
 ## Run it
 
 ```bash
-cp ../../.env.example ../../.env   # from repo root, then add FISH_API_KEY
+cp ../../.env.example ../../.env   # creates fish-audio/.env; then add FISH_API_KEY
 uv run stream_tts.py "Let me cross the bridge"       # saves out/stream.mp3
 uv run stream_tts.py "Let me cross the bridge" --play # also plays it (needs ffmpeg/ffplay)
 uv run stream_tts.py --dry-run                        # prints mock NPC tokens, no Fish call

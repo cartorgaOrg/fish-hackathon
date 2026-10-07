@@ -1,6 +1,9 @@
-# 🐟 Fishathon Starter Kit
+# 🎮 Game kit: the game part
 
-Make a 3D browser game in a weekend. This kit gives you:
+Make a 3D browser game in a weekend. This folder is the **game** half of the starter kit; the **voice** half
+is next door in [`../fish-audio/`](../fish-audio/). See the [root README](../README.md) for how the two fit together.
+
+This kit gives you:
 
 - **8 playable sample games** to copy from: 🌱 Starter · 🎣 Fishing · ⚔️ Action RPG · 🍄 3D Jump & Run · 🧱 Mario-style Side-Scroller · 🗼 Tower Defense · 🎯 FPS Arena Shooter · 🏰 Age-of-Empires-style Strategy. All have menus and work on phones.
 - **A small engine of reusable primitives** (`engine/`, ~2,900 lines of commented JavaScript on [three.js](https://threejs.org)). It covers the game loop, entities, model loading, animation, input, collisions, a character controller, 3 cameras, health, AI state machines, pathfinding, HUD, menus, touch controls, sound effects and particles.
@@ -16,6 +19,7 @@ No engine to install. Edit a `.js` file, save, and the browser reloads. **Works 
 Requires [Node.js](https://nodejs.org) 20+.
 
 ```bash
+cd game-kit                      # every command below runs from this folder
 npm install
 npm run dev                      # → open http://localhost:5173 (check the terminal for the URL)
 npm run new my-game              # make your own game (copy of the starter)…
@@ -55,6 +59,7 @@ game.start();
 | Fix something that's broken | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
 | Run the event: pre-event email, offline USB kit, kickoff checklist | [docs/ORGANIZERS.md](docs/ORGANIZERS.md) |
 | Let an AI assistant work on the code | [AGENTS.md](AGENTS.md) (Claude Code loads it automatically via `CLAUDE.md`) |
+| Give my game a voice (talking NPCs, narrator) | [../fish-audio/](../fish-audio/) and the [root README](../README.md#using-both-parts-together) |
 
 ## Pages while `npm run dev` runs
 

@@ -4,7 +4,7 @@
 
 Full-control voice conversation pipeline: browser mic → VAD → STT → LLM → streaming TTS →
 browser playback. Every stage is a small, swappable module. This is the highest-effort,
-highest-control path in this repo (path **C** - see the root [README](../../README.md)).
+highest-control path in this folder (path **C** - see the [fish-audio README](../../README.md)).
 
 ## Pipeline
 
@@ -55,7 +55,7 @@ the browser's "Timing" panel.
 ## Run it
 
 ```bash
-cp ../../.env.example .env   # or let it fall back to the repo root .env
+cp ../../.env.example .env   # or let it fall back to fish-audio/.env
 cd examples/06-own-pipeline
 uv run uvicorn server:app --port 8001
 # open http://localhost:8001

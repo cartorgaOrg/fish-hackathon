@@ -15,7 +15,7 @@ needs — you can always move to a more custom path later, and you can mix paths
 > ```
 >
 > This installs two skills — `fish-audio-sdk` (Python/JS SDKs) and `fish-audio-api` (raw REST/WS) —
-> already committed for Claude Code in `.claude/skills/`. Also useful to an agent: the doc index
+> already committed for Claude Code in `.claude/skills/` at the repo root. Also useful to an agent: the doc index
 > [`llms.txt`](https://docs.fish.audio/llms.txt) and full dump
 > [`llms-full.txt`](https://docs.fish.audio/llms-full.txt), and the MCP server
 > `https://api.fish.audio/mcp` (gives tools — search voices, generate speech, transcribe — instead

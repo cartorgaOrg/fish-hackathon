@@ -2,8 +2,6 @@ node_modules
 dist
 .DS_Store
 *.log
-.claude/settings.local.json
-.claude/
 .smoke
 dist.zip
 fishathon-offline-kit.zip

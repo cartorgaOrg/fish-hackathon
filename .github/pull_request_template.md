@@ -1,10 +1,16 @@
+## Part
+- [ ] `game-kit/` (game)
+- [ ] `fish-audio/` (voice)
+- [ ] Root / both
+
 ## What this adds
 
 ## How to run
 
 ## Tested
-- [ ] With a real `FISH_API_KEY`
-- [ ] Mock-only (no keys)
+- [ ] game-kit: `npm run check` and `npm run smoke -- <game>`
+- [ ] fish-audio: with a real `FISH_API_KEY`
+- [ ] fish-audio: mock-only (no keys)
 - [ ] Not runnable here (explain)
 
 ## GAME HOOK / MOCKUP spots

@@ -62,7 +62,7 @@ LLM when configured. It should not need game-specific edits.
 ## Run it
 
 ```bash
-cp ../../.env.example .env   # if you haven't already, from the repo root
+cp ../../.env.example .env   # if you haven't already (or use fish-audio/.env)
 # fill in FISH_API_KEY, and in this folder's .env also set:
 #   CUSTOM_LLM_API_KEY=<any long random string>
 uv run uvicorn server:app --port 8000

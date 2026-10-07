@@ -3,6 +3,9 @@
 You are working in a **browser game starter kit** for a hackathon. Teams build small 3D games quickly with plain JavaScript, three.js, a small engine of reusable primitives (`engine/`), and 780+ CC0 models (`public/assets/`).
 Your job is usually to change or create a game under `games/<name>/`. Read this file first, then follow the links when you need detail.
 
+This folder (`game-kit/`) is one half of a monorepo. Run every `npm` command from inside `game-kit/`, and read paths below as relative to it.
+For voice (Fish Audio TTS, STT, talking NPCs) see [`../fish-audio/AGENTS.md`](../fish-audio/AGENTS.md); the [root AGENTS.md](../AGENTS.md) explains how the parts connect.
+
 ## 1. Golden rules
 
 1. **Plain JavaScript ES modules.** No TypeScript, no React, no bundler config changes. Import from `'@engine'`, which also re-exports `THREE`.

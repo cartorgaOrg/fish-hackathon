@@ -2,9 +2,15 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "playground",
+      "name": "game-kit",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "game-kit", "run", "dev", "--", "--port", "5173"],
+      "port": 5173
+    },
+    {
+      "name": "fish-playground",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["playground/start.mjs"],
+      "runtimeArgs": ["fish-audio/playground/start.mjs"],
       "port": 3000
     }
   ]

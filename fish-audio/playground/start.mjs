@@ -1,6 +1,7 @@
 // Starts both voice options and the playground page with one command:
-//   node playground/start.mjs        then open http://localhost:3000
-// Needs Node 20+ and uv, plus a filled-in .env at the repo root (see .env.example).
+//   node playground/start.mjs        (from fish-audio/) then open http://localhost:3000
+// Needs Node 20+ and uv, plus a filled-in fish-audio/.env (see fish-audio/.env.example).
+// The agent page runs on :5174 so it does not collide with the game kit (:5173).
 import { spawn, spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { createServer } from "node:http";
@@ -11,7 +12,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const agentDir = resolve(root, "examples/04-agent-web");
 const PORT = 3000;
 
-if (!existsSync(resolve(root, ".env"))) console.warn("[playground] no .env at the repo root; copy .env.example to .env first");
+if (!existsSync(resolve(root, ".env"))) console.warn("[playground] no fish-audio/.env yet; copy fish-audio/.env.example to fish-audio/.env first");
 if (!existsSync(resolve(agentDir, "node_modules"))) {
   console.log("[playground] installing the hosted-agent example's npm packages ...");
   spawnSync("npm install", { cwd: agentDir, shell: true, stdio: "inherit" });
@@ -19,7 +20,7 @@ if (!existsSync(resolve(agentDir, "node_modules"))) {
 
 const services = [
   ["agent-token", "npm run server", agentDir],
-  ["agent-ui", "npm run dev -- --port 5173 --strictPort", agentDir],
+  ["agent-ui", "npm run dev -- --port 5174 --strictPort", agentDir],
   ["pipeline", "uv run uvicorn server:app --port 8001", resolve(root, "examples/06-own-pipeline")],
 ];
 

@@ -1,16 +1,19 @@
 # AGENTS.md: guidance for coding agents
 
-You are helping a hackathon team build a game that uses Fish Audio for voice. This repo contains
-**audio starting blocks only**. The team builds the game.
+You are helping a hackathon team build a game that uses Fish Audio for voice. This folder (`fish-audio/`)
+contains **audio starting blocks only**. The game lives in [`../game-kit/`](../game-kit/AGENTS.md) or wherever
+the team builds it. The [root AGENTS.md](../AGENTS.md) explains how the two parts connect.
+All paths below are relative to `fish-audio/` unless they say "repo root".
 
 ## Step 0: load the official Fish Audio skills (do this first)
 
 ```bash
+# run these from the repo root (one level up), so the skills land in the shared .claude/skills/
 npx skills add https://docs.fish.audio                 # interactive: choose your agent
 npx skills add https://docs.fish.audio -s '*' -a claude-code --copy -y   # non-interactive (swap the agent: cursor, codex, ...)
 ```
 
-Claude Code: they are already committed in `.claude/skills/`, so read them before writing any Fish Audio code.
+Claude Code: they are already committed in `.claude/skills/` at the repo root, so read them before writing any Fish Audio code.
 Note: the skill files mention a `references/` folder that is not shipped. For deeper detail, fetch
 https://docs.fish.audio/llms-full.txt or the specific page from https://docs.fish.audio/llms.txt.
 
@@ -19,8 +22,8 @@ https://docs.fish.audio/llms-full.txt or the specific page from https://docs.fis
 Do not guess Fish Audio APIs from memory. They change. Use, in order:
 
 1. **Installed skills** (exact SDK signatures and the raw protocol):
-   - `.claude/skills/fish-audio-sdk/SKILL.md`: Python `fishaudio` (PyPI `fish-audio-sdk`) and JS `fish-audio`
-   - `.claude/skills/fish-audio-api/SKILL.md`: raw REST and WebSocket: auth, MessagePack, streaming protocol
+   - `../.claude/skills/fish-audio-sdk/SKILL.md`: Python `fishaudio` (PyPI `fish-audio-sdk`) and JS `fish-audio`
+   - `../.claude/skills/fish-audio-api/SKILL.md`: raw REST and WebSocket: auth, MessagePack, streaming protocol
    - Reinstall or update with: `npx skills add https://docs.fish.audio`
 2. **Doc index for LLMs**: https://docs.fish.audio/llms.txt (every page also exists as `.md`)
    **Full dump**: https://docs.fish.audio/llms-full.txt

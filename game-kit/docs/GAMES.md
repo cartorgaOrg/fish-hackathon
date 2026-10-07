@@ -4,7 +4,7 @@ Every folder in `games/` is a complete, playable game built only from the engine
 Pick the sample closest to your idea, copy it with `npm run new <name> -- --from <sample>`, and change it.
 
 This document describes what each sample contains, how it's wired together, and where to edit for the most common changes.
-Every identifier below exists in the code. Paths are relative to the repo root.
+Every identifier below exists in the code. Paths are relative to `game-kit/`.
 
 All samples share the same skeleton:
 

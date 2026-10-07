@@ -1,8 +1,9 @@
-# Fish Audio Game Audio Starter
+# 🔊 Fish Audio: the voice part
 
 Starting blocks for the **audio layer** of a voice-driven game, built on [Fish Audio](https://fish.audio).
-The game itself is yours to build. This repo gives you working, copy-pasteable snippets for making
-characters **speak**, **listen** and **hold conversations**, plus docs on the concepts behind them.
+This folder gives you working, copy-pasteable snippets for making characters **speak**, **listen** and
+**hold conversations**, plus docs on the concepts behind them. The game itself lives next door in
+[`../game-kit/`](../game-kit/) (or anywhere else you like). See the [root README](../README.md) for how the two fit together.
 
 ## 🤖 Building with an AI coding agent? Start here
 
@@ -14,14 +15,14 @@ npx skills add https://docs.fish.audio
 
 This installs two official skills, **`fish-audio-sdk`** (Python and JS SDK signatures) and **`fish-audio-api`**
 (raw REST and WebSocket protocol), for Claude Code, Cursor, Codex and others. Claude Code users already have them:
-they are committed in [`.claude/skills/`](.claude/skills/). Also point your agent at:
+they are committed in [`.claude/skills/`](../.claude/skills/) at the repo root. Also point your agent at:
 
 | Resource | URL |
 |---|---|
 | Doc index for LLMs | https://docs.fish.audio/llms.txt |
 | Full docs in one file | https://docs.fish.audio/llms-full.txt |
 | Fish Audio MCP server (tools: voices, TTS, STT) | `https://api.fish.audio/mcp` |
-| This repo's rules for agents | [AGENTS.md](AGENTS.md) |
+| This folder's rules for agents | [AGENTS.md](AGENTS.md) |
 
 > Every example runs with only a `FISH_API_KEY`. The "game brain" in each example is a clearly marked
 > **MOCKUP** (a one-sentence prompt or a fake LLM that always returns the same line). Replace it with
@@ -30,6 +31,7 @@ they are committed in [`.claude/skills/`](.claude/skills/). Also point your agen
 ## Quick start
 
 ```bash
+cd fish-audio               # every command below runs from this folder
 cp .env.example .env        # then paste your FISH_API_KEY (https://fish.audio/app/api-keys)
 cd examples/01-tts-basics   # pick any example and follow its README
 ```

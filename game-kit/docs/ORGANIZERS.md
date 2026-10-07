@@ -31,8 +31,8 @@ Rule for organizers: **don't change the asset packs during the event**. Code and
 > 1. Install **Node.js 20+** from https://nodejs.org (check with `node -v`) and **git**.
 > 2. Run:
 >    ```
->    git clone https://github.com/playmanogames/game-starter-kit.git fishathon
->    cd fishathon
+>    git clone https://github.com/cartorgaOrg/fish-hackathon.git fishathon
+>    cd fishathon/game-kit
 >    npm install
 >    npx playwright install chromium     # optional, ~115 MB: lets AI assistants test your game
 >    npm run dev
@@ -43,20 +43,20 @@ Rule for organizers: **don't change the asset packs during the event**. Code and
 ## 2. Offline kit for people who didn't (USB sticks / local share)
 
 ```bash
-npm run offline-kit -- --remote https://github.com/playmanogames/game-starter-kit.git    # → fishathon-offline-kit.zip (≈175 MB)
+npm run offline-kit -- --remote https://github.com/cartorgaOrg/fish-hackathon.git    # → fishathon-offline-kit.zip (≈175 MB)
 ```
 
 (Use the **HTTPS** URL: participants may not have SSH keys set up. `--remote` defaults to this repo's `origin`.)
 
 The zip contains:
-- a git clone of the latest commit with all models, connected to that upstream, so `git pull` brings later fixes (only the changes);
-- an npm package cache with the native build tools for **Windows, macOS and Linux (x64 + arm64)**;
+- a git clone of the latest commit of the whole repo (game kit with all models, plus the Fish Audio examples), connected to that upstream, so `git pull` brings later fixes (only the changes);
+- an npm package cache (for `game-kit/`) with the native build tools for **Windows, macOS and Linux (x64 + arm64)**;
 - `OFFLINE-INSTALL.md` with the steps.
 
 Participants unzip it, then run:
 
 ```bash
-cd fishathon-kit
+cd fishathon-kit/game-kit
 npm ci --offline --cache ./npm-cache      # installs without internet
 npm run dev
 ```

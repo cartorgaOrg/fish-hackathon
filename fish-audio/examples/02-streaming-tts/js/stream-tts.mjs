@@ -9,7 +9,7 @@ import { dirname, resolve } from "node:path";
 import { FishAudioClient, RealtimeEvents } from "fish-audio";
 import { GAME_STATE, streamNpcReply } from "./game.mjs";
 
-// Load .env from this folder or the nearest parent (the repo root keeps one shared .env).
+// Load .env from this folder or the nearest parent (fish-audio/ keeps one shared .env).
 for (let dir = process.cwd(); ; dir = dirname(dir)) {
   if (existsSync(resolve(dir, ".env"))) { dotenv.config({ path: resolve(dir, ".env"), quiet: true }); break; }
   if (dirname(dir) === dir) break;
