@@ -95,7 +95,8 @@ npm run assets:upload -- --version v2   # never overwrites v1, so deployed games
 ```
 
 Files are cached for a year (`immutable`), so never re-upload changed files into an existing version: bump it.
-The bucket's CORS rules decide which websites may load the models. If a deployed game shows "Could not load …" errors, check that its domain is allowed (`npx wrangler r2 bucket cors list mano-assets`).
+Any website may load the models (read-only CORS `*`, set from `infra/r2-cors.json`), so games deployed to itch.io, GitHub Pages, Netlify and so on all work.
+Re-apply it with `CLOUDFLARE_ACCOUNT_ID=f9264e6402496d116d81066613a3b8c3 npx wrangler r2 bucket cors set mano-assets --file infra/r2-cors.json`.
 
 ### Re-downloading
 
