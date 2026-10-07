@@ -1,84 +1,124 @@
-# Fish Audio Game Audio Starter
+# 🐟 Fishathon Starter Kit
 
-Starting blocks for the **audio layer** of a voice-driven game, built on [Fish Audio](https://fish.audio).
-The game itself is yours to build. This repo gives you working, copy-pasteable snippets for making
-characters **speak**, **listen** and **hold conversations**, plus docs on the concepts behind them.
+Build a game with **characters that talk, listen and hold conversations**, powered by [Fish Audio](https://fish.audio).
+Voice is the heart of this hackathon. The repo gives you working voice examples first, and a 3D browser game kit
+to put them in.
+
+| | Folder | What it gives you | You need | Start here |
+|---|---|---|---|---|
+| 🔊 | [`fish-audio/`](fish-audio/) | **The voice (start here).** Working examples for making characters **speak** (text-to-speech), **listen** (speech-to-text) and **hold conversations** (voice agents), from a simple narrator to a full voice pipeline. | A Fish Audio API key, plus [uv](https://docs.astral.sh/uv/) (Python) and/or Node.js 20+ | [fish-audio/README.md](fish-audio/README.md) |
+| 🎮 | [`game-kit/`](game-kit/) | **The game to put it in.** A small three.js engine, 8 playable sample games (RPG, platformer, fishing, shooter…) and 780+ free 3D models. Plain JavaScript, runs in the browser. | Node.js 20+ | [game-kit/README.md](game-kit/README.md) |
+
+Each part has its own README, docs and `AGENTS.md`. The voice examples work with any game: the game kit, a
+game engine like Unity or Godot, or your own code.
 
 ## 🤖 Building with an AI coding agent? Start here
 
-Give your agent the official Fish Audio knowledge **before** it writes code:
+Give your agent the official Fish Audio skills **before** it writes any voice code. Run this **from the repo root**:
 
 ```bash
 npx skills add https://docs.fish.audio
 ```
 
-This installs two official skills, **`fish-audio-sdk`** (Python and JS SDK signatures) and **`fish-audio-api`**
-(raw REST and WebSocket protocol), for Claude Code, Cursor, Codex and others. Claude Code users already have them:
-they are committed in [`.claude/skills/`](.claude/skills/). Also point your agent at:
-
-| Resource | URL |
-|---|---|
-| Doc index for LLMs | https://docs.fish.audio/llms.txt |
-| Full docs in one file | https://docs.fish.audio/llms-full.txt |
-| Fish Audio MCP server (tools: voices, TTS, STT) | `https://api.fish.audio/mcp` |
-| This repo's rules for agents | [AGENTS.md](AGENTS.md) |
-
-> Every example runs with only a `FISH_API_KEY`. The "game brain" in each example is a clearly marked
-> **MOCKUP** (a one-sentence prompt or a fake LLM that always returns the same line). Replace it with
-> your game.
+Claude Code users already have them: they are committed in [`.claude/skills/`](.claude/skills/).
+Then point your agent at [AGENTS.md](AGENTS.md). It explains the two parts and sends the agent to the right
+`AGENTS.md` for whatever it's working on. Claude Code loads it automatically (via `CLAUDE.md`).
 
 ## Quick start
 
 ```bash
-cp .env.example .env        # then paste your FISH_API_KEY (https://fish.audio/app/api-keys)
-cd examples/01-tts-basics   # pick any example and follow its README
+git clone https://github.com/cartorgaOrg/fish-hackathon.git my-team
+cd my-team
 ```
 
-Python examples use [uv](https://docs.astral.sh/uv/) (`uv run ...`). Browser examples use Node 20+.
-
-### Try both conversation options in one page
+**1. Hear your first voice** (needs a Fish Audio key from https://fish.audio/app/api-keys):
 
 ```bash
-node playground/start.mjs   # then open http://localhost:3000 (needs FISH_API_KEY and FISH_AGENT_ID in .env)
+cd fish-audio
+cp .env.example .env         # paste your FISH_API_KEY into .env
+cd examples/01-tts-basics    # pick any example and follow its README
 ```
 
-The playground has two tabs, **Fish hosted agent** and **Own pipeline**, each with a short explanation of how
-it's set up. Run `npm run create-agent` in `examples/04-agent-web` once to get a `FISH_AGENT_ID`.
-Use Chrome and headphones.
+Then pick how your game will use voice in [fish-audio/docs/00-choose-your-path.md](fish-audio/docs/00-choose-your-path.md):
+just speech, streaming speech, or a full conversation with an NPC.
 
-## Pick a path
-
-| | Path | Control | Effort | Start here |
-|---|---|---|---|---|
-| 🔊 | **Just speech**: narrator, NPC barks, cutscenes | — | Lowest | [01-tts-basics](examples/01-tts-basics) · [03-npc-voice-factory](examples/03-npc-voice-factory) |
-| ⚡ | **Streaming speech**: an LLM's text spoken as it is generated | Medium | Low | [02-streaming-tts](examples/02-streaming-tts) |
-| 🗣️ | **A. Hosted Fish agent**: Fish runs STT + LLM + TTS + turn-taking; your game injects events and receives tool calls | Medium | Low | [04-agent-web](examples/04-agent-web) |
-| 🧠 | **B. Hosted agent + your own LLM server**: Fish handles voice, your "game master" server owns state and replies | High | Medium | [05-agent-custom-llm](examples/05-agent-custom-llm) |
-| 🔧 | **C. Own pipeline**: mic → voice detection → STT → LLM → streaming TTS, every piece swappable | Full | Highest | [06-own-pipeline](examples/06-own-pipeline) |
-
-Not sure which one fits? Read [docs/00-choose-your-path.md](docs/00-choose-your-path.md).
-
-## Connecting your real game
-
-Each example has a `game.py` / `game.ts` / `game.js` file. **It is a mockup, not the place your game has
-to live.** It's a tiny fake game (one NPC, one prompt, a fixed `[MOCKUP]` reply) that exists only so the
-example's audio pipeline runs end to end and you can test it.
-
-What to take from it is the **interface**: what the audio code needs *from* a game (state, events, text
-to speak) and what it hands *back* (transcripts, replies, tool calls or actions). Your real game can live
-anywhere: a game engine, the browser, a separate backend service. Feed the audio code those same inputs
-and handle the same outputs, and delete the mockup.
+**2. Run the game kit** (no keys needed, works offline). Open a new terminal in the `my-team` folder:
 
 ```bash
-grep -rn "GAME HOOK" examples/     # the touch points between audio code and a game
-grep -rn "MOCKUP" examples/        # fake behaviour standing in for a real game
+cd game-kit
+npm install
+npm run dev                  # keeps running; open the URL it prints (usually http://localhost:5173)
 ```
 
-See [CONVENTIONS.md](CONVENTIONS.md) for details.
+Leave that running. In a **second terminal**, inside `my-team/game-kit`, make your own game:
 
-## Docs
+```bash
+npm run new my-game          # then open /games/my-game/ and edit game-kit/games/my-game/main.js
+```
 
-- [docs/00-choose-your-path.md](docs/00-choose-your-path.md): decision tree and trade-offs
-- [docs/concepts/](docs/concepts/): latency, turn-taking, context injection, emotion tags, voices, NPC prompting
-- [docs/gotchas.md](docs/gotchas.md): things that will bite you (read this one)
-- [docs/fish-audio-links.md](docs/fish-audio-links.md): curated links into the official Fish Audio docs
+New to making games? Read [game-kit/docs/GETTING_STARTED.md](game-kit/docs/GETTING_STARTED.md) (15 minutes).
+
+## Putting the voice in your game
+
+The game runs **in the browser**. Fish Audio needs your **secret API key**. A key in browser code can be
+read by anyone who opens your game, so the browser never talks to Fish Audio with your key. Instead:
+
+```
+ your game (browser)                     small server (yours)                 Fish Audio
+ ───────────────────                     ────────────────────                 ──────────
+ games/my-game/main.js  ── /api/... ──▶  holds FISH_API_KEY      ── HTTPS ──▶  TTS / STT / agents
+                        ◀── audio  ───   (from fish-audio/)      ◀──────────
+```
+
+Pick the simplest option that fits your game idea:
+
+| | I want… | How | Copy from |
+|---|---|---|---|
+| 🔊 | **Pre-written lines** (narrator, NPC barks, cutscenes) | Generate MP3s once, put them in `game-kit/public/sounds/`, play them with `await game.audio.load('intro', '/sounds/intro.mp3')` then `game.audio.play('intro')`. No server at runtime. | [01-tts-basics](fish-audio/examples/01-tts-basics) · [03-npc-voice-factory](fish-audio/examples/03-npc-voice-factory) |
+| 🗣️ | **An NPC the player can talk to** | Run the example's token server, then add `server: { proxy: { '/api': 'http://localhost:8787' } }` to `game-kit/vite.config.js` so your game can call `/api/session`. Port the browser code from `src/main.ts` into your game as plain JS. | [04-agent-web](fish-audio/examples/04-agent-web) |
+| 🧠 | **NPC replies that depend on game state** | Same as above, plus your own "game master" server that decides what the NPC says. | [05-agent-custom-llm](fish-audio/examples/05-agent-custom-llm) |
+| 🔧 | **Full control** (voice commands, custom turn-taking) | Your own server runs mic → STT → LLM → TTS; the game talks to it over a WebSocket. | [06-own-pipeline](fish-audio/examples/06-own-pipeline) |
+
+Every Fish example marks its touch points with `GAME HOOK` (where a game plugs in) and `MOCKUP` (fake game
+logic to replace). Find them with `grep -rn "GAME HOOK" fish-audio/examples/`.
+
+### Ports when everything runs at once
+
+| Port | What | Started by |
+|---|---|---|
+| 3000 | Fish voice playground (both conversation options in one page) | `node playground/start.mjs` in `fish-audio/` |
+| 5174 | Hosted agent page (inside the playground) | the playground |
+| 8787 | Agent token server | the playground, or `npm run server` in `fish-audio/examples/04-agent-web/` |
+| 8001 | Own-pipeline server | the playground, or `fish-audio/examples/06-own-pipeline/` |
+| 5173 | Game kit dev server | `npm run dev` in `game-kit/` |
+
+## Repo layout
+
+```
+README.md            you are here
+LICENSING.md         what you may use, sell and must credit (voices, models, code, your own assets)
+AGENTS.md            map for AI coding agents (start here, then the part's own AGENTS.md)
+.claude/skills/      official Fish Audio skills for Claude Code (shared by the whole repo)
+
+fish-audio/          🔊 the voice part (Python with uv, and Node)
+  examples/NN-name/    self-contained examples, from simple TTS to a full voice pipeline
+  playground/          try both conversation options in one page
+  docs/                choose your path, concepts, gotchas, links to the official docs
+  .env.example         copy to fish-audio/.env and add your FISH_API_KEY
+
+game-kit/            🎮 the game part (Node + Vite + three.js)
+  engine/              reusable game primitives, imported as '@engine'
+  games/<name>/        one folder per game: the samples, and yours
+  public/assets/       780+ CC0 3D models
+  docs/                getting started, engine API, recipes, assets, deploy, troubleshooting
+  scripts/             new-game, check, smoke, package, asset tools
+```
+
+## Credits & license
+
+**Read [LICENSING.md](LICENSING.md) before you add outside assets or sell your game.** In short:
+
+- **Voices: [Fish Audio](https://fish.audio) terms.** Free accounts are for personal, non-commercial use, so selling a game with generated voices needs a paid plan. Only clone voices you have permission to use.
+- **3D models: CC0** (public domain) by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. Use them in anything, including games you sell. Credit is appreciated, not required.
+- **Game kit code: MIT** (see [game-kit/LICENSE](game-kit/LICENSE)).
+- **Anything you add** (models, sounds, music, fonts) needs a license that allows it. LICENSING.md has a table of what's OK.

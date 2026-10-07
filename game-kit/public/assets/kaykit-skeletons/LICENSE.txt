@@ -1,0 +1,3 @@
+KayKit Character Pack: Skeletons
+License: CC0 1.0 — Kay Lousberg (www.kaylousberg.com)
+Source: https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/tree/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons

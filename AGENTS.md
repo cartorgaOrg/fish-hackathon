@@ -1,60 +1,50 @@
 # AGENTS.md: guidance for coding agents
 
-You are helping a hackathon team build a game that uses Fish Audio for voice. This repo contains
-**audio starting blocks only**. The team builds the game.
+You are helping a hackathon team build a **voice-driven game** with Fish Audio. Voice is the focus of the
+hackathon; the game kit is a place to put it. This repo is a monorepo with two independent parts. Figure out which part the task touches, then read **that part's `AGENTS.md`** before
+writing code. Its rules apply inside its folder.
 
-## Step 0: load the official Fish Audio skills (do this first)
+| Folder | What it is | Read first |
+|---|---|---|
+| `fish-audio/` | Fish Audio voice examples: TTS, STT, hosted agents, own pipeline. Python (uv) + Node/TS. | [fish-audio/AGENTS.md](fish-audio/AGENTS.md) |
+| `game-kit/` | 3D browser game kit: three.js engine, sample games, CC0 models. Plain JS ES modules, Vite. | [game-kit/AGENTS.md](game-kit/AGENTS.md) |
 
-```bash
-npx skills add https://docs.fish.audio                 # interactive: choose your agent
-npx skills add https://docs.fish.audio -s '*' -a claude-code --copy -y   # non-interactive (swap the agent: cursor, codex, ...)
-```
+Claude Code also loads `fish-audio/CLAUDE.md` and `game-kit/CLAUDE.md` when you work on files in those folders.
 
-Claude Code: they are already committed in `.claude/skills/`, so read them before writing any Fish Audio code.
-Note: the skill files mention a `references/` folder that is not shipped. For deeper detail, fetch
-https://docs.fish.audio/llms-full.txt or the specific page from https://docs.fish.audio/llms.txt.
+## Rules that apply everywhere
 
-## Ground truth: always check the official Fish Audio docs
+1. **Run commands from the part's folder.** There is no root `package.json`. `npm run dev/check/smoke` run in
+   `game-kit/`; Fish examples run in their own `fish-audio/examples/NN-name/` folder.
+2. **Never put `FISH_API_KEY` in browser code**, and that includes everything under `game-kit/games/`. The
+   game calls a small server (proxied by Vite under `/api`), and the server calls Fish Audio. Keys live in
+   `fish-audio/.env` (template: `fish-audio/.env.example`), which is gitignored.
+3. **Don't guess Fish Audio APIs.** Read the skills in `.claude/skills/` (repo root) and the docs links in
+   [fish-audio/AGENTS.md](fish-audio/AGENTS.md) first.
+4. **Don't guess asset paths or animation names.** Look them up in `game-kit/docs/ASSET_LIST.md`.
+5. **Never add an asset without a known license.** Models, sounds, music, fonts and images must be CC0 or
+   another license that allows the use (see [LICENSING.md](LICENSING.md)). Record the file, author, license and
+   source URL in a `LICENSE.txt` next to the file, and tell the user about any credit requirement. Never fetch
+   assets from random sites or other games. Prefer the bundled CC0 packs and the engine's synthesized sounds.
+6. **Keep the parts independent.** No imports across `game-kit/` and `fish-audio/`. To use a Fish example in a
+   game, copy the code you need into the game's folder (or a server next to it) and adapt it to the game kit's
+   conventions (plain JS, no TypeScript in `game-kit/games/`).
 
-Do not guess Fish Audio APIs from memory. They change. Use, in order:
+## Putting the voice in a game
 
-1. **Installed skills** (exact SDK signatures and the raw protocol):
-   - `.claude/skills/fish-audio-sdk/SKILL.md`: Python `fishaudio` (PyPI `fish-audio-sdk`) and JS `fish-audio`
-   - `.claude/skills/fish-audio-api/SKILL.md`: raw REST and WebSocket: auth, MessagePack, streaming protocol
-   - Reinstall or update with: `npx skills add https://docs.fish.audio`
-2. **Doc index for LLMs**: https://docs.fish.audio/llms.txt (every page also exists as `.md`)
-   **Full dump**: https://docs.fish.audio/llms-full.txt
-3. **API specs**: https://docs.fish.audio/api-reference/openapi.json (REST) and
-   https://docs.fish.audio/api-reference/endpoint/websocket/tts-live.md (WebSocket TTS; the asyncapi.yml listed in llms.txt is a 404)
-4. **MCP server** (gives tools rather than docs: search voices, generate speech, transcribe):
-   `https://api.fish.audio/mcp` (OAuth)
+The table in the root [README.md → Putting the voice in your game](README.md#putting-the-voice-in-your-game) maps game
+needs to Fish examples. In short:
 
-Curated per-topic links: [docs/fish-audio-links.md](docs/fish-audio-links.md).
+- **Pre-generated lines:** generate MP3s with `fish-audio/examples/01-tts-basics` or `03-npc-voice-factory`,
+  save them to `game-kit/public/sounds/`, then `await game.audio.load(name, '/sounds/<file>.mp3')` and
+  `game.audio.play(name)`.
+- **Live speech or conversation:** run a server from `fish-audio/examples/04`, `05` or `06`, and add a Vite proxy
+  in `game-kit/vite.config.js` (`server: { proxy: { '/api': 'http://localhost:8787' } }`, as in
+  `fish-audio/examples/04-agent-web/vite.config.ts`). Wire the game to the example's `GAME HOOK` points and
+  delete its `MOCKUP` game.
 
-## Facts that are easy to get wrong
+## Verify
 
-- Fish **speech-to-text is batch only** (`POST /v1/asr`, whole file in, whole transcript out). There is no
-  streaming STT. Detect end of speech first (VAD), then upload the clip. Fish **agents** handle STT for you.
-- TTS model IDs: `s2.1-pro` (recommended), `s2.1-pro-free` (free, no latency guarantees), `s2-pro`, `s1` (legacy).
-  The SDK type hints only list `s1` and `s2-pro`, but `s2.1-pro` works over the wire (cast or `# type: ignore`).
-- Emotion and delivery control on S2 models uses **[square brackets]** with free-form text, e.g.
-  `[whispering] Over here.` (S1 used `(parentheses)`). Keep it to at most 3 tags per sentence.
-- Python SDK `latency` only accepts `"normal"` or `"balanced"`. The raw WebSocket also accepts `"low"`.
-- Fish agents run over **WebRTC (LiveKit)**. Client → server events include `user.message` (inject text;
-  `"audio": false` makes it silent context) and `user.interrupt`. The server calls client tools via `client_tool.call`.
-- A custom LLM for agents is an **OpenAI-compatible `POST /chat/completions` with `stream: true` (SSE)**.
-  `llm_extra_body` set on the session arrives as `fishaudio_extra_body`.
-- Starter-tier concurrency is **5 simultaneous requests** per account.
-
-## Repo conventions (follow them when extending)
-
-- Each example's `game.*` file is a **mockup harness** so the example runs; it is NOT where a team's game must live.
-  When integrating a real game, keep the audio code, wire the game (engine, frontend, backend, wherever it is)
-  to the `GAME HOOK` touch points, and delete the mockup. Don't grow the real game inside `game.*` by default.
-- Placeholder behaviour is marked `MOCKUP`. When you replace a mockup, remove the marker.
-- Config comes from env vars (see `.env.example`). Never hardcode keys. Never expose `FISH_API_KEY` to a browser:
-  browser code must get tokens or audio through a small server.
-- An LLM is optional. With `LLM_API_KEY` unset, examples use the mock. Any OpenAI-compatible provider works
-  (`LLM_BASE_URL`, `LLM_MODEL`).
-
-More detail in [CONVENTIONS.md](CONVENTIONS.md).
+- Voice changes: run the example as its README says. Without a `FISH_API_KEY` you can only check the mock
+  paths, so say so when you report back.
+- Game changes: `npm run check` and `npm run smoke -- <game>` in `game-kit/`, then look at the screenshots in
+  `game-kit/.smoke/` (see game-kit/AGENTS.md section 6).

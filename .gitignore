@@ -10,3 +10,6 @@ __pycache__/
 .vite/
 .claude/worktrees/
 .claude/settings.local.json
+
+# game-kit offline kit, unzipped in place (see game-kit/docs/ORGANIZERS.md)
+/OFFLINE-INSTALL.md
