@@ -10,6 +10,11 @@ That gives you:
 - `dist/`: a static website whose `index.html` opens your game directly.
 - `dist.zip`: the same thing zipped (about 1 MB), ready for itch.io.
 
+> **Before you publish:** the bundled models are CC0, so they're fine anywhere. Anything you added yourself
+> (models, sounds, music, fonts) needs a license that allows publishing, and CC-BY assets need a credit on your
+> game page. Fish Audio voices from a free account are for non-commercial use only. Run through the checklist in
+> [LICENSING.md](../../LICENSING.md#before-you-submit-or-publish).
+
 Models are **not** inside it. They stream from `https://cdn.manogames.com/fishathon-kit/v1/`, which allows every website, is cached for a year, and is shared by every team's game.
 
 Want a fully self-contained build (offline demo, USB stick, no CDN)? Use `npm run package -- my-game --full`, which bundles all ~95 MB of models.

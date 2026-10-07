@@ -14,7 +14,8 @@ For voice (Fish Audio TTS, STT, talking NPCs) see [`../fish-audio/AGENTS.md`](..
 4. **Copy patterns from the samples.** [`docs/GAMES.md`](docs/GAMES.md) explains every sample game and where things live.
 5. **Every game has a `GameMenu` (title/pause/game over) and `TouchControls` (phones).** Keep them. Use `menu.gameOver()`/`menu.win()`/`menu.restart()`, never a bare `location.reload()`, and make every keyboard action reachable by a touch button.
 6. **Put tuning numbers in a `CONFIG` object or data tables at the top of the file**, and keep comments beginner-friendly. Hackathon teammates will read your code.
-7. **Verify before you say you're done** (section 6). You can't see the screen, so run `npm run smoke` and read the screenshots.
+7. **Only add assets with a known license** (CC0 preferred). Record each new file's author, license and source in a `LICENSE.txt` next to it, and see [`../LICENSING.md`](../LICENSING.md).
+8. **Verify before you say you're done** (section 6). You can't see the screen, so run `npm run smoke` and read the screenshots.
 
 ## 2. Repository map
 

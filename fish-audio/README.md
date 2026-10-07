@@ -84,3 +84,4 @@ See [CONVENTIONS.md](CONVENTIONS.md) for details.
 - [docs/concepts/](docs/concepts/): latency, turn-taking, context injection, emotion tags, voices, NPC prompting
 - [docs/gotchas.md](docs/gotchas.md): things that will bite you (read this one)
 - [docs/fish-audio-links.md](docs/fish-audio-links.md): curated links into the official Fish Audio docs
+- [../LICENSING.md](../LICENSING.md#voices-fish-audio): who may use generated voices and how (free accounts are non-commercial; clone only with consent)

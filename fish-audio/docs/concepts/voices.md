@@ -95,6 +95,12 @@ another NPC's stored id.
 > tempted to clone a real person (a friend, a streamer, a public figure) for a bit — get consent
 > first, every time.
 
+**Commercial use:** Fish Audio's [terms](https://fish.audio/terms) limit free accounts to personal,
+non-commercial use. Commercial use is licensed for paid plans. Fine for a hackathon demo, but generate the final
+audio on a paid account before you sell or monetize the game. Public community voice models can be imitations
+of real people, so designing your own voices ([03-npc-voice-factory](../../examples/03-npc-voice-factory)) is
+the safest choice. More: [LICENSING.md](../../../LICENSING.md#voices-fish-audio).
+
 ## Fish Audio docs
 
 - Voice cloning best practices: https://docs.fish.audio/developer-guide/best-practices/voice-cloning.md

@@ -88,6 +88,7 @@ logic to replace). Find them with `grep -rn "GAME HOOK" fish-audio/examples/`.
 
 ```
 README.md            you are here
+LICENSING.md         what you may use, sell and must credit (models, code, voices, your own assets)
 AGENTS.md            map for AI coding agents (start here, then the part's own AGENTS.md)
 .claude/skills/      official Fish Audio skills for Claude Code (shared by the whole repo)
 
@@ -107,5 +108,9 @@ fish-audio/          🔊 the voice part (Python with uv, and Node)
 
 ## Credits & license
 
-- Game kit code: MIT (see [game-kit/LICENSE](game-kit/LICENSE)). Models: CC0 by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**.
-- Voice: [Fish Audio](https://fish.audio). Docs: https://docs.fish.audio
+**Read [LICENSING.md](LICENSING.md) before you add outside assets or sell your game.** In short:
+
+- **3D models: CC0** (public domain) by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. Use them in anything, including games you sell. Credit is appreciated, not required.
+- **Game kit code: MIT** (see [game-kit/LICENSE](game-kit/LICENSE)).
+- **Voices: [Fish Audio](https://fish.audio) terms.** Free accounts are for personal, non-commercial use, so selling a game with generated voices needs a paid plan. Only clone voices you have permission to use.
+- **Anything you add** (models, sounds, music, fonts) needs a license that allows it. LICENSING.md has a table of what's OK.

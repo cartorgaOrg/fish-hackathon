@@ -27,7 +27,7 @@ Everything in `public/assets/` is **CC0**, meaning public domain. You can use it
 | `quaternius-weapons` | Swords, axes, bows, shields, spears | Loot, props |
 | `quaternius-animation-library` | Mannequin with 45 humanoid animations | Animation reference |
 
-Each folder has a `LICENSE.txt` naming its source repo and commit.
+**Every pack is CC0** (public domain): use, change and sell freely, no credit required. Each folder has a `LICENSE.txt` naming its license, author, source repo and commit. Adding assets from elsewhere? Check their license first: [../../LICENSING.md](../../LICENSING.md#adding-your-own-assets).
 
 ## Sizes: how big is everything?
 
@@ -59,7 +59,7 @@ The asset browser prints the exact size of any model (`size … (w×h×d)`), and
 
 All packs are downloaded by `scripts/fetch-assets.mjs` from GitHub, pinned to a commit. To add one:
 
-1. Find a CC0 pack on GitHub with `.glb`/`.gltf` files. Good sources:
+1. Find a pack on GitHub with `.glb`/`.gltf` files that is **CC0** (the kit promises teams that every bundled model is CC0, so don't add anything else here). Confirm the license in the pack's own LICENSE file or on the author's site. Good sources:
    - the [KayKit-Game-Assets](https://github.com/KayKit-Game-Assets) org (Space Base, City Builder, Halloween, Furniture, Restaurant…);
    - [trebeljahr/quaternius-showcase](https://github.com/trebeljahr/quaternius-showcase/tree/main/public/glb), a mirror of ~30 Quaternius packs (sci-fi, cyberpunk, dinosaurs, survival, ultimate space, house interior, medieval village…), which is the mirror this kit already uses.
 2. Add an entry to `PACKS` in `scripts/fetch-assets.mjs`:

@@ -21,7 +21,11 @@ Claude Code also loads `game-kit/CLAUDE.md` and `fish-audio/CLAUDE.md` when you 
 3. **Don't guess Fish Audio APIs.** Read the skills in `.claude/skills/` (repo root) and the docs links in
    [fish-audio/AGENTS.md](fish-audio/AGENTS.md) first.
 4. **Don't guess asset paths or animation names.** Look them up in `game-kit/docs/ASSET_LIST.md`.
-5. **Keep the parts independent.** No imports across `game-kit/` and `fish-audio/`. To use a Fish example in a
+5. **Never add an asset without a known license.** Models, sounds, music, fonts and images must be CC0 or
+   another license that allows the use (see [LICENSING.md](LICENSING.md)). Record the file, author, license and
+   source URL in a `LICENSE.txt` next to the file, and tell the user about any credit requirement. Never fetch
+   assets from random sites or other games. Prefer the bundled CC0 packs and the engine's synthesized sounds.
+6. **Keep the parts independent.** No imports across `game-kit/` and `fish-audio/`. To use a Fish example in a
    game, copy the code you need into the game's folder (or a server next to it) and adapt it to the game kit's
    conventions (plain JS, no TypeScript in `game-kit/games/`).
 

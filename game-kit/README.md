@@ -98,5 +98,6 @@ infra/           CDN bucket settings
 ## Credits & license
 
 - Code: MIT. Do whatever you want with it.
-- Models: CC0 by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. Credit is appreciated, not required.
+- Models: CC0 (public domain) by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. You can use them in any game, including ones you sell. Credit is appreciated, not required.
+- Adding your own models, sounds or music, or selling your game? Read [../LICENSING.md](../LICENSING.md) first.
 - Built on [three.js](https://threejs.org) and [Vite](https://vitejs.dev).
