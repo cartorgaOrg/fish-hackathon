@@ -11,8 +11,13 @@ import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
 const here = import.meta.url;
 const ROOT = import.meta.env?.DEV ? new URL('/', location.href) : new URL('../', here);
 
-/** Turn "/assets/x.glb" into a URL that works both in dev and in a deployed build. */
+// Optional CDN: `npm run build:cdn` sets VITE_ASSET_BASE (see .env.cdn), so "/assets/…" is
+// loaded from e.g. https://cdn.manogames.com/fishathon-kit/v1/… instead of shipping 95 MB in dist/.
+const CDN = (import.meta.env?.VITE_ASSET_BASE ?? '').replace(/\/$/, '');
+
+/** Turn "/assets/x.glb" into a URL that works in dev, in a deployed build, and from the CDN. */
 export function assetUrl(path) {
+  if (CDN && path.startsWith('/assets/')) return CDN + path.slice('/assets'.length);
   return path.startsWith('/') ? new URL('.' + path, ROOT).href : path;
 }
 

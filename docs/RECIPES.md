@@ -343,4 +343,4 @@ npm run preview    # test the build locally
 - **itch.io**: zip the *contents* of `dist/` and upload it as an HTML game. Set the launch file to `games/<your-game>/index.html`, or keep `index.html` for the launcher.
 - **GitHub Pages / Netlify / Vercel / Cloudflare Pages**: publish the `dist/` folder.
 
-The build copies all ~95 MB of assets. To ship less, delete the packs you don't use from `public/assets/` before building.
+`npm run build` copies all ~95 MB of assets. Prefer **`npm run build:cdn`**: models then load from `cdn.manogames.com` and `dist/` is only a few hundred KB (see the CDN section of `docs/ASSETS.md`). For a fully offline build, delete the packs you don't use from `public/assets/` first.

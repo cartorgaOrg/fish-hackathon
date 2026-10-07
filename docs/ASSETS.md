@@ -79,6 +79,24 @@ All packs are downloaded by `scripts/fetch-assets.mjs` from GitHub, pinned to a 
 Drop `.glb` files anywhere in `public/` (for example `public/models/`) and load them with `game.assets.model('/models/thing.glb')`.
 Other great free sources: [poly.pizza](https://poly.pizza), [kenney.nl](https://kenney.nl/assets), [quaternius.com](https://quaternius.com) (full packs including FBX/Blend), [kaylousberg.itch.io](https://kaylousberg.itch.io).
 
+## CDN (cdn.manogames.com)
+
+All packs are also published to Cloudflare R2 (bucket `mano-assets`, served from `https://cdn.manogames.com/fishathon-kit/v1/`).
+
+- **Development** always uses the local copy in `public/assets/`, so it works offline.
+- **`npm run build:cdn`** builds games that load models from the CDN and leaves the ~95 MB of assets out of `dist/`. Uploads are tiny, and players' browsers cache the models once for every game. The URL lives in `.env.cdn`.
+- **`npm run build`** still bundles everything into `dist/` for fully self-contained builds (offline demos, USB sticks).
+
+Publishing a new asset version (only needed when packs change; requires `npx wrangler login` with access to the Mano Games account):
+
+```bash
+npm run assets:upload -- --version v2   # never overwrites v1, so deployed games keep working
+# then set VITE_ASSET_BASE=https://cdn.manogames.com/fishathon-kit/v2 in .env.cdn
+```
+
+Files are cached for a year (`immutable`), so never re-upload changed files into an existing version: bump it.
+The bucket's CORS rules decide which websites may load the models. If a deployed game shows "Could not load …" errors, check that its domain is allowed (`npx wrangler r2 bucket cors list mano-assets`).
+
 ### Re-downloading
 
 `public/assets/` is committed so the kit works offline at a hackathon. If it's ever missing or corrupted, run:

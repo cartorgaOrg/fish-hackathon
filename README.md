@@ -111,9 +111,11 @@ docs/              ENGINE.md, RECIPES.md, ASSETS.md, ASSET_LIST.md
 |---|---|
 | `npm run dev` | Dev server with hot reload |
 | `npm run new <name> [-- --from <game>]` | Scaffold a new game |
-| `npm run build` / `npm run preview` | Production build into `dist/` (relative paths, so it works on itch.io or GitHub Pages) |
+| `npm run build:cdn` | Production build into `dist/`; models load from `cdn.manogames.com` (small upload, recommended) |
+| `npm run build` / `npm run preview` | Self-contained production build with all assets (relative paths, so it works on itch.io or GitHub Pages) |
 | `npm run assets` | (Re-)download asset packs (already included) |
 | `npm run catalog` | Rebuild the asset catalog after adding models |
+| `npm run assets:upload` | Publish the asset packs to the CDN (maintainers only) |
 
 ## Tips for the hackathon
 

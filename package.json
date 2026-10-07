@@ -7,15 +7,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:cdn": "vite build --mode cdn",
     "preview": "vite preview",
     "assets": "node scripts/fetch-assets.mjs",
     "catalog": "node scripts/build-catalog.mjs",
+    "assets:upload": "node scripts/upload-assets.mjs",
     "new": "node scripts/new-game.mjs"
   },
   "dependencies": {
     "three": "^0.170.0"
   },
   "devDependencies": {
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "wrangler": "^4.148.0"
   }
 }
