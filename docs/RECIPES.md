@@ -21,7 +21,7 @@ const game = new Game();
 - [Game states: title screen, game over, restart](#game-states-title-screen-game-over-restart)
 - [Phones & touch](#phones--touch)
 - [Save a high score](#save-a-high-score)
-- [An underwater / fish scene 🐟](#an-underwater--fish-scene)
+- [An underwater / fish scene 🐟](#an-underwater--fish-scene-)
 - [Team colours](#team-colours)
 - [Use your own models or sounds](#use-your-own-models-or-sounds)
 - [Add real physics (Rapier)](#add-real-physics-rapier)
@@ -334,13 +334,8 @@ Keep game state in plain objects so it's easy to serialize.
 ## Deploy / share your game
 
 ```bash
-npm run build      # → dist/ (all games + asset browser)
-npm run preview    # test the build locally
+npm run package -- my-game     # → dist/ + dist.zip (≈1 MB; models stream from cdn.manogames.com)
+npm run preview                # test it locally first
 ```
 
-`dist/` is static files. It works from any folder because the kit uses relative paths (`base: './'`):
-
-- **itch.io**: zip the *contents* of `dist/` and upload it as an HTML game. Set the launch file to `games/<your-game>/index.html`, or keep `index.html` for the launcher.
-- **GitHub Pages / Netlify / Vercel / Cloudflare Pages**: publish the `dist/` folder.
-
-`npm run build` copies all ~95 MB of assets. Prefer **`npm run build:cdn`**: models then load from `cdn.manogames.com` and `dist/` is only a few hundred KB (see the CDN section of `docs/ASSETS.md`). For a fully offline build, delete the packs you don't use from `public/assets/` first.
+Upload `dist.zip` to itch.io (HTML game), or `dist/` to Cloudflare Pages, Netlify or GitHub Pages. Full instructions: [DEPLOY.md](DEPLOY.md).

@@ -1,134 +1,95 @@
 # 🐟 Fishathon Starter Kit
 
-A batteries-included starting point for hackathon games in the browser:
+Make a 3D browser game in a weekend. This kit gives you:
 
-- **7 playable sample games** (🎣 Fishing, Action RPG, 3D Jump & Run, Mario-style Side-Scroller, Tower Defense, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea. Every sample has a title screen, a pause menu, game-over and win screens, and on-screen touch controls for phones.
-- **Reusable primitives** in `engine/` (~2,400 lines of commented JavaScript on top of [three.js](https://threejs.org)): game loop, entities, model loading, animation, input, AABB physics, character controller, 3 camera rigs, health, state machines, A* pathfinding, RTS selection, HUD/dialogs, menus (title/pause/game over), touch controls, synthesized sound effects and particles.
-- **780+ CC0 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, skeletons, dungeons, platformer kits, RTS buildings, guns, animals and 40+ animated fish. They're already downloaded and include a visual **asset browser**.
+- **8 playable sample games** to copy from: 🌱 Starter · 🎣 Fishing · ⚔️ Action RPG · 🍄 3D Jump & Run · 🧱 Mario-style Side-Scroller · 🗼 Tower Defense · 🎯 FPS Arena Shooter · 🏰 Age-of-Empires-style Strategy. All have menus and work on phones.
+- **A small engine of reusable primitives** (`engine/`, ~2,900 lines of commented JavaScript on [three.js](https://threejs.org)). It covers the game loop, entities, model loading, animation, input, collisions, a character controller, 3 cameras, health, AI state machines, pathfinding, HUD, menus, touch controls, sound effects and particles.
+- **780+ free (CC0) 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, monsters, dungeons, platformer kits, castles, guns, animals and 40+ animated fish, with a visual **asset browser**. They're bundled for offline development and served from `cdn.manogames.com` when you deploy.
+- **Docs written for humans and AI assistants**, plus `check`/`smoke` commands so assistants can test their own work.
 
-No game engine to install, no build step to learn: edit a `.js` file, save, and the browser reloads.
+No engine to install. Edit a `.js` file, save, and the browser reloads.
 
 ---
 
 ## Quick start
 
-You need [Node.js](https://nodejs.org) 18+.
+Requires [Node.js](https://nodejs.org) 20+.
 
 ```bash
 npm install
-npm run dev
+npm run dev                      # → open http://localhost:5173 (check the terminal for the URL)
+npm run new my-game              # make your own game (copy of the starter)…
+npm run new my-game -- --from rpg   # …or of the sample closest to your idea
 ```
 
-Open **http://localhost:5173** (Vite picks the next free port if 5173 is taken; check the terminal).
+Then open `http://localhost:5173/games/my-game/` and edit `games/my-game/main.js`.
 
-| Page | |
-|---|---|
-| `/` | Launcher with every game |
-| `/games/starter/` | Smallest complete game (~80 lines) |
-| `/games/fishing/` | Fish Frenzy (fishing) |
-| `/games/rpg/` | Action RPG |
-| `/games/platformer/` | 3D Jump & Run |
-| `/games/sidescroller/` | Side-Scroller (Mario-style) |
-| `/games/towerdefense/` | Tower Defense |
-| `/games/shooter/` | Arena Shooter |
-| `/games/strategy/` | Strategy (AoE-like) |
-| `/assets.html` | **Asset browser**: search models, preview animations, copy code |
+**New here? Read [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md). It takes 15 minutes.**
 
-## Make your own game
-
-```bash
-npm run new my-game                  # copies games/starter
-npm run new my-game -- --from rpg    # or start from any sample
-```
-
-Then open `/games/my-game/` and edit `games/my-game/main.js`.
-
-A complete game is about this much code:
+## A whole game in 10 lines
 
 ```js
-import { Game, CharacterController, FollowCamera, setupEnvironment } from '@engine';
+import { Game, CharacterController, FollowCamera, GameMenu, TouchControls, setupEnvironment } from '@engine';
 
 const game = new Game();
 setupEnvironment(game, { sky: 'sunset' });                          // lights, sky, ground, shadows
-
 const model = await game.assets.model('/assets/kaykit-adventurers/Knight.glb');
 const player = game.add(new CharacterController(game, model));     // WASD + jump + animations
 player.camera = game.add(new FollowCamera(game, player.object));    // orbiting 3rd-person camera
-
+new GameMenu(game, { title: 'My Game' });                           // title screen, pause, game over
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: 'Jump', key: 'Space' }] });
 game.start();
 ```
 
-## Which sample should I start from?
+## Documentation map
 
-| You want to make… | Start from | Key primitives it shows |
-|---|---|---|
-| Anything / not sure yet | `starter` | `Game`, `Entity`, `CharacterController`, `FollowCamera`, UI |
-| Action RPG, adventure, hack & slash, survival | `rpg` | Melee combat, `StateMachine` enemy AI, `Health`, dialog, quests, XP, loot, interactables |
-| 3D platformer, collect-a-thon, obby | `platformer` | Double jump, moving platforms, hazards, stomping, checkpoints, data-driven level |
-| Side-scroller, Mario-like, metroidvania, endless runner | `sidescroller` | ASCII-map levels, 2.5D camera, `body.ceiling` block bumps, power-up states, stomping, timer |
-| Tower defense, lane or wave survival | `towerdefense` | ASCII-map road + `PathFollower`, tower targeting, homing/lobbed projectiles, splash & slow, upgrades/sell, wave tables, fast-forward |
-| FPS, arena or wave shooter | `shooter` | `FirstPersonCamera`, hitscan raycasts, weapons table, waves, pickups, screen shake |
-| RTS, city builder, tower defense, tactics | `strategy` | `RTSCamera`, `Selection`, `NavGrid` pathfinding, gathering economy, building placement, unit training |
-| Fishing, cozy or collection game 🎣 | `fishing` | Cast/bite/reel `StateMachine`, tension minigame, rarity tables, shop, journal, save data |
-| Underwater game 🐟 | `starter` + the fish recipe | See *An underwater / fish scene* in [docs/RECIPES.md](docs/RECIPES.md) |
+| I want to… | Read |
+|---|---|
+| Get set up and make my first changes | [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) |
+| Pick a sample and know where everything is in it | [docs/GAMES.md](docs/GAMES.md) |
+| Look up an engine class or function | [docs/ENGINE.md](docs/ENGINE.md) (starts with *Core concepts*) |
+| Do a specific thing (projectiles, levels from text, save games, multiplayer…) | [docs/RECIPES.md](docs/RECIPES.md) |
+| Find a model or animation name | `/assets.html` in the browser, or [docs/ASSET_LIST.md](docs/ASSET_LIST.md) |
+| Understand model sizes, packs, the CDN, adding models | [docs/ASSETS.md](docs/ASSETS.md) |
+| Put my game online (itch.io, Pages, Netlify…) | [docs/DEPLOY.md](docs/DEPLOY.md) |
+| Fix something that's broken | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
+| Let an AI assistant work on the code | [AGENTS.md](AGENTS.md) (Claude Code loads it automatically via `CLAUDE.md`) |
 
-Mixing genres is easy: every primitive is independent. A top-down shooter is `RTSCamera` plus the shooter's weapons.
+## Pages while `npm run dev` runs
+
+| URL | |
+|---|---|
+| `/` | Launcher: every sample + your own games |
+| `/games/<name>/` | A game. Add `?touch` to see the phone controls on desktop. |
+| `/assets.html` | Asset browser: search, preview animations, hide parts, copy code |
+
+## Commands
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server with hot reload (also prints a Network URL for testing on your phone) |
+| `npm run new <name> [-- --from <game>]` | Create `games/<name>/` from the starter or any sample |
+| `npm run check` | Fast checks: asset paths, game folders, production build |
+| `npm run smoke [-- <game>…]` | Open games in headless Chrome, press Play, report errors, save screenshots to `.smoke/` (first time: `npx playwright install chromium`) |
+| `npm run package -- <game> [--full]` | Build one game into `dist/` + `dist.zip`, ready for itch.io and friends |
+| `npm run build` / `npm run build:cdn` / `npm run preview` | Build every game (with models / models from CDN) and preview the build |
+| `npm run catalog` | Rebuild the asset catalog after adding models |
+| `npm run assets` / `npm run assets:upload` | Maintainers: download the packs / publish them to the CDN |
 
 ## Project layout
 
 ```
-engine/            reusable primitives (import from '@engine'); every file starts with a usage example
-  Game.js            loop, entities, timers, mouse picking
-  Entity.js          base class for everything in the world
-  Assets.js          model loading + helpers (setVisible, attach, fitHeight, tint…)
-  Animator.js        animation clips with forgiving names and cross-fades
-  Input.js           keyboard / mouse / gamepad
-  Physics.js         AABB colliders, kinematic Body, raycasts
-  CharacterController.js   ready-made 3rd-person hero
-  cameras/           FollowCamera, FirstPersonCamera, RTSCamera
-  Menu.js            title / pause / game-over screens
-  Touch.js           on-screen joystick + buttons for phones
-  Health.js  StateMachine.js  NavGrid.js  Selection.js
-  UI.js  Audio.js  Effects.js  Environment.js  shapes.js  utils.js
-games/<name>/      one folder per game: index.html + main.js (+ more modules)
-public/assets/     the CC0 model packs (+ catalog.json)
-tools/             the asset browser
-scripts/           fetch-assets, build-catalog, new-game
-docs/              ENGINE.md, RECIPES.md, ASSETS.md, ASSET_LIST.md
+engine/          reusable primitives: import from '@engine' (see docs/ENGINE.md)
+games/<name>/    one folder per game: index.html + main.js (+ more modules)
+public/assets/   the CC0 model packs (+ catalog.json); your own files go in public/<anything-else>/
+docs/            all documentation
+scripts/         new-game, check, smoke, package, asset tooling
+tools/           the asset browser
+infra/           CDN bucket settings
 ```
-
-## Documentation
-
-- **[docs/ENGINE.md](docs/ENGINE.md)** covers every primitive with examples.
-- **[docs/RECIPES.md](docs/RECIPES.md)** answers how-tos: pickups, projectiles, trigger zones, click-to-move, text-map levels, title/game-over screens, high scores, underwater scenes, real physics, multiplayer pointers, debugging, deployment.
-- **[docs/ASSETS.md](docs/ASSETS.md)** describes the packs, their sizes and scales, gotchas, and how to add more.
-- **[docs/ASSET_LIST.md](docs/ASSET_LIST.md)** lists every model URL and animation name.
-- **[AGENTS.md](AGENTS.md)** holds conventions for AI coding assistants (Claude Code, Cursor, Copilot…). Point yours at it.
-
-## Scripts
-
-| Command | |
-|---|---|
-| `npm run dev` | Dev server with hot reload |
-| `npm run new <name> [-- --from <game>]` | Scaffold a new game |
-| `npm run build:cdn` | Production build into `dist/`; models load from `cdn.manogames.com` (small upload, recommended) |
-| `npm run build` / `npm run preview` | Self-contained production build with all assets (relative paths, so it works on itch.io or GitHub Pages) |
-| `npm run assets` | (Re-)download asset packs (already included) |
-| `npm run catalog` | Rebuild the asset catalog after adding models |
-| `npm run assets:upload` | Publish the asset packs to the CDN (maintainers only) |
-
-## Tips for the hackathon
-
-- **Get something playable in the first hour.** Copy a sample, swap the models, change one mechanic.
-- Keep tuning numbers in a `CONFIG` object at the top of the file, like the samples do.
-- `game` is on `window`. Use the browser console to inspect things (`game.findAll('enemy')`) or try slow motion (`game.timeScale = 0.3`).
-- `game.physics.showDebug(game.scene)` shows colliders when something feels off.
-- Test on your phone: `npm run dev` prints a Network URL. Add `?touch` on desktop to see the touch controls.
-- Sound matters more than you think: `game.audio.play('coin')` works without any audio files.
-- Juice: `game.effects.shake()`, `burst()`, `flash()` and `ui.floatingText()` make hits feel good.
 
 ## Credits & license
 
 - Code: MIT. Do whatever you want with it.
-- Models: CC0 by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. Credit isn't required but is appreciated.
+- Models: CC0 by **Kay Lousberg** ([KayKit](https://kaylousberg.com)) and **[Quaternius](https://quaternius.com)**. Credit is appreciated, not required.
 - Built on [three.js](https://threejs.org) and [Vite](https://vitejs.dev).

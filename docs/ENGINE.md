@@ -1,8 +1,8 @@
 # Engine reference
 
 The engine is a thin layer of **reusable game primitives** on top of [three.js](https://threejs.org/docs/).
-It is ~2,400 lines of plain JavaScript in `engine/`, so when the docs aren't enough, read the source.
-Every file starts with a usage example.
+It is ~2,900 lines of plain JavaScript in `engine/`, so when the docs aren't enough, read the source.
+Every file starts with a usage example. For complete, working examples of every primitive, see the sample games ([GAMES.md](GAMES.md)).
 
 ```js
 import { Game, Entity, Animator, CharacterController, FollowCamera, /* … */ } from '@engine';
@@ -12,6 +12,7 @@ import { Game, Entity, Animator, CharacterController, FollowCamera, /* … */ } 
 
 **Contents**
 
+- [Core concepts](#core-concepts): read this first
 - [Game](#game): loop, entities, timers, picking
 - [Entity](#entity): things that live in the game
 - [Assets](#assets): load models, plus helpers (`setVisible`, `attach`, `fitHeight`…)
@@ -32,6 +33,67 @@ import { Game, Entity, Animator, CharacterController, FollowCamera, /* … */ } 
 - [setupEnvironment](#setupenvironment): sky, sun, shadows, ground
 - [shapes](#shapes): coloured primitives for prototyping
 - [utils](#utils): math and gameplay helpers
+
+---
+
+## Core concepts
+
+**The loop.** `game.start()` runs this every frame:
+input → `game.after`/`game.every` timers → `physics.update()` → `update(dt)` on every added thing (in the order added) → `game.onUpdate` callbacks → effects → render → UI repositioning.
+
+**Things.** Anything with an `update(dt)` method can be passed to `game.add()`: an `Entity`, a camera, a `Selection`, your own object. If it has an `.object` (a `THREE.Object3D`), that's added to the scene. `Entity` adds tags, lifecycle hooks and `destroy()`.
+
+**Time.**
+- `dt` is in seconds, clamped to 1/20.
+- `game.paused = true` stops all updates; rendering continues. `GameMenu` and `ui.dialog` use it.
+- `game.timeScale` gives slow motion or fast-forward.
+- `game.time`, `game.after()` and `game.every()` are game time: they stop while paused. `setTimeout` and `cooldown()` use real time.
+
+**Space.**
+- Y is up, 1 unit ≈ 1 metre, the ground is y = 0.
+- Models face **+Z**: to face a point, set `rotation.y = Math.atan2(dx, dz)` (or use `yawTo(from, to)`).
+- Characters' origins are at their feet.
+
+**Loading.**
+- Game files use top-level `await`.
+- Preload with `await game.load([...urls])`, which shows a loading bar.
+- Each `await game.assets.model(url)` returns a new, independent copy, which is cheap after the first load.
+- Asset URLs are always written as `'/assets/<pack>/<file>'`; `assetUrl()` maps them for dev, builds and the CDN.
+
+**Physics.**
+- Everything solid is an axis-aligned box.
+- `Body` is a kinematic character with gravity, wall sliding, step-up and moving-platform riding.
+- Raycasts hit boxes and (optionally) entity meshes.
+- There's no rotation, no rigid-body dynamics and no slopes.
+
+**UI.** HTML over the canvas. Positions use CSS units, and numbers mean px.
+
+**Debugging.** `window.game` is always set: try `game.findAll('enemy')`, `game.timeScale = 0.2` or `game.physics.showDebug(game.scene)` in the browser console.
+
+**A complete minimal game:**
+
+```js
+import { Game, Entity, CharacterController, FollowCamera, GameMenu, TouchControls, setupEnvironment, distXZ } from '@engine';
+
+const game = new Game();
+setupEnvironment(game, { sky: 'day' });
+await game.load(['/assets/kaykit-adventurers/Knight.glb', '/assets/quaternius-platformer/Coin.glb']);
+
+const player = game.add(new CharacterController(game, await game.assets.model('/assets/kaykit-adventurers/Knight.glb')));
+player.camera = game.add(new FollowCamera(game, player.object));
+
+class Coin extends Entity {
+  update(dt) {
+    this.object.rotation.y += dt * 3;
+    if (distXZ(this.position, player.position) < 1.2) { game.audio.play('coin'); this.destroy(); menu.win({ score: 1 }); }
+  }
+}
+game.add(new Coin(await game.assets.model('/assets/quaternius-platformer/Coin.glb', { scale: 0.5 }))).position.set(0, 1, -8);
+
+const menu = new GameMenu(game, { title: 'Grab the coin', controls: ['WASD — move', 'Space — jump'] });
+new TouchControls(game, { joystick: true, look: true, buttons: [{ label: 'Jump', key: 'Space' }] });
+game.start();
+```
 
 ---
 
@@ -115,6 +177,7 @@ Helpers:
 | `getBounds(obj)` / `getSize(obj)` | World box/size. Correct for skinned models, unlike `Box3.setFromObject`. |
 | `centerOnGround(obj)` | Recentre so the bottom sits at y=0 |
 | `tint(obj, color, amount)` | Recolour a copy (team colours!) |
+| `assetUrl('/assets/x.glb')` | The real URL for a path (local in dev, CDN in `build:cdn`). Use it for anything you `fetch()` yourself. |
 | `setShadows(obj, cast, receive)` | Toggle shadows |
 
 ## Animator
@@ -199,6 +262,7 @@ const player = game.add(new CharacterController(game, model, {
 player.camera = followCam;    // WASD relative to the camera
 player.locked = true;         // ignore input (attacks, cutscenes, dialogs)
 player.teleport(v3(0, 0, 0));
+player.launch(18);            // throw upward: springs, stomps, knockback (not cut by releasing Space)
 player.lookAt(target);
 player.body;  player.animator;  player.model;
 player.onJump = () => {};
@@ -286,7 +350,7 @@ const hp = game.ui.bar({ bottom: 20, left: 20 }, { width: 200, color: '#e33', la
 game.ui.message('Wave 3', 2, { sub: 'Here they come!' });   // big centred text (0 = until .remove())
 game.ui.toast('Quest updated');
 game.ui.floatingText(pos, '-12', '#f44');                    // damage numbers
-const label = game.ui.worldLabel(npc.object, 'Talk [E]', 2.5);  // follows a 3D object
+const label = game.ui.worldLabel(npc.object, 'Talk [E]', 2.5);  // follows a 3D object; hide with label.el.style.visibility = 'hidden'
 const bar = game.ui.worldBar(enemy.object, 2.4);  bar.set(0.7);
 const choice = await game.ui.dialog('Merchant', 'Buy a potion?', ['Yes', 'No']);  // pauses the game; keys 1-9 work
 const btns = game.ui.buttons([{ label: 'Build', key: 'B', onClick, disabled }], { bottom: 16, right: 16 });  btns.update(newItems);
@@ -306,6 +370,8 @@ const menu = new GameMenu(game, {
   controls: ['WASD — move', 'Space — jump'],           // shown on the title and pause screens
   touchControls: ['Stick — move', 'Jump button — jump'], // shown instead on phones
   onStart: () => startWaves(),                         // runs when Play is pressed
+  onPause: () => cancelBuilding(),                     // optional: Esc / ⏸ opened the pause menu
+  onResume: () => {},                                  // optional
   lockPointer: false,                                  // true for FPS games (Play/Resume capture the mouse)
   accent: '#ffd166',
 });
@@ -388,8 +454,8 @@ sphere(r, color, pos)  cylinder(r, h, color, pos)  cone(r, h, color, pos)  capsu
 rand(min, max)  randInt(min, max)  pick(array)  chance(0.3)
 clamp(v, a, b)  lerp(a, b, t)  damp(a, b, lambda, dt)  dampAngle(a, b, lambda, dt)  angleDiff(a, b)
 distXZ(a, b)  yawTo(from, to)  v3(x, y, z)
-const fire = cooldown(0.2);  if (fire.ready()) shoot();  fire.progress();
-storage.save('highscore', 42);  storage.load('highscore', 0);
+const fire = cooldown(0.2);  if (fire.ready()) shoot();  fire.progress();   // real time (ignores pause/timeScale)
+storage.save('highscore', 42);  storage.load('highscore', 0);  storage.remove('highscore');
 ```
 
 `damp` is the frame-rate-independent version of `lerp(a, b, 0.1)`. Use it for anything smooth.

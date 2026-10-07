@@ -15,7 +15,7 @@ export const SKY_PRESETS = {
   night:      { top: '#05070f', bottom: '#1b2440', sun: 0.6, ambient: 0.35, sunColor: '#9fb4ff', fog: '#141a30' },
   dungeon:    { top: '#0b0a10', bottom: '#1e1a24', sun: 0.8, ambient: 0.5, sunColor: '#ffcc88', fog: '#100e14' },
   space:      { top: '#000000', bottom: '#0a0820', sun: 2.2, ambient: 0.4, sunColor: '#ffffff', fog: null },
-  underwater: { top: '#04324a', bottom: '#0b7fa8', sun: 1.4, ambient: 1.0, sunColor: '#bff4ff', fog: '#0b6f94' },
+  underwater: { top: '#04324a', bottom: '#0b7fa8', sun: 2.2, ambient: 2.2, sunColor: '#d8fbff', fog: '#0b6f94', groundLight: '#3a8fa8' },
 };
 
 /**
@@ -33,7 +33,7 @@ export function setupEnvironment(game, { sky = 'day', ground = {}, fog = {}, sha
   scene.background = gradientTexture(preset.top, preset.bottom);
   if (fog && preset.fog) scene.fog = new THREE.Fog(preset.fog, fog.near ?? 60, fog.far ?? 220);
 
-  const hemi = new THREE.HemisphereLight(preset.bottom, '#444433', preset.ambient);
+  const hemi = new THREE.HemisphereLight(preset.bottom, preset.groundLight ?? '#444433', preset.ambient);
   scene.add(hemi);
 
   const sun = new THREE.DirectionalLight(preset.sunColor, preset.sun);

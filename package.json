@@ -24,5 +24,8 @@
     "playwright": "^1.63.0",
     "vite": "^6.0.0",
     "wrangler": "^4.148.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
