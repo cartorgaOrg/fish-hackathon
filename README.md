@@ -2,7 +2,7 @@
 
 A batteries-included starting point for hackathon games in the browser:
 
-- **6 playable sample games** (🎣 Fishing, Action RPG, 3D Jump & Run, Mario-style Side-Scroller, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea. Every sample has a title screen, a pause menu, game-over and win screens, and on-screen touch controls for phones.
+- **7 playable sample games** (🎣 Fishing, Action RPG, 3D Jump & Run, Mario-style Side-Scroller, Tower Defense, FPS Arena Shooter and an Age-of-Empires-style Strategy game) plus a tiny **starter**. Copy whichever is closest to your idea. Every sample has a title screen, a pause menu, game-over and win screens, and on-screen touch controls for phones.
 - **Reusable primitives** in `engine/` (~2,400 lines of commented JavaScript on top of [three.js](https://threejs.org)): game loop, entities, model loading, animation, input, AABB physics, character controller, 3 camera rigs, health, state machines, A* pathfinding, RTS selection, HUD/dialogs, menus (title/pause/game over), touch controls, synthesized sound effects and particles.
 - **780+ CC0 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, skeletons, dungeons, platformer kits, RTS buildings, guns, animals and 40+ animated fish. They're already downloaded and include a visual **asset browser**.
 
@@ -29,6 +29,7 @@ Open **http://localhost:5173** (Vite picks the next free port if 5173 is taken; 
 | `/games/rpg/` | Action RPG |
 | `/games/platformer/` | 3D Jump & Run |
 | `/games/sidescroller/` | Side-Scroller (Mario-style) |
+| `/games/towerdefense/` | Tower Defense |
 | `/games/shooter/` | Arena Shooter |
 | `/games/strategy/` | Strategy (AoE-like) |
 | `/assets.html` | **Asset browser**: search models, preview animations, copy code |
@@ -65,12 +66,13 @@ game.start();
 | Action RPG, adventure, hack & slash, survival | `rpg` | Melee combat, `StateMachine` enemy AI, `Health`, dialog, quests, XP, loot, interactables |
 | 3D platformer, collect-a-thon, obby | `platformer` | Double jump, moving platforms, hazards, stomping, checkpoints, data-driven level |
 | Side-scroller, Mario-like, metroidvania, endless runner | `sidescroller` | ASCII-map levels, 2.5D camera, `body.ceiling` block bumps, power-up states, stomping, timer |
+| Tower defense, lane or wave survival | `towerdefense` | ASCII-map road + `PathFollower`, tower targeting, homing/lobbed projectiles, splash & slow, upgrades/sell, wave tables, fast-forward |
 | FPS, arena or wave shooter | `shooter` | `FirstPersonCamera`, hitscan raycasts, weapons table, waves, pickups, screen shake |
 | RTS, city builder, tower defense, tactics | `strategy` | `RTSCamera`, `Selection`, `NavGrid` pathfinding, gathering economy, building placement, unit training |
 | Fishing, cozy or collection game 🎣 | `fishing` | Cast/bite/reel `StateMachine`, tension minigame, rarity tables, shop, journal, save data |
 | Underwater game 🐟 | `starter` + the fish recipe | See *An underwater / fish scene* in [docs/RECIPES.md](docs/RECIPES.md) |
 
-Mixing genres is easy: every primitive is independent. A tower defense is the strategy sample's `NavGrid` plus the shooter's waves. A top-down shooter is `RTSCamera` plus the shooter's weapons.
+Mixing genres is easy: every primitive is independent. A top-down shooter is `RTSCamera` plus the shooter's weapons.
 
 ## Project layout
 

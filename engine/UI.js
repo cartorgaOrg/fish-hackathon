@@ -89,7 +89,8 @@ export class UI {
 
   /**
    * A label that follows a 3D object (name tags, "Press E", health bars over units).
-   * Returns { el, set(html), remove() }.
+   * Returns { el, set(html), remove() }. To hide it temporarily use `el.style.visibility = 'hidden'`
+   * (`display` is managed for you: labels are hidden while off-screen).
    */
   worldLabel(object, html, heightOffset = 2, className = 'fx-label') {
     const e = this.el('div', { className, html });

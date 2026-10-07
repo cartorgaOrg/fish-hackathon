@@ -28,13 +28,14 @@
 <body>
   <div class="wrap">
     <h1>🐟 Fishathon Starter Kit</h1>
-    <p class="lead">Six playable sample games built from the same small set of reusable primitives, plus 780+ free CC0 models from KayKit and Quaternius. All of them have menus and work on phones. Pick the one closest to your idea, copy it and start hacking.</p>
+    <p class="lead">Seven playable sample games built from the same small set of reusable primitives, plus 780+ free CC0 models from KayKit and Quaternius. All of them have menus and work on phones. Pick the one closest to your idea, copy it and start hacking.</p>
     <div class="grid">
       <a class="card" href="games/starter/"><span class="emoji">🌱</span><h2>Starter</h2><p>The smallest complete game (~80 lines). Walk around and collect coins. Copy this one if you're starting from nothing.</p><code>games/starter/</code></a>
       <a class="card" href="games/fishing/"><span class="emoji">🎣</span><h2>Fish Frenzy</h2><p>Cast, wait for a bite, hook and reel against line tension. 35 species, rarities, rod & lure shop, fish journal.</p><code>games/fishing/</code></a>
       <a class="card" href="games/rpg/"><span class="emoji">⚔️</span><h2>Action RPG</h2><p>Third-person hero, sword combat, skeleton AI, NPC dialog, quests, XP and loot.</p><code>games/rpg/</code></a>
       <a class="card" href="games/platformer/"><span class="emoji">🍄</span><h2>3D Jump &amp; Run</h2><p>3D platformer with double jump, moving platforms, hazards, stompable enemies, checkpoints and a goal flag.</p><code>games/platformer/</code></a>
       <a class="card" href="games/sidescroller/"><span class="emoji">🧱</span><h2>Side-Scroller</h2><p>Mario-style 2.5D level built from an ASCII map: ? blocks, breakable bricks, power-up, stomping, pipes, pits, flagpole and timer.</p><code>games/sidescroller/</code></a>
+      <a class="card" href="games/towerdefense/"><span class="emoji">🗼</span><h2>Tower Defense</h2><p>Archer, cannon and frost towers with upgrades, 10 waves along an ASCII-map road, boss wave, fast-forward.</p><code>games/towerdefense/</code></a>
       <a class="card" href="games/shooter/"><span class="emoji">🎯</span><h2>Arena Shooter</h2><p>First-person shooter with hitscan guns, reloads, enemy waves, pickups and screen shake.</p><code>games/shooter/</code></a>
       <a class="card" href="games/strategy/"><span class="emoji">🏰</span><h2>Strategy (AoE-like)</h2><p>Gather wood and gold, build houses and barracks, train units, box-select and fight raiders.</p><code>games/strategy/</code></a>
     </div>
@@ -51,7 +52,7 @@
   </div>
   <script type="module">
     // Games you create with `npm run new <name>` show up here automatically.
-    const builtIn = ['starter', 'fishing', 'rpg', 'platformer', 'sidescroller', 'shooter', 'strategy'];
+    const builtIn = ['starter', 'fishing', 'rpg', 'platformer', 'sidescroller', 'towerdefense', 'shooter', 'strategy'];
     const pages = Object.keys(import.meta.glob('/games/*/index.html', { query: '?raw' }));
     const yours = pages.map((p) => p.split('/')[2]).filter((n) => !builtIn.includes(n));
     for (const n of yours) {
