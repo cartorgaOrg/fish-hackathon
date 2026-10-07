@@ -7,3 +7,5 @@ dist
 .smoke
 dist.zip
 fishathon-offline-kit.zip
+npm-cache/
+OFFLINE-INSTALL.md

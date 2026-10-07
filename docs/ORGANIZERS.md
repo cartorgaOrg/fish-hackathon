@@ -6,14 +6,24 @@ What to prepare so ~everyone has a working setup in the first 15 minutes, even w
 
 | Step | Download | Needs internet? |
 |---|---|---|
-| `git clone` (code + all 780 models) | ≈ 40 MB | yes, once |
-| `npm install` | ≈ 20 MB | yes, once |
+| `git clone` (code + all 780 models) | ≈ 27 MB | yes, once (`--depth 1` doesn't help: the models are most of it) |
+| `npm install` | ≈ 19 MB | yes, once |
+| `git pull` (organizer updates during the event) | **≈ 10–100 KB** (only what changed; models never re-download) | yes, but tiny |
 | `npm run dev` and **all** games, the asset browser, editing, `check`, `build` | — | **no** (verified with every network request blocked) |
 | `npx playwright install chromium` (only for `npm run smoke`, AI-assistant testing) | ≈ 115 MB | yes, once (optional) |
 | Deploying (`npm run package` → itch.io etc.) | upload ≈ 1 MB | yes |
 | Playing a deployed game | models stream from `cdn.manogames.com` | yes (players) |
 
 So: **if people clone + install before they arrive, the venue Wi-Fi doesn't matter for building games.**
+
+The one thing to avoid is **many fresh clones at the venue at the same time**: 40 people × ~46 MB is ~1.8 GB through one access point, which can take 10+ minutes or fail on bad Wi-Fi. Pushing fixes during the event is fine: everyone's `git pull` is a few KB.
+
+**Venue plan, in order of preference:**
+1. Everyone cloned + installed at home (the pre-event email below).
+2. Late arrivals: the **USB offline kit**. No network at all; it's a real git clone, so `git pull` works for them later too.
+3. No USB? Share the kit zip from an organizer laptop **plugged into the router by cable**: `npx serve .` or `python3 -m http.server 8000` in the folder with the zip. Traffic then stays on the local network instead of the internet uplink.
+
+Rule for organizers: **don't change the asset packs during the event**. Code and doc fixes are fine, because pulls stay tiny.
 
 ## 1. Before the event: email participants
 
@@ -33,11 +43,13 @@ So: **if people clone + install before they arrive, the venue Wi-Fi doesn't matt
 ## 2. Offline kit for people who didn't (USB sticks / local share)
 
 ```bash
-npm run offline-kit        # → fishathon-offline-kit.zip (≈150 MB)
+npm run offline-kit -- --remote https://github.com/<org>/<repo>.git    # → fishathon-offline-kit.zip (≈175 MB)
 ```
 
+(`--remote` defaults to this repo's `origin`; set it to the URL participants clone from.)
+
 The zip contains:
-- the whole repo, with all models;
+- a git clone of the latest commit with all models, connected to that upstream, so `git pull` brings later fixes (only the changes);
 - an npm package cache with the native build tools for **Windows, macOS and Linux (x64 + arm64)**;
 - `OFFLINE-INSTALL.md` with the steps.
 
@@ -50,9 +62,9 @@ npm run dev
 ```
 
 Put the **Node.js installers** next to it (Windows `.msi`, macOS `.pkg`, from https://nodejs.org), since Node can't be installed via npm.
-Rebuild the kit after every change to the repo. It packs the committed files (with a warning if there are uncommitted changes).
+Rebuild the kit after every change to the repo. It packs the last **commit** (with a warning if there are uncommitted changes).
 
-Tested: unzipped into an empty folder, `npm ci --offline` with no network access, and all games loading with every internet request blocked.
+Tested: unzipped into an empty folder → clean `git status`; `npm ci --offline` with no network access; all games loading with every internet request blocked; then `git pull` fast-forwarding an upstream fix.
 
 ## 3. Kickoff checklist
 
