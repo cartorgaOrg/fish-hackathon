@@ -1,0 +1,13 @@
+{
+  "name": "streaming-tts-example-js",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node stream-tts.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "fish-audio": "^0.1.0"
+  }
+}

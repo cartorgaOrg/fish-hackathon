@@ -1,0 +1,9 @@
+[project]
+name = "01-tts-basics"
+version = "0.1.0"
+description = "Text-to-speech: narrator lines and NPC barks"
+requires-python = ">=3.11"
+dependencies = [
+    "fish-audio-sdk",
+    "python-dotenv",
+]

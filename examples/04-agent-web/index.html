@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fish hosted agent</title>
+    <script>if (window.self !== window.top) document.documentElement.classList.add("embedded");</script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <h1>Fish hosted agent</h1>
+
+    <div id="controls">
+      <button id="start">Start call</button>
+      <button id="stop" disabled>Hang up</button>
+      <span id="mic-status">idle</span>
+    </div>
+
+    <h2>Game events</h2>
+    <div id="events"></div>
+
+    <h2>Game state</h2>
+    <pre id="state"></pre>
+
+    <h2>Transcript</h2>
+    <pre id="transcript"></pre>
+
+    <h2>Tool calls</h2>
+    <pre id="tools"></pre>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

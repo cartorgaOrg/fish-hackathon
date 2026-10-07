@@ -1,0 +1,11 @@
+[project]
+name = "streaming-tts-example"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fish-audio-sdk>=1.3.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.40.0",      # optional: only used if LLM_API_KEY is set, see game.py
+    "websockets>=14.0",    # only used by stream_tts_raw.py (raw WebSocket demo)
+    "msgpack>=1.0.0",      # only used by stream_tts_raw.py (MessagePack framing)
+]

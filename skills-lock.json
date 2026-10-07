@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "fish-audio-api": {
+      "source": "docs.fish.audio",
+      "sourceType": "well-known",
+      "computedHash": "ecde66f5a8b5b333716461836feec08c261cee1275b6992865e209de60847567"
+    },
+    "fish-audio-sdk": {
+      "source": "docs.fish.audio",
+      "sourceType": "well-known",
+      "computedHash": "c5eefae181b10fb4959e348e6fbfe77fbf7bf391de7335314eb2bca9f4a27714"
+    }
+  }
+}

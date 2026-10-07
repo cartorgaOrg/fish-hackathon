@@ -1,0 +1,10 @@
+[project]
+name = "03-npc-voice-factory"
+version = "0.1.0"
+description = "Voice design: describe a character, generate candidate voices, save and reuse"
+requires-python = ">=3.11"
+dependencies = [
+    "fish-audio-sdk",
+    "python-dotenv",
+    "httpx",
+]

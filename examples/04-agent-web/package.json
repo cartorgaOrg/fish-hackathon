@@ -1,0 +1,21 @@
+{
+  "name": "04-agent-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server/server.mjs",
+    "create-agent": "node scripts/create-agent.mjs",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@fishaudio/agent-client": "^0.3.0",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^6.4.4"
+  }
+}

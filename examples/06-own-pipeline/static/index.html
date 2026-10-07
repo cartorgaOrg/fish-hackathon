@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Own pipeline (STT, LLM, TTS)</title>
+<script>if (window.self !== window.top) document.documentElement.classList.add("embedded");</script>
+<!--
+  VAD (@ricky0123/vad-web) runs voice-activity detection fully client-side via onnxruntime-web
+  (WASM). Loaded from jsdelivr; versions/paths checked against https://docs.vad.ricky0123.com
+  at the time this example was written. If the CDN or ONNX WASM assets are unreachable (offline
+  demo, flaky venue wifi), use "Push to talk" instead - no extra script needed for that mode.
+-->
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.wasm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ricky0123/vad-web@0.0.31/dist/bundle.min.js"></script>
+<style>
+  html { background: #fff; }
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; color: #111; }
+  button { font-size: 1rem; padding: 0.5rem 1rem; }
+  .panel { border: 1px solid #ccc; border-radius: 6px; padding: 0.75rem; margin-top: 0.75rem; }
+  .label { font-weight: 600; color: #555; font-size: 0.8rem; text-transform: uppercase; }
+  .embedded h1 { display: none; }
+  .embedded body { margin-top: 1rem; }
+  pre { white-space: pre-wrap; margin: 0.25rem 0 0; }
+</style>
+</head>
+<body>
+<h1>Own pipeline (STT, LLM, TTS)</h1>
+<p>
+  Mode:
+  <label><input type="radio" name="mode" value="vad" checked /> Voice activity detection</label>
+  <label><input type="radio" name="mode" value="ptt" /> Push to talk</label>
+</p>
+<button id="start">Start</button>
+<button id="stop" disabled>Stop</button>
+<button id="talk" disabled>Hold to talk</button>
+<p id="status">idle</p>
+
+<div class="panel"><div class="label">Transcript</div><pre id="transcript">-</pre></div>
+<div class="panel"><div class="label">Reply</div><pre id="reply">-</pre></div>
+<div class="panel"><div class="label">Timing (ms)</div><pre id="timing">-</pre></div>
+<div class="panel"><div class="label">Game state</div><pre id="state">-</pre></div>
+
+<script>
+const statusEl = document.getElementById("status");
+const startBtn = document.getElementById("start");
+const talkBtn = document.getElementById("talk");
+const stopBtn = document.getElementById("stop");
+
+let ws, audioCtx, stream, mediaSourceNode, scriptNode, myvad;
+let recording = false, pttSamples = [];
+let playQueue = [], currentAudio = null;
+
+function setStatus(s) { statusEl.textContent = s; }
+
+// --- WAV encoding (shared by VAD and push-to-talk capture) ----------------
+function encodeWav(float32Samples, sampleRate) {
+  const buffer = new ArrayBuffer(44 + float32Samples.length * 2);
+  const view = new DataView(buffer);
+  const writeStr = (off, s) => { for (let i = 0; i < s.length; i++) view.setUint8(off + i, s.charCodeAt(i)); };
+  writeStr(0, "RIFF"); view.setUint32(4, 36 + float32Samples.length * 2, true);
+  writeStr(8, "WAVE"); writeStr(12, "fmt "); view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true); view.setUint16(22, 1, true); view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+  writeStr(36, "data"); view.setUint32(40, float32Samples.length * 2, true);
+  let off = 44;
+  for (const s of float32Samples) {
+    view.setInt16(off, Math.max(-1, Math.min(1, s)) * 0x7fff, true);
+    off += 2;
+  }
+  return new Blob([buffer], { type: "audio/wav" });
+}
+
+function sendUtterance(wavBlob) {
+  stopPlayback(); // local barge-in: a new utterance means we stop listening to the old reply
+  wavBlob.arrayBuffer().then((buf) => ws.send(buf));
+}
+
+// --- Playback: one audio element per sentence, played back-to-back --------
+function stopPlayback() {
+  playQueue = [];
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+}
+function enqueueAudio(blob) {
+  playQueue.push(blob);
+  if (!currentAudio) playNext();
+}
+function playNext() {
+  const blob = playQueue.shift();
+  if (!blob) { currentAudio = null; return; }
+  const url = URL.createObjectURL(blob);
+  currentAudio = new Audio(url);
+  currentAudio.onended = () => { URL.revokeObjectURL(url); playNext(); };
+  currentAudio.play();
+}
+
+// --- WebSocket -------------------------------------------------------------
+let pendingFormat = "mp3";
+function connectWs() {
+  ws = new WebSocket(`ws://${location.host}/ws`);
+  ws.binaryType = "arraybuffer";
+  ws.onmessage = (ev) => {
+    if (typeof ev.data === "string") {
+      const msg = JSON.parse(ev.data);
+      if (msg.type === "transcript") document.getElementById("transcript").textContent = msg.text || "(nothing heard)";
+      else if (msg.type === "reply_sentence") {
+        const r = document.getElementById("reply");
+        r.textContent = r.textContent === "-" ? msg.text : r.textContent + " " + msg.text;
+      } else if (msg.type === "audio_meta") pendingFormat = msg.format;
+      else if (msg.type === "timing") document.getElementById("timing").textContent = JSON.stringify(msg, null, 2);
+      else if (msg.type === "state") document.getElementById("state").textContent = JSON.stringify(msg.state, null, 2);
+      else if (msg.type === "barge_in") { stopPlayback(); setStatus("barge-in"); }
+      else if (msg.type === "done") setStatus("listening");
+    } else {
+      enqueueAudio(new Blob([ev.data], { type: pendingFormat === "wav" ? "audio/wav" : "audio/mpeg" }));
+    }
+  };
+}
+
+// --- Mic capture: VAD mode ---------------------------------------------------
+async function startVad() {
+  myvad = await vad.MicVAD.new({
+    onSpeechEnd: (float32Audio) => {
+      document.getElementById("reply").textContent = "-";
+      sendUtterance(encodeWav(float32Audio, 16000)); // vad-web always gives 16 kHz audio
+    },
+    onnxWASMBasePath: "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/",
+    baseAssetPath: "https://cdn.jsdelivr.net/npm/@ricky0123/vad-web@0.0.31/dist/",
+  });
+  myvad.start();
+  setStatus("listening (VAD)");
+}
+
+// --- Mic capture: push-to-talk ----------------------------------------------
+async function setupPtt() {
+  stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  audioCtx = new AudioContext();
+  mediaSourceNode = audioCtx.createMediaStreamSource(stream);
+  scriptNode = audioCtx.createScriptProcessor(4096, 1, 1); // deprecated but universally supported
+  scriptNode.onaudioprocess = (e) => {
+    if (recording) pttSamples.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+  };
+  mediaSourceNode.connect(scriptNode);
+  scriptNode.connect(audioCtx.destination);
+  talkBtn.disabled = false;
+  talkBtn.onmousedown = () => { recording = true; pttSamples = []; document.getElementById("reply").textContent = "-"; setStatus("recording..."); };
+  talkBtn.onmouseup = () => {
+    recording = false;
+    const flat = new Float32Array(pttSamples.reduce((n, a) => n + a.length, 0));
+    let off = 0;
+    for (const a of pttSamples) { flat.set(a, off); off += a.length; }
+    sendUtterance(encodeWav(flat, audioCtx.sampleRate));
+    setStatus("listening (push-to-talk)");
+  };
+}
+
+startBtn.onclick = async () => {
+  startBtn.disabled = true;
+  connectWs();
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+  try {
+    if (mode === "vad") await startVad();
+    else await setupPtt();
+    stopBtn.disabled = false;
+  } catch (err) {
+    stopBtn.onclick(); // clean up whatever did start
+    setStatus(`error: ${err.message ?? err}`);
+  }
+};
+
+// Stop the call: release the mic, stop playback and close the socket
+// (the server cancels any reply still in progress when the socket closes).
+stopBtn.onclick = () => {
+  myvad?.destroy(); myvad = null;
+  stream?.getTracks().forEach((t) => t.stop()); stream = null;
+  audioCtx?.close(); audioCtx = null;
+  recording = false;
+  stopPlayback();
+  ws?.close();
+  talkBtn.disabled = true;
+  stopBtn.disabled = true;
+  startBtn.disabled = false;
+  setStatus("stopped");
+};
+</script>
+</body>
+</html>
