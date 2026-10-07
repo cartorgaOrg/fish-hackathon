@@ -1,15 +1,15 @@
 # AGENTS.md: guidance for coding agents
 
-You are helping a hackathon team build a **voice-driven browser game**. This repo is a monorepo with two
-independent parts. Figure out which part the task touches, then read **that part's `AGENTS.md`** before
+You are helping a hackathon team build a **voice-driven game** with Fish Audio. Voice is the focus of the
+hackathon; the game kit is a place to put it. This repo is a monorepo with two independent parts. Figure out which part the task touches, then read **that part's `AGENTS.md`** before
 writing code. Its rules apply inside its folder.
 
 | Folder | What it is | Read first |
 |---|---|---|
-| `game-kit/` | 3D browser game kit: three.js engine, sample games, CC0 models. Plain JS ES modules, Vite. | [game-kit/AGENTS.md](game-kit/AGENTS.md) |
 | `fish-audio/` | Fish Audio voice examples: TTS, STT, hosted agents, own pipeline. Python (uv) + Node/TS. | [fish-audio/AGENTS.md](fish-audio/AGENTS.md) |
+| `game-kit/` | 3D browser game kit: three.js engine, sample games, CC0 models. Plain JS ES modules, Vite. | [game-kit/AGENTS.md](game-kit/AGENTS.md) |
 
-Claude Code also loads `game-kit/CLAUDE.md` and `fish-audio/CLAUDE.md` when you work on files in those folders.
+Claude Code also loads `fish-audio/CLAUDE.md` and `game-kit/CLAUDE.md` when you work on files in those folders.
 
 ## Rules that apply everywhere
 
@@ -29,9 +29,9 @@ Claude Code also loads `game-kit/CLAUDE.md` and `fish-audio/CLAUDE.md` when you 
    game, copy the code you need into the game's folder (or a server next to it) and adapt it to the game kit's
    conventions (plain JS, no TypeScript in `game-kit/games/`).
 
-## Connecting a game to voice
+## Putting the voice in a game
 
-The table in the root [README.md → Using both parts together](README.md#using-both-parts-together) maps game
+The table in the root [README.md → Putting the voice in your game](README.md#putting-the-voice-in-your-game) maps game
 needs to Fish examples. In short:
 
 - **Pre-generated lines:** generate MP3s with `fish-audio/examples/01-tts-basics` or `03-npc-voice-factory`,
@@ -44,7 +44,7 @@ needs to Fish examples. In short:
 
 ## Verify
 
-- Game changes: `npm run check` and `npm run smoke -- <game>` in `game-kit/`, then look at the screenshots in
-  `game-kit/.smoke/` (see game-kit/AGENTS.md section 6).
 - Voice changes: run the example as its README says. Without a `FISH_API_KEY` you can only check the mock
   paths, so say so when you report back.
+- Game changes: `npm run check` and `npm run smoke -- <game>` in `game-kit/`, then look at the screenshots in
+  `game-kit/.smoke/` (see game-kit/AGENTS.md section 6).

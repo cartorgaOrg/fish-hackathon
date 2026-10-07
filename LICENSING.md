@@ -1,8 +1,8 @@
 # Licensing: what you can use, and how
 
-Short version: **the 3D models and the game kit code are free to use in your game, even one you sell.**
-For voices, check your Fish Audio plan before you sell anything. Before you add anything from outside this repo, read
-[Adding your own assets](#adding-your-own-assets).
+Short version: **voices you generate with Fish Audio are fine for the hackathon; selling them needs a paid Fish
+Audio plan.** The 3D models and the game kit code are free to use in your game, even one you sell. Before you
+add anything from outside this repo, read [Adding your own assets](#adding-your-own-assets).
 
 > This page is a practical guide for hackathon teams, not legal advice. If you plan to sell your game,
 > read the actual licenses (linked below) yourself.
@@ -11,13 +11,25 @@ For voices, check your Fish Audio plan before you sell anything. Before you add 
 
 | What | License | Use it in your game? | Sell your game? | Must you credit it? |
 |---|---|---|---|---|
+| Fish Audio example code (`fish-audio/`) | None yet (the copyright owner hasn't chosen one) | Ask the organizers | Ask the organizers | — |
+| Fish Audio skills (`.claude/skills/`) | Owned by Fish Audio (copied from docs.fish.audio), no license stated | As reference for your AI agent only | — | — |
+| Speech you generate with Fish Audio | [Fish Audio Terms of Service](https://fish.audio/terms) | ✅ Yes | ⚠️ Only on a **paid** plan | See [Voices](#voices-fish-audio) |
 | 3D models in `game-kit/public/assets/` (KayKit, Quaternius) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | ✅ Yes | ✅ Yes | No (appreciated) |
 | Game kit code (`game-kit/engine/`, `games/`, `scripts/`, `tools/`) | [MIT](game-kit/LICENSE) | ✅ Yes | ✅ Yes | Keep `game-kit/LICENSE` with the code if you share the source |
 | [three.js](https://github.com/mrdoob/three.js/blob/dev/LICENSE) and [Vite](https://github.com/vitejs/vite/blob/main/LICENSE) | MIT | ✅ Yes | ✅ Yes | No in-game credit needed; keep their license files if you share their source |
 | Built-in sound effects (`game.audio.play('coin')`, …) | Synthesized in code (part of the MIT engine) | ✅ Yes | ✅ Yes | No |
-| Fish Audio example code (`fish-audio/`) | None yet (the copyright owner hasn't chosen one) | Ask the organizers | Ask the organizers | — |
-| Fish Audio skills (`.claude/skills/`) | Owned by Fish Audio (copied from docs.fish.audio), no license stated | As reference for your AI agent only | — | — |
-| Speech you generate with Fish Audio | [Fish Audio Terms of Service](https://fish.audio/terms) | ✅ Yes | ⚠️ Only on a **paid** plan | See [Voices](#voices-fish-audio) |
+
+## Voices (Fish Audio)
+
+- **Free vs paid.** Fish Audio's [terms](https://fish.audio/terms) limit free accounts to personal,
+  non-commercial use. Commercial use is licensed for paid plans. A hackathon demo is fine. If you later sell the
+  game or put it behind ads, the audio must come from a paid account. Terms change, so re-read them before you ship.
+- **Cloning needs consent.** Only clone your own voice or the voice of someone who gave you written permission.
+  Never clone a celebrity, a streamer or any voice you found online. See
+  [fish-audio/docs/concepts/voices.md](fish-audio/docs/concepts/voices.md#licensing-and-consent).
+- **Other people's public voice models** on fish.audio can be imitations of real people. To be safe, design your
+  own NPC voices from a text description
+  ([03-npc-voice-factory](fish-audio/examples/03-npc-voice-factory)) or use your team's own voices.
 
 ## What CC0 means
 
@@ -40,18 +52,6 @@ Crediting the artists is still kind, and it costs one line in your credits:
   [J-Ponzo/gltf-universal-animation-library](https://github.com/J-Ponzo/gltf-universal-animation-library)) of
   Quaternius's free CC0 packs ([Quaternius FAQ](https://quaternius.com/faq.html): "can be used for free without the
   need for attribution in commercial, educational, and personal projects").
-
-## Voices (Fish Audio)
-
-- **Free vs paid.** Fish Audio's [terms](https://fish.audio/terms) limit free accounts to personal,
-  non-commercial use. Commercial use is licensed for paid plans. A hackathon demo is fine. If you later sell the
-  game or put it behind ads, the audio must come from a paid account. Terms change, so re-read them before you ship.
-- **Cloning needs consent.** Only clone your own voice or the voice of someone who gave you written permission.
-  Never clone a celebrity, a streamer or any voice you found online. See
-  [fish-audio/docs/concepts/voices.md](fish-audio/docs/concepts/voices.md#licensing-and-consent).
-- **Other people's public voice models** on fish.audio can be imitations of real people. To be safe, design your
-  own NPC voices from a text description
-  ([03-npc-voice-factory](fish-audio/examples/03-npc-voice-factory)) or use your team's own voices.
 
 ## Adding your own assets
 

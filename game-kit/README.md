@@ -60,7 +60,7 @@ game.start();
 | Fix something that's broken | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
 | Run the event: pre-event email, offline USB kit, kickoff checklist | [docs/ORGANIZERS.md](docs/ORGANIZERS.md) |
 | Let an AI assistant work on the code | [AGENTS.md](AGENTS.md) (Claude Code loads it automatically via `CLAUDE.md`) |
-| Give my game a voice (talking NPCs, narrator) | [../fish-audio/](../fish-audio/) and the [root README](../README.md#using-both-parts-together) |
+| Give my game a voice (talking NPCs, narrator) | [../fish-audio/](../fish-audio/) and the [root README](../README.md#putting-the-voice-in-your-game) |
 
 ## Pages while `npm run dev` runs
 
