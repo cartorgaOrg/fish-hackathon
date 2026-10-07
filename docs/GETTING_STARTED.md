@@ -21,7 +21,7 @@ You need:
 - **git**, a code editor (VS Code works well), and Chrome, Edge or Firefox.
 
 ```bash
-git clone <your team's copy of this repo> my-team
+git clone https://github.com/playmanogames/game-starter-kit.git my-team   # or your team's fork
 cd my-team
 npm install
 npm run dev
