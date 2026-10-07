@@ -494,7 +494,7 @@ async function openJournal() {
     `<span style="display:block;max-height:45vh;overflow:auto;font-size:14px;line-height:1.6">${rows.join('<br>')}</span>`,
     ['Close', 'Reset progress']);
   if (i === 1 && (await game.ui.dialog('Reset?', 'Delete all coins, gear and journal entries?', ['Keep my stuff', 'Reset'])) === 1) {
-    storage.save('fishing-save', null);
+    storage.remove('fishing-save');
     menu.restart();
   }
 }

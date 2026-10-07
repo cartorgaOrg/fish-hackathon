@@ -126,7 +126,8 @@ const road = [];
   }
 }
 const waypoints = road.map((t) => cellPos(t.c, t.r));
-waypoints.unshift(waypoints[0].clone().add(v3(-CELL * 2, 0, 0))); // enemies walk in from off-map
+// enemies walk in from off-map, along the direction of the first road tile
+waypoints.unshift(waypoints[0].clone().sub(waypoints[1].clone().sub(waypoints[0]).multiplyScalar(2)));
 
 // ---- build the scenery
 const towers = new Map(); // "c,r" → Tower
@@ -290,7 +291,7 @@ class Tower extends Entity {
 
   update(dt) {
     this.cooldown -= dt;
-    if (this.cooldown > 0) return;
+    if (this.cooldown > 0 || this.topY == null) return; // (model still loading)
     // target = enemy in range that is furthest along the road
     let target = null;
     for (const e of game.findNear(this.position, this.range, 'enemy')) if (!target || e.progress > target.progress) target = e;

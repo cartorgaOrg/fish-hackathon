@@ -4,3 +4,5 @@ dist
 *.log
 .claude/settings.local.json
 .claude/
+.smoke
+dist.zip

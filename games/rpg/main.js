@@ -327,6 +327,7 @@ function onEnemyKilled(enemy) {
   }
   if (enemy.def.boss) {
     quest.stage = 'done';
+    stopSpawning?.();                    // the realm is saved: no more skeletons
     game.audio.play('win');
     game.after(2.5, () => menu.win({
       title: 'Victory! 👑',
@@ -350,8 +351,8 @@ function startSpawning() {
   stopSpawning = game.every(every, spawnOne);
 }
 async function spawnBoss() {
-  const king = await Skeleton.spawn(game, 'king', v3(0, 0, -42), { onDeath: onEnemyKilled });
-  game.ui.worldLabel(king.object, '👑 Skeleton King', 4.6, 'fx-label');
+  const king = await Skeleton.spawn(game, 'king', v3(0, 0, -42), { onDeath: (e) => { label.remove(); onEnemyKilled(e); } });
+  const label = game.ui.worldLabel(king.object, '👑 Skeleton King', 4.6, 'fx-label');
 }
 
 // =============================================================================

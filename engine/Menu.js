@@ -27,13 +27,15 @@ export class GameMenu {
    * @param {string[]} [opts.controls]   lines shown on the title screen (keyboard help)
    * @param {string[]} [opts.touchControls]  lines shown instead on touch devices
    * @param {() => void} [opts.onStart]
+   * @param {() => void} [opts.onPause]    e.g. cancel a half-finished action (building placement…)
+   * @param {() => void} [opts.onResume]
    * @param {boolean} [opts.lockPointer=false]  FPS games: capture the mouse on Play/Resume
    * @param {boolean} [opts.showTitle=true]     false = skip the title screen entirely
    * @param {string} [opts.accent='#ffd166']
    */
-  constructor(game, { title, subtitle = '', controls = [], touchControls, onStart, lockPointer = false, showTitle = true, accent = '#ffd166' }) {
+  constructor(game, { title, subtitle = '', controls = [], touchControls, onStart, onPause, onResume, lockPointer = false, showTitle = true, accent = '#ffd166' }) {
     this.game = game;
-    this.opts = { title, subtitle, controls, touchControls, onStart, lockPointer, accent };
+    this.opts = { title, subtitle, controls, touchControls, onStart, onPause, onResume, lockPointer, accent };
     this.state = 'title'; // title | playing | paused | over
     this.bestKey = `fx-best:${location.pathname}`;
     injectCss(accent);
@@ -86,6 +88,7 @@ export class GameMenu {
     this.state = 'paused';
     this.game.paused = true;
     if (document.pointerLockElement) document.exitPointerLock();
+    this.opts.onPause?.();
     this._show(`
       <h1>Paused</h1>
       <div class="fx-menu-buttons">
@@ -103,6 +106,7 @@ export class GameMenu {
     this.state = 'playing';
     this.game.paused = false;
     if (this.opts.lockPointer) this.game.input.lockPointer();
+    this.opts.onResume?.();
   }
 
   /** Show the game-over screen. `score` (optional) is compared with the saved best. */

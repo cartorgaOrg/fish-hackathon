@@ -154,8 +154,11 @@ for (let x = 0; x < W * T; x += rand(25, 40)) {           // big soft hills far 
 // =============================================================================
 //  PLAYER — the engine's CharacterController, with movement mapped onto the X axis.
 // =============================================================================
-const state = { score: 0, coins: 0, lives: storage.load('ss-lives', CONFIG.lives), time: CONFIG.time, over: false };
-storage.save('ss-lives', CONFIG.lives); // lives only carry over through a death-reload
+// Losing a life reloads the page (the simplest possible restart). Lives, score and coins survive
+// that reload through storage; a fresh visit or "Play again" starts a new run.
+const run = storage.load('ss-run', { lives: CONFIG.lives, score: 0, coins: 0 });
+storage.remove('ss-run');
+const state = { score: run.score, coins: run.coins, lives: run.lives, time: CONFIG.time, over: false };
 
 class Player extends CharacterController {
   constructor(model) {
@@ -200,9 +203,11 @@ class Player extends CharacterController {
     game.audio.play('hurt');
     this.body.velocity.set(0, 20, 0);            // the classic death hop, then fall through everything
     const lives = state.lives - 1;
-    storage.save('ss-lives', lives > 0 ? lives : CONFIG.lives);
     game.after(2.5, () => {
-      if (lives > 0) menu.restart();             // simplest possible restart (skips the title); lives are kept in storage
+      if (lives > 0) {                           // reload into the same run (skips the title)
+        storage.save('ss-run', { lives, score: state.score, coins: state.coins });
+        menu.restart();
+      }
       else { state.over = true; menu.gameOver({ text: 'Out of lives!', score: state.score }); }
     });
   }

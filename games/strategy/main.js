@@ -283,6 +283,7 @@ game.onUpdate(() => {
 // ----------------------------------------------------------------------------- menus + touch
 // The game is paused until Play, so the raid timers (game.time based) only start counting then.
 const menu = new GameMenu(game, {
+  onPause: () => cancelPlacing(), // Esc pauses — don't leave a ghost building hanging around
   title: 'Tiny Empires',
   subtitle: `Gather, build, train — and survive ${CONFIG.wavesToWin} skeleton raids.`,
   controls: CONTROLS,

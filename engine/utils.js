@@ -63,6 +63,7 @@ export function cooldown(seconds) {
 export const storage = {
   save(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} },
   load(key, fallback = null) {
-    try { const v = localStorage.getItem(key); return v == null ? fallback : JSON.parse(v); } catch { return fallback; }
+    try { const v = JSON.parse(localStorage.getItem(key)); return v ?? fallback; } catch { return fallback; }
   },
+  remove(key) { try { localStorage.removeItem(key); } catch {} },
 };
