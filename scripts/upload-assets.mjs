@@ -82,7 +82,7 @@ console.log(`Uploading ${files.length} files (${mb} MB) to r2://${bucket}/${base
 function put(f) {
   return new Promise((resolve) => {
     const child = spawn('npx', [
-      'wrangler', 'r2', 'object', 'put', `${bucket}/${f.key}`, '--remote',
+      '--yes', 'wrangler@4', 'r2', 'object', 'put',   // fetched on demand (not a project dependency: it's ~200 MB) `${bucket}/${f.key}`, '--remote',
       '--file', f.file, '--content-type', f.type,
       '--cache-control', 'public, max-age=31536000, immutable',
     ], { cwd: ROOT, shell: process.platform === 'win32', stdio: ['ignore', 'ignore', 'pipe'] });

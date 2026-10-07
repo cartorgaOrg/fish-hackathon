@@ -7,6 +7,7 @@
  *   npm run smoke                       # every game in games/
  *   npm run smoke -- rpg fishing        # only these
  *   npm run smoke -- my-game --touch    # with on-screen touch controls (?touch)
+ *   npm run smoke -- --offline          # block all internet requests: proves games work on bad Wi-Fi
  *   npm run smoke -- my-game --wait 8   # let it run 8 s before the screenshot (default 3)
  *   npm run smoke -- my-game --keys KeyW:1500,Space   # hold W for 1.5 s, then tap Space
  *   npm run smoke -- my-game --eval "game.find('player').position.set(0,0,20)"   # run JS in the page
@@ -31,6 +32,7 @@ const optNames = new Set(['--wait', '--keys', '--eval']);
 const evals = args.flatMap((a, i) => (a === '--eval' ? [args[i + 1]] : []));
 const names = args.filter((a, i) => !a.startsWith('--') && !optNames.has(args[i - 1]));
 const touch = args.includes('--touch');
+const offline = args.includes('--offline');
 const waitSec = Number(opt('wait', 3));
 const keys = (opt('keys', '') || '').split(',').filter(Boolean).map((k) => { const [code, ms] = k.split(':'); return { code, ms: Number(ms) || 0 }; });
 
@@ -66,6 +68,14 @@ for (const g of games) {
   page.on('pageerror', (e) => issues.push(`exception: ${e.message}`));
   page.on('console', (m) => { if (m.type() === 'error' && !/GPU stall|WebGL-/.test(m.text())) issues.push(`console: ${m.text()}`); });
   page.on('response', (r) => { if (r.status() >= 400) issues.push(`HTTP ${r.status()}: ${r.url().replace(base, '')}`); });
+  if (offline) {
+    await page.route('**/*', (route) => {
+      const url = route.request().url();
+      if (url.startsWith(base) || url.startsWith('data:') || url.startsWith('blob:')) return route.continue();
+      issues.push(`offline: blocked request to ${url}`);
+      return route.abort();
+    });
+  }
   const started = Date.now();
   await page.goto(`${base}/games/${g}/${touch ? '?touch' : ''}`);
   const loaded = await page.waitForFunction(() => window.game && !document.querySelector('.fx-loading'), null, { timeout: 120_000 })
@@ -100,5 +110,5 @@ for (const g of games) {
 
 await browser.close();
 await server.close();
-console.log(failed ? `\n${failed} game(s) had problems.` : '\nNo errors. Look at the screenshots in .smoke/ to check that things look right.');
+console.log(failed ? `\n${failed} game(s) had problems.` : `\nNo errors${offline ? ' (with all internet requests blocked)' : ''}. Look at the screenshots in .smoke/ to check that things look right.`);
 process.exit(failed ? 1 : 0);
