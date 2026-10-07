@@ -15,7 +15,8 @@ For voices, check your Fish Audio plan before you sell anything. Before you add 
 | Game kit code (`game-kit/engine/`, `games/`, `scripts/`, `tools/`) | [MIT](game-kit/LICENSE) | ✅ Yes | ✅ Yes | Keep `game-kit/LICENSE` with the code if you share the source |
 | [three.js](https://github.com/mrdoob/three.js/blob/dev/LICENSE) and [Vite](https://github.com/vitejs/vite/blob/main/LICENSE) | MIT | ✅ Yes | ✅ Yes | No in-game credit needed; keep their license files if you share their source |
 | Built-in sound effects (`game.audio.play('coin')`, …) | Synthesized in code (part of the MIT engine) | ✅ Yes | ✅ Yes | No |
-| Fish Audio example code (`fish-audio/`) | No license chosen yet (ask the organizers) | ✅ At the hackathon | Ask first | — |
+| Fish Audio example code (`fish-audio/`) | None yet (the copyright owner hasn't chosen one) | Ask the organizers | Ask the organizers | — |
+| Fish Audio skills (`.claude/skills/`) | Owned by Fish Audio (copied from docs.fish.audio), no license stated | As reference for your AI agent only | — | — |
 | Speech you generate with Fish Audio | [Fish Audio Terms of Service](https://fish.audio/terms) | ✅ Yes | ⚠️ Only on a **paid** plan | See [Voices](#voices-fish-audio) |
 
 ## What CC0 means
