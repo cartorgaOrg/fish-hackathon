@@ -140,5 +140,6 @@ To test win/lose paths, expose a small debug hook in your game (e.g. `window.dbg
 | `npm run smoke [-- <games…>] [--touch] [--wait s] [--keys …] [--eval js]` | Headless browser test + screenshots (`--eval` runs JS in the page, repeatable) |
 | `npm run package -- <game> [--full]` | Deployable `dist/` + `dist.zip` for one game |
 | `npm run build` / `build:cdn` / `preview` | Full builds of every game |
+| `npm run smoke -- --offline` | Same, with all internet requests blocked (the kit must work on bad Wi-Fi) |
 | `npm run catalog` | Regenerate `docs/ASSET_LIST.md` + `public/assets/catalog.json` after adding models |
 | `npm run assets` / `assets:upload` | Maintainers: download packs / publish them to the CDN |

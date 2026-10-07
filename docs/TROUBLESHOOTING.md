@@ -7,6 +7,7 @@ Second step: run `npm run check`, and `npm run smoke -- <game>` for a headless r
 
 | Problem | Fix |
 |---|---|
+| No internet / `npm install` times out | Use the offline kit from the organizers: `npm ci --offline --cache ./npm-cache` (see `OFFLINE-INSTALL.md` in the kit). After installing, nothing else needs internet. |
 | `npm install` fails / old Node | Install Node.js 20+ (`node -v`). On Windows use the official installer, then reopen the terminal. |
 | "Port 5173 is in use" | Vite picks the next free port. Read the URL in the terminal. |
 | Can't open the game on my phone | Use the **Network** URL that `npm run dev` prints, on the same Wi-Fi. Corporate or guest Wi-Fi often blocks device-to-device traffic, so use a phone hotspot. |

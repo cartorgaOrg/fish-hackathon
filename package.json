@@ -15,7 +15,8 @@
     "new": "node scripts/new-game.mjs",
     "check": "node scripts/check.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "package": "node scripts/package.mjs"
+    "package": "node scripts/package.mjs",
+    "offline-kit": "node scripts/offline-kit.mjs"
   },
   "dependencies": {
     "three": "^0.170.0"

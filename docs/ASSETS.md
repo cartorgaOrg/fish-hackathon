@@ -100,7 +100,7 @@ Re-apply it with `CLOUDFLARE_ACCOUNT_ID=f9264e6402496d116d81066613a3b8c3 npx wra
 
 ### Re-downloading
 
-`public/assets/` is committed so the kit works offline at a hackathon. If it's ever missing or corrupted, run:
+`public/assets/` is committed so the kit works offline at a hackathon (see [ORGANIZERS.md](ORGANIZERS.md) for the offline USB kit). If it's ever missing or corrupted, run:
 
 ```bash
 npm run assets            # only downloads missing files

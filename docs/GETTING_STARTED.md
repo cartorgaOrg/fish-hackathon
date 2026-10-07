@@ -27,7 +27,9 @@ npm install
 npm run dev
 ```
 
-Open the URL it prints, usually **http://localhost:5173**. That's it: all the 3D models are already in the repo, so you don't need internet once it's cloned.
+Open the URL it prints, usually **http://localhost:5173**. That's it.
+
+> **Bad Wi-Fi?** Only `git clone` (~40 MB) and `npm install` (~20 MB) need internet. After that, everything, including all 780 models, works fully offline, so **do these two steps at home before the event**. No internet at all? Ask an organizer for the **offline kit** (a zip on USB) and follow its `OFFLINE-INSTALL.md`: `npm ci --offline --cache ./npm-cache`.
 
 > Port taken? Vite picks the next free one; the terminal shows which. Anything else odd: [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 

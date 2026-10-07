@@ -7,7 +7,7 @@ Make a 3D browser game in a weekend. This kit gives you:
 - **780+ free (CC0) 3D models** from [KayKit](https://kaylousberg.com) and [Quaternius](https://quaternius.com): heroes, monsters, dungeons, platformer kits, castles, guns, animals and 40+ animated fish, with a visual **asset browser**. They're bundled for offline development and served from `cdn.manogames.com` when you deploy.
 - **Docs written for humans and AI assistants**, plus `check`/`smoke` commands so assistants can test their own work.
 
-No engine to install. Edit a `.js` file, save, and the browser reloads.
+No engine to install. Edit a `.js` file, save, and the browser reloads. **Works fully offline** after `git clone` + `npm install`; there's also an offline USB kit for venues with bad Wi-Fi.
 
 ---
 
@@ -53,6 +53,7 @@ game.start();
 | Understand model sizes, packs, the CDN, adding models | [docs/ASSETS.md](docs/ASSETS.md) |
 | Put my game online (itch.io, Pages, Netlify…) | [docs/DEPLOY.md](docs/DEPLOY.md) |
 | Fix something that's broken | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
+| Run the event: pre-event email, offline USB kit, kickoff checklist | [docs/ORGANIZERS.md](docs/ORGANIZERS.md) |
 | Let an AI assistant work on the code | [AGENTS.md](AGENTS.md) (Claude Code loads it automatically via `CLAUDE.md`) |
 
 ## Pages while `npm run dev` runs
@@ -74,6 +75,7 @@ game.start();
 | `npm run package -- <game> [--full]` | Build one game into `dist/` + `dist.zip`, ready for itch.io and friends |
 | `npm run build` / `npm run build:cdn` / `npm run preview` | Build every game (with models / models from CDN) and preview the build |
 | `npm run catalog` | Rebuild the asset catalog after adding models |
+| `npm run offline-kit` | Organizers: build a zip that installs with no internet (USB sticks) |
 | `npm run assets` / `npm run assets:upload` | Maintainers: download the packs / publish them to the CDN |
 
 ## Project layout
